@@ -1,3 +1,7 @@
+.classpath
+.cache
+.project
+.settings/*
 *.class
 *.log
 
