@@ -1,4 +1,5 @@
-cdl-toolkit
-===========
+# CDL Toolkit
+This tool was built as part of my research ([Kivikangas, Petri; Ishizuka, Mitsuru; "Improving Semantic Queries by Utilizing UNL Ontology and a Graph Database", Proc. IEEE 6th Int'l Conf. on Semantic Computing (ICSC 2012), Palermo, Italy, pp.83-86, Sep. 2012](http://www.miv.t.u-tokyo.ac.jp/papers/petri-ICSC2012.pdf)). You can use the tool as you like (see LICENSE.txt), but I don't take any responsibilities (see DISCLAIMER.txt).
 
-CDL Toolkit is a tool for facilitating research and development efforts on Concept Description Language
+# Concept Description Language (CDL)
+Concept Description Language, or CDL, is a declarative formal language for representing semantic data. It is a machine-understandable language aiming at becoming the next generation language for the intelligent Web. For more information about CDL and its ecosystem, see ["Common Web Language - W3C Incubator Group Report 31 March 2008"](http://www.w3.org/2005/Incubator/cwl/XGR-cwl/).
