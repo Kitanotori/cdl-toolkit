@@ -3,6 +3,10 @@
 // @namespace      cxo
 // @match          http://localhost:*/*webadmin*
 // ==/UserScript==
+/* 
+ *  This script is taken from https://github.com/aguenther/Neo4j-Styles-Exporter 
+ *  with only a modification to @match URI. 
+ */
 function main(){
     var 
         stylesDiv,//the main div of the overlay
