@@ -5,6 +5,8 @@
  */
 package cdl.wrappers
 
+import scala.language.implicitConversions
+
 import org.neo4j.graphdb.RelationshipType
 
 class UnsupportedRelType(reason: String) extends Exception(reason)

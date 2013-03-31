@@ -27,9 +27,9 @@ class RestNeoWrapper(override val uri: URI, override val userPw: Option[(String,
     if (isConnected) {
       ds.gds.shutdown
       execEngine = null
-      logger.debug("Stopped REST API wrapper")
+      logger.info("Stopped REST API wrapper")
     } else {
-      logger.debug("Tried to stop REST API wrapper that was not running")
+      logger.info("Tried to stop REST API wrapper that was not running")
     }
   }
 
@@ -41,13 +41,13 @@ class RestNeoWrapper(override val uri: URI, override val userPw: Option[(String,
     val resource = Client.create.resource(accessPoint)
     val response = resource.get(classOf[ClientResponse])
     try {
-      logger.debug("GET on [%s], status code [%d]".format(accessPoint, response.getStatus))
+      logger.info("GET on [%s], status code [%d]".format(accessPoint, response.getStatus))
     } catch {
       case ex: ClientHandlerException => logger.error("Not connected to "+accessPoint+": "+ex.getMessage); return false
     } finally response.close
 
     if (response.getStatus == 200) {
-      logger.debug("Connection to "+accessPoint+" works")
+      logger.info("Connection to "+accessPoint+" works")
       return true
     } else {
       logger.error("Problem with connection to "+accessPoint)

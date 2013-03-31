@@ -137,7 +137,7 @@ public class Editor {
 			public void keyPressed(KeyEvent e) {
 				if (e.getKeyCode() == KeyEvent.VK_ENTER) {
 					UW[] uws = NeoWrapper.fetchUWs(textfUW.getText());
-					logger.debug("Fetched "+uws.length+" UWs");
+					logger.info("Fetched "+uws.length+" UWs");
 					comboFormsModel.removeAllElements();
 					for (int i = 0; i < uws.length; i++) {
 						comboFormsModel.addElement(uws[i]);
@@ -767,14 +767,14 @@ public class Editor {
 		if (NeoWrapper.isConnected()) {
 			ExecutionResult result = NeoWrapper.query(textaCypher.getText());
 			if (!result.javaIterator().hasNext()) {
-				logger.debug("Returned empty result");
+				logger.info("Returned empty result");
 				textaResult.setText("");
 			} else {
-				logger.debug("Query found a match");
+				logger.info("Query found a match");
 				textaResult.setText(result.dumpToString());
 			}
 		} else {
-			logger.debug("Tried to run query without connection to DB");
+			logger.info("Tried to run query without connection to DB");
 			lblStatus.setText("Cannot run query without connection to DB");
 		}
 	}

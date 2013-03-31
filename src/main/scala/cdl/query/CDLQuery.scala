@@ -64,7 +64,7 @@ object CDLQuery {
           case 1 => {
             val hyponyms = NeoWrapper.getHyponyms(c)
             if (hyponyms.isEmpty) {
-              logger.debug("Didn't find hyponyms for ["+c.uw + ']')
+              logger.info("Didn't find hyponyms for ["+c.uw + ']')
               "\tx"+c.rlabel+".uw! = '"+c.uw+"'"
             } else {
               val sb = new StringBuilder("\t(x"+c.rlabel+".uw! = '"+c.uw+"' OR ")
@@ -96,7 +96,7 @@ class CDLQuery(override val entities: List[Concept], override val arcs: List[Arc
 
   def execute: ExecutionResult = {
     val result = NeoWrapper.query(toCypher(0))
-    CDLQuery.logger.debug("Query returned: "+result)
+    CDLQuery.logger.info("Query returned: "+result)
     return result
   }
 

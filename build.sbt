@@ -1,12 +1,12 @@
 name := "CDL Toolkit"
 
-version := "0.8"
+version := "0.9"
 
-scalaVersion := "2.9.2"
+scalaVersion := "2.10.1"
 
 mainClass in (Compile, run) := Some("cdl.editor.Editor")
 
-scalacOptions ++= Seq("-unchecked", "-deprecation", "–encoding UTF8", "-target:jvm-1.5")
+scalacOptions ++= Seq("-unchecked", "-deprecation", "–encoding UTF8", "-target:jvm-1.7")
  
 resolvers ++= Seq(
 	"fakod-snapshots" at "https://raw.github.com/FaKod/fakod-mvn-repo/master/snapshots",
@@ -18,15 +18,12 @@ resolvers ++= Seq(
 
 libraryDependencies ++= Seq(
 	"org.codehaus.janino" % "janino" % "2.6.1",
-	/* "io.spray" % "spray-client" % "1.1-M4.2",
-	"org.springframework.data" % "spring-data-neo4j" % "2.1.0.RELEASE" withSources,
-	"com.typesafe.akka" % "akka-actor" % "2.0.3" withSources, */
-	"org.scalatest" % "scalatest_2.9.2" % "2.0.M4" withSources, 
-	"junit" % "junit" % "4.10",
+	"org.scalatest" %% "scalatest" % "2.0.M6-SNAP9" withSources, 
+	"junit" % "junit" % "4.11",
 	"commons-io" % "commons-io" % "2.4",
-	"ch.qos.logback" % "logback-core" % "1.0.7",
-	"ch.qos.logback" % "logback-classic" % "1.0.7",
-	"org.slf4j" % "slf4j-api" % "1.6.6",
+	"ch.qos.logback" % "logback-core" % "1.0.10",
+	"ch.qos.logback" % "logback-classic" % "1.0.10",
+	"org.slf4j" % "slf4j-api" % "1.7.4",
 	"org.neo4j" % "neo4j-scala" % "0.2.0-M2-SNAPSHOT" withSources,
 	"org.neo4j" % "neo4j" % "1.8" withSources,
 	"org.neo4j" % "neo4j-cypher" % "1.8",

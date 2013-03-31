@@ -27,7 +27,7 @@ class EmbeddedNeoWrapper(storeDir: String) extends CDLNeoWrapper with EmbeddedGr
   def accessPoint: String = uri
   def neo4jStoreDir: String = storeDir
 
-  def start = {
+  def start() = {
     if (srv == null) {
       registerShutdownHook
 
@@ -42,17 +42,17 @@ class EmbeddedNeoWrapper(storeDir: String) extends CDLNeoWrapper with EmbeddedGr
       srv = new WrappingNeoServerBootstrapper(ds.gds.asInstanceOf[EmbeddedGraphDatabase])
       srv.start
       uri = srv.getServer.baseUri.toString
-      logger.debug("Started server at "+uri)
+      logger.info("Started server at "+uri)
     }
   }
 
-  def stop = {
+  def stop() = {
     if (srv != null) {
       srv.stop
       srv = null
-      logger.debug("Stopped server")
+      logger.info("Stopped server")
       ds.gds.shutdown
-      logger.debug("Disconnected from database")
+      logger.info("Disconnected from database")
     }
   }
 
@@ -60,7 +60,7 @@ class EmbeddedNeoWrapper(storeDir: String) extends CDLNeoWrapper with EmbeddedGr
     if (accessPoint.isEmpty) return false
     val resource = Client.create.resource(accessPoint)
     val response = resource.get(classOf[ClientResponse])
-    logger.debug("GET on [%s], status code [%d]".format(accessPoint, response.getStatus))
+    logger.info("GET on [%s], status code [%d]".format(accessPoint, response.getStatus))
     response.close
     return response.getStatus == 200
   }

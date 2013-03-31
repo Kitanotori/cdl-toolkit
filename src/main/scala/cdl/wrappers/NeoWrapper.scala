@@ -34,13 +34,13 @@ class NeoWrapperException(reason: String) extends Exception(reason)
 trait CDLNeoLightWrapper {
   def getHyponyms(uw: UW): List[String]
   def query(q: String): ExecutionResult
-  def cleanDB: Map[String, Any]
+  def cleanDB(): Map[String, Any]
   def fetchUWs(head: String): Array[UW]
   def importDocuments(docs: Array[File])
   def isConnected: Boolean // should return true if the wrapper is able to connect to database
-  def stop // call when discarding the wrapper object
-  def start // call when starting to use the wrapper object
-  def importOntology
+  def stop() // call when discarding the wrapper object
+  def start() // call when starting to use the wrapper object
+  def importOntology()
   def accessPoint: String // For embedded-only wrappers this is the filesystem path. For REST-based wrappers this is the uri
 }
 
@@ -52,14 +52,14 @@ trait CDLNeoWrapper extends Neo4jWrapper with Neo4jIndexProvider with CDLNeoLigh
   /* These should be defined by the Neo wrapper implementations */
   var execEngine: ExecutionEngine
   def accessPoint: String
-  def start
-  def stop
+  def start()
+  def stop()
   def isConnected: Boolean
 
   def getHyponyms(uw: UW): List[String] = {
     val ontology = fetchUWs(uw.toString)
-    if (ontology.isEmpty) logger.debug("Didn't find corresponding ontology for UW ["+uw.uw + ']')
-    if (ontology.size > 1) logger.debug("Multiple same ontologies in DB! <"+ontology.toString)
+    if (ontology.isEmpty) logger.info("Didn't find corresponding ontology for UW ["+uw.uw + ']')
+    if (ontology.size > 1) logger.info("Multiple same ontologies in DB! <"+ontology.toString)
     var hypos = List[String]()
     val res = query("START x=node:uws(uw='"+uw.uw+"') MATCH x-[:HYPO*1..20]->y RETURN y")
     val i: Iterator[Node] = res.columnAs("y")
@@ -70,7 +70,7 @@ trait CDLNeoWrapper extends Neo4jWrapper with Neo4jIndexProvider with CDLNeoLigh
   }
 
   def query(q: String): ExecutionResult = {
-    logger.debug("Executing query:\n"+q)
+    logger.info("Executing query:\n"+q)
     var result: ExecutionResult = null
     try {
       result = execEngine.execute(q)
@@ -78,7 +78,7 @@ trait CDLNeoWrapper extends Neo4jWrapper with Neo4jIndexProvider with CDLNeoLigh
       case e: SyntaxException => logger.error("Invalid Cypher query"); return null
     }
     if (result != null) {
-      logger.debug("Query returned:\n"+result)
+      logger.info("Query returned:\n"+result)
       return result
     }
     return null
@@ -113,13 +113,13 @@ trait CDLNeoWrapper extends Neo4jWrapper with Neo4jIndexProvider with CDLNeoLigh
   }
 
   def addDocument(parsedDoc: CDLDocument) = {
-    logger.debug("Adding document <"+parsedDoc.title + '>')
+    logger.info("Adding document <"+parsedDoc.title + '>')
     val documentNode = createDocumentNode(parsedDoc)
-    ds.gds.getReferenceNode --> CONTAINS --> documentNode // Add CDL documents to the root node
+    rootNode --> CONTAINS --> documentNode // Add CDL documents to the root node
     for (entity <- parsedDoc.entities) {
       documentNode --> CONTAINS --> unpackEntity(entity.asInstanceOf[Statement])
     }
-    logger.debug("Finished adding a document")
+    logger.info("Finished adding a document")
   }
 
   private def unpackEntity(stat: Statement): Node = {
@@ -144,9 +144,9 @@ trait CDLNeoWrapper extends Neo4jWrapper with Neo4jIndexProvider with CDLNeoLigh
           entities(arc.from.toString) --> RelTypes.toRelType(arc.relation) --> entities(arc.to.toString)
         } else {
           if (!entities.contains(arc.from.toString))
-            logger.debug("Did not find 'from' entity by id: "+arc.from.toString)
+            logger.info("Did not find 'from' entity by id: "+arc.from.toString)
           if (!entities.contains(arc.to.toString))
-            logger.debug("Did not find 'to' entity by id: "+arc.to.toString)
+            logger.info("Did not find 'to' entity by id: "+arc.to.toString)
         }
       }
     }
@@ -179,23 +179,23 @@ trait CDLNeoWrapper extends Neo4jWrapper with Neo4jIndexProvider with CDLNeoLigh
     } else {
       val o = ontology.getSingle
       if (o == null) {
-        logger.debug("Couldn't find ontology: "+concept.uw)
+        logger.info("Couldn't find ontology: "+concept.uw)
       } else {
         node --> ONTOLOGY --> o
-        logger.debug("Added ("+node+") ~> ("+o+") UW: "+concept.uw)
+        logger.info("Added ("+node.getId+") ~> ("+o.getId+") UW: "+concept.uw)
       }
     }
     return node
   }
 
   /* Imports UNL Ontology */
-  def importOntology = {
+  def importOntology() = {
     val parsed = OntologyParser.parse(Config.getProperty("unlOntologyPath").get)
-    logger.debug("Importing ontologies..")
+    logger.info("Importing ontologies..")
     val time = System.currentTimeMillis
     val top = doImport(parsed)
-    ds.gds.getReferenceNode --> CONTAINS --> top
-    logger.debug("Imported ontologies in "+(System.currentTimeMillis - time) / 1000.0+"s")
+    rootNode --> CONTAINS --> top
+    logger.info("Imported ontologies in "+(System.currentTimeMillis - time) / 1000.0+"s")
   }
 
   def doImport(n: UwNode): Node = {
@@ -219,13 +219,13 @@ trait CDLNeoWrapper extends Neo4jWrapper with Neo4jIndexProvider with CDLNeoLigh
    * Use e.g. neo4j-clean-remote-db-addon 
    * server plugin for cleaning db. 
    */
-  def cleanDB: Map[String, Any] = {
+  def cleanDB(): Map[String, Any] = {
     var result = clearIndex
     result ++= removeNodes(Long.MaxValue)
     return result
   }
 
-  private def clearIndex: Map[String, Any] = {
+  private def clearIndex(): Map[String, Any] = {
     var r = Map[String, Any]()
     val indexManager: IndexManager = ds.gds.index
     r += "node-indexes" -> indexManager.nodeIndexNames.toList
@@ -244,16 +244,16 @@ trait CDLNeoWrapper extends Neo4jWrapper with Neo4jIndexProvider with CDLNeoLigh
   }
 
   private def removeNodes(maxNodesToDelete: Long): Map[String, Any] = {
+    import org.neo4j.tooling.GlobalGraphOperations
     var r = Map[String, Any]()
-    val refNode = ds.gds.getReferenceNode
     var nodes = 0L
     var relationships = 0L
-    for (node <- ds.gds.getAllNodes if nodes < maxNodesToDelete) {
+    for (node <- GlobalGraphOperations.at(ds.gds).getAllNodes if nodes < maxNodesToDelete) {
       for (rel <- node.getRelationships) {
         rel.delete
         relationships += 1
       }
-      if (!node.equals(refNode)) { // Don't delete reference node!
+      if (!node.equals(rootNode)) { // Don't delete the root node!
         node.delete
         nodes += 1
       }
@@ -281,7 +281,7 @@ trait CDLNeoWrapper extends Neo4jWrapper with Neo4jIndexProvider with CDLNeoLigh
 
   protected def sanitize(query: String): String = QueryParser.escape(query)
 
-  protected def registerShutdownHook = {
+  protected def registerShutdownHook() = {
     // Registers a shutdown hook for the Neo4j instance so that it
     // shuts down nicely when the VM exits (even if you "Ctrl-C" the
     // running example before it's completed)
@@ -300,21 +300,23 @@ trait CDLNeoWrapper extends Neo4jWrapper with Neo4jIndexProvider with CDLNeoLigh
   lazy val concepts = getNodeIndex("concepts").get
   lazy val documents = getNodeIndex("documents").get
   lazy val uws = getNodeIndex("uws").get
+  
+  lazy val rootNode: Node = ds.gds.getNodeById(0)
 }
 
 object NeoWrapper {
   protected val logger = LoggerFactory.getLogger(this.getClass)
   var impl: CDLNeoLightWrapper = null
 
-  def toggleRestWrapper = {
-    logger.debug("Toggling REST API wrapper...")
+  def toggleRestWrapper() = {
+    logger.info("Toggling REST API wrapper...")
     stop
     Config.getProperty("restNeoURI") match {
       case Some(uri) =>
         try {
           impl = new RestNeoWrapper(new URI(uri))
           if (impl.isConnected) {
-            logger.debug("Toggled REST API wrapper for "+uri)
+            logger.info("Toggled REST API wrapper for "+uri)
             start
           } else {
             logger.error("Unable to toggle REST API wrapper for "+uri)
@@ -323,44 +325,43 @@ object NeoWrapper {
         } catch {
           case ex: ClientHandlerException => logger.error("Could not create RestNeoWrapper for "+uri+": "+ex.getMessage); impl = null
         }
-      case None => logger.debug("Unable to toggle RestNeoWrapper")
+      case None => logger.info("Unable to toggle RestNeoWrapper")
     }
   }
 
-  def toggleRestBatchWrapper = {
+  def toggleRestBatchWrapper() = {
     // TODO: implement
   }
 
-  def toggleEmbeddedBatchWrapper = {
-    logger.debug("Toggling EmbeddedBatchInserter...")
+  def toggleEmbeddedBatchWrapper() = {
+    logger.info("Toggling EmbeddedBatchInserter...")
     stop
     Config.getProperty("embeddedNeoPath") match {
       case Some(path) =>
-        logger.debug("Using configuration: embeddedNeoPath = "+path)
+        logger.info("Using configuration: embeddedNeoPath = "+path)
         impl = new EmbeddedBatchInserter(path)
         start
-        logger.debug("Toggled EmbeddedBatchInserter")
-      case None => logger.debug("Unable to toggle EmbeddedBatchInserter")
+        logger.info("Toggled EmbeddedBatchInserter")
+      case None => logger.info("Unable to toggle EmbeddedBatchInserter")
     }
   }
 
-  def toggleEmbeddedWrapper = {
-    logger.debug("Toggling EmbeddedNeoWrapper...")
+  def toggleEmbeddedWrapper() = {
+    logger.info("Toggling EmbeddedNeoWrapper...")
     stop
     Config.getProperty("embeddedNeoPath") match {
       case Some(path) =>
-        logger.debug("Using configuration: embeddedNeoPath = "+path)
+        logger.info("Using configuration: embeddedNeoPath = "+path)
         impl = new EmbeddedNeoWrapper(path)
         start
-        logger.debug("Toggled EmbeddedNeoWrapper")
-      case None => logger.debug("Unable to toggle EmbeddedNeoWrapper")
+        logger.info("Toggled EmbeddedNeoWrapper")
+      case None => logger.info("Unable to toggle EmbeddedNeoWrapper")
     }
   }
 
   /*
    * Map containing acceptable node property names.
    * The values are the property names stored in Neo4j.
-   * 
    */
   val nodeProperties = Map(
     "nodeType" -> "cdlType",
@@ -375,12 +376,12 @@ object NeoWrapper {
   /* Direct the db calls to wrapper implementations */
   def getHyponyms(uw: UW): List[String] = impl.getHyponyms(uw)
   def query(q: String): ExecutionResult = impl.query(q)
-  def cleanDB = impl.cleanDB
+  def cleanDB() = impl.cleanDB
   def fetchUWs(head: String): Array[UW] = impl.fetchUWs(head)
   def importDocuments(docs: Array[File]) = impl.importDocuments(docs)
   def isConnected: Boolean = impl.isConnected
-  def stop = if (impl != null) impl.stop
-  def start = impl.start
-  def importOntology = impl.importOntology
+  def stop() = if (impl != null) impl.stop
+  def start() = impl.start
+  def importOntology() = impl.importOntology
 
 }

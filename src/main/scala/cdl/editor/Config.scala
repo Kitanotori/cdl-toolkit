@@ -29,10 +29,10 @@ object Config {
       configFile.load(is)
       //configFile.entrySet.map(e => println(e.getKey+": "+(e.getValue.toString)))
       is.close
-      logger.debug("Loaded configurations from "+confFile.getAbsolutePath+":")
+      logger.info("Loaded configurations from "+confFile.getAbsolutePath+":")
     } catch {
       case ex: FileNotFoundException => {
-        logger.debug("Config file "+confFile.getAbsolutePath+" not found")
+        logger.info("Config file "+confFile.getAbsolutePath+" not found")
       }
       case ex: IOException => {
         logger.error(

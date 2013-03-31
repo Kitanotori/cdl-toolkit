@@ -32,8 +32,8 @@ class EmbeddedBatchInserter(storeDir: String) extends CDLNeoWrapper with Neo4jBa
     "neostore.propertystore.db.arrays.mapped_memory" -> "100M")
     */
 
-  def start = {
-    logger.debug("Starting batch mode")
+  def start() = {
+    logger.info("Starting batch mode")
     concepts.setCacheCapacity(nodeProperties("headword"), 10000000)
     documents.setCacheCapacity(nodeProperties("documentTitle"), 1000)
     uws.setCacheCapacity(nodeProperties("universalWord"), 100000)
@@ -41,14 +41,14 @@ class EmbeddedBatchInserter(storeDir: String) extends CDLNeoWrapper with Neo4jBa
     registerShutdownHook
   }
 
-  def flush = {
+  def flush() = {
     concepts.flush
     documents.flush
     uws.flush
   }
 
-  def stop = {
-    logger.debug("Stopping batch mode, and writing changes to disk")
+  def stop() = {
+    logger.info("Stopping batch mode, and writing changes to disk")
     var time = System.currentTimeMillis
     flush
     shutdownIndex

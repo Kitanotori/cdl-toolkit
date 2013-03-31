@@ -143,7 +143,7 @@ public class FileReader extends JFrame {
 	}
 
 	void parseFile() {
-		logger.debug("Parsing selected files..");
+		logger.info("Parsing selected files..");
 		File[] files = fileChooser.getSelectedFiles();
 		CDLDocument doc;
 		for (int i = 0; i < files.length; i++) {
