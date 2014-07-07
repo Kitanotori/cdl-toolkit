@@ -10,7 +10,7 @@ import org.neo4j.scala.{ BatchGraphDatabaseServiceProvider, Neo4jBatchIndexProvi
 
 import cdl.wrappers.NeoWrapper.nodeProperties
 
-class EmbeddedBatchInserter(storeDir: String) extends CDLNeoWrapper with Neo4jBatchIndexProvider with BatchGraphDatabaseServiceProvider {
+class EmbeddedBatchInserter(storeDir: String) extends CDLNeoWrapper {
   private var isInBatch: Boolean = false
 
   var execEngine: ExecutionEngine = null

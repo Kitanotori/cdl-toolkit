@@ -116,7 +116,7 @@ public class Editor {
 		frame = new JFrame();
 		frame.setBounds(100, 100, 819, 589);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		frame.setTitle("CDL Editor");
+		frame.setTitle("CDL Toolkit");
 
 		comboFormsModel = new DefaultComboBoxModel<UW>();
 		comboForms = new JComboBox<UW>(comboFormsModel);
