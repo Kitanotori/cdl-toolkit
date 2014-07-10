@@ -3,7 +3,7 @@
  * @date 6.2.2012
  *
  */
-package cdl.wrappers
+package cdl.neo4j.wrappers
 
 import scala.language.implicitConversions
 

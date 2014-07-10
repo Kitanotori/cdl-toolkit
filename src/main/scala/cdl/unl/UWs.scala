@@ -6,7 +6,6 @@
 package cdl.unl
 
 import java.nio.file.FileSystems
-import cdl.wrappers.RelTypes
 import java.io.File
 import org.slf4j.LoggerFactory
 import scala.util.Sorting
@@ -26,7 +25,7 @@ object UWs {
    * Fetches UWs from Neo4j. One has to make sure that UWs 
    * are imported to database before calling this method.
    * 
-   */
+   
   def getUWsFromNeo: Array[String] = {
     var ontology: File = null
     try {
@@ -39,5 +38,5 @@ object UWs {
     Sorting.quickSort(attrsArr)
     RelTypes.getTypes
     attrsArr
-  }
+  }*/
 }

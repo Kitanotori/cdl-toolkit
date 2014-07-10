@@ -23,9 +23,9 @@ import javax.swing.border.EmptyBorder;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import cdl.neo4j.wrappers.NeoWrapper;
 import cdl.objects.CDLDocument;
 import cdl.parser.CDLParser;
-import cdl.wrappers.NeoWrapper;
 
 public class FileReader extends JFrame {
 	private static final long serialVersionUID = -4229835275010876845L;

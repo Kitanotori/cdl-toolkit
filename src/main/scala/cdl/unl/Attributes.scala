@@ -13,13 +13,11 @@ import scala.util.Sorting
 
 import org.slf4j.LoggerFactory
 
-import cdl.wrappers.RelTypes
-
 /* 
  * The idea of this object is to provide the attributes specified by UNL/CDL specification.
  * 
  * See: {@linktourl http://www.undl.org/unlsys/unl/unl2005/attribute.htm}
- */
+ 
 object Attributes {
   private val logger = LoggerFactory.getLogger(this.getClass)
   def getAttributes: Array[String] = {
@@ -35,4 +33,4 @@ object Attributes {
     RelTypes.getTypes
     attrsArr
   }
-}
+}*/

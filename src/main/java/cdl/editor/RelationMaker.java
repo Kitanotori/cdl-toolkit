@@ -20,9 +20,9 @@ import javax.swing.JScrollPane;
 import javax.swing.LayoutStyle.ComponentPlacement;
 import javax.swing.border.EmptyBorder;
 
+import cdl.neo4j.wrappers.RelTypes;
 import cdl.objects.Arc;
 import cdl.objects.Concept;
-import cdl.wrappers.RelTypes;
 
 public class RelationMaker extends JFrame {
 	private static final long serialVersionUID = 1L;

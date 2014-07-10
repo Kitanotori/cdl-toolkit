@@ -10,8 +10,9 @@ import scala.collection.mutable.StringBuilder
 import org.neo4j.cypher.ExecutionResult
 import org.slf4j.LoggerFactory
 
-import cdl.objects.{ Arc, Concept, DefinitionLabel, Statement }
-import cdl.wrappers.NeoWrapper
+import cdl.neo4j.wrappers.NeoWrapper
+import cdl.objects.{ Attribute, ComplexEntity, DefinitionLabel, ElementalEntity, Entity, RealizationLabel, Relation, UW }
+
 import cdl.parser.CDLParser
 
 object CDLQuery {
@@ -20,17 +21,17 @@ object CDLQuery {
   def it = this // convenience method for Java
 
   def getQuery(cdlQuery: String): CDLQuery = {
-    val parsedStatement = CDLParser.parseDocument(cdlQuery).entities(0).asInstanceOf[Statement]
-    var qvars = List[Concept]()
-    var concepts = List[Concept]()
+    val parsedStatement = CDLParser.parseDocument(cdlQuery).entities(0).asInstanceOf[ComplexEntity]
+    var qvars = List[ElementalEntity]()
+    var concepts = List[ElementalEntity]()
     parsedStatement.entities.foreach(entity => {
-      if (entity.asInstanceOf[Concept].uw.startsWith("?")) {
-        qvars ::= entity.asInstanceOf[Concept]
+      if (entity.asInstanceOf[ElementalEntity].rlabel.toString.startsWith("?")) {
+        qvars ::= entity.asInstanceOf[ElementalEntity]
       } else {
-        concepts ::= entity.asInstanceOf[Concept]
+        concepts ::= entity.asInstanceOf[ElementalEntity]
       }
     })
-    return new CDLQuery(concepts.reverse, parsedStatement.arcs, qvars.reverse)
+    return new CDLQuery(concepts.reverse, parsedStatement.relations, qvars.reverse)
   }
 
   def getCypher(cdlQuery: String, expansion: Int): String = {
@@ -47,28 +48,28 @@ object CDLQuery {
    */
   def getCypher(cdlQuery: CDLQuery, expansion: Int = 0): String = {
     if (cdlQuery.entities.isEmpty) return ""
-    var cypherQuery = new StringBuilder("START\tx"+cdlQuery.entities(0).rlabel+"=node:concepts(uw='"+cdlQuery.entities.head.uw+"')")
-    if (cdlQuery.arcs.nonEmpty) {
+    var cypherQuery = new StringBuilder("START\tx" + cdlQuery.entities(0).rlabel + "=node:concepts(uw='" + cdlQuery.entities.head.dlabel + "')")
+    if (cdlQuery.relations.nonEmpty) {
       cypherQuery ++= "\nMATCH"
-      cdlQuery.arcs.map(arc => "\t"+arc.toCypherString).addString(cypherQuery, ",\n")
+      cdlQuery.relations.map(arc => "\t" + arc.toCypherString).addString(cypherQuery, ",\n")
     }
     cypherQuery ++= "\nWHERE"
     cdlQuery.entities.map(entity => entity match {
-      case s: Statement => "" // TODO: allow use of inner entities in the query
-      case c: Concept => {
+      case e: ComplexEntity => "" // TODO: allow use of inner entities in the query
+      case e: ElementalEntity => {
         /* The level of query expansion */
         expansion match {
           /* Do exact concept matching */
-          case 0 => "\tx"+c.rlabel+".uw! = '"+c.uw+"'"
+          case 0 => "\tx" + e.rlabel + ".uw! = '" + e.dlabel + "'"
           /* Expand query with hyponyms */
           case 1 => {
-            val hyponyms = NeoWrapper.getHyponyms(c)
+            val hyponyms = NeoWrapper.getHyponyms(e.asInstanceOf[UW])
             if (hyponyms.isEmpty) {
-              logger.info("Didn't find hyponyms for ["+c.uw + ']')
-              "\tx"+c.rlabel+".uw! = '"+c.uw+"'"
+              logger.info("Didn't find hyponyms for [" + e.dlabel + ']')
+              "\tx" + e.rlabel + ".uw! = '" + e.dlabel + "'"
             } else {
-              val sb = new StringBuilder("\t(x"+c.rlabel+".uw! = '"+c.uw+"' OR ")
-              hyponyms.map(h => "x"+c.rlabel+".uw! = '"+h+"'").addString(sb, " OR ")
+              val sb = new StringBuilder("\t(x" + e.rlabel + ".uw! = '" + e.dlabel + "' OR ")
+              hyponyms.map(h => "x" + e.rlabel + ".uw! = '" + h + "'").addString(sb, " OR ")
               sb += ')'
               sb.toString
             }
@@ -78,25 +79,31 @@ object CDLQuery {
       }
     }).addString(cypherQuery, " AND\n")
 
-    if (cdlQuery.queryVars.nonEmpty) {
+    if (cdlQuery.qvars.nonEmpty) {
       cypherQuery ++= "\nRETURN"
-      cdlQuery.queryVars.map(qvar => "\tx"+qvar.rlabel).addString(cypherQuery, ",\n")
+      cdlQuery.qvars.map(qvar => "\tx" + qvar.rlabel).addString(cypherQuery, ",\n")
     } else {
       cypherQuery ++= "\nRETURN"
-      cdlQuery.entities.map(e => "\tx"+e.rlabel).addString(cypherQuery, ",\n")
+      cdlQuery.entities.map(e => "\tx" + e.rlabel).addString(cypherQuery, ",\n")
     }
     return cypherQuery.toString
   }
 }
 
-class CDLQuery(override val entities: List[Concept], override val arcs: List[Arc], val queryVars: List[Concept])
-  extends Statement("", DefinitionLabel.Null, entities ::: queryVars, arcs) {
+class CDLQuery(
+  ent: List[Entity] = Nil,
+  rel: List[Relation] = Nil,
+  val qvars: List[Entity],
+  rl: RealizationLabel = new RealizationLabel(),
+  dl: DefinitionLabel = new DefinitionLabel(),
+  atr: List[Attribute] = Nil)
+  extends ComplexEntity(rl, dl, atr, ent ::: qvars, rel) {
 
   def toCypher(expansion: Int): String = CDLQuery.getCypher(this, expansion)
 
   def execute: ExecutionResult = {
     val result = NeoWrapper.query(toCypher(0))
-    CDLQuery.logger.info("Query returned: "+result)
+    CDLQuery.logger.info("Query returned: " + result)
     return result
   }
 

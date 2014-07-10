@@ -1,4 +1,4 @@
-package cdl.wrappers
+package cdl.neo4j.wrappers
 
 import org.neo4j.graphdb.DynamicLabel
 

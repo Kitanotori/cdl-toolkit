@@ -41,14 +41,14 @@ import org.neo4j.cypher.ExecutionResult;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import cdl.neo4j.wrappers.EmbeddedBatchInserter;
+import cdl.neo4j.wrappers.NeoWrapper;
 import cdl.objects.Arc;
 import cdl.objects.Concept;
 import cdl.objects.Statement;
 import cdl.objects.UW;
 import cdl.query.CDLQuery;
 import cdl.unl.Attributes;
-import cdl.wrappers.EmbeddedBatchInserter;
-import cdl.wrappers.NeoWrapper;
 
 public class Editor {
 	/* for CDL concept IDs */
