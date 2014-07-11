@@ -6,12 +6,13 @@
 package cdl.neo4j.wrappers
 
 import java.io.File
-import java.net.ConnectException
+import java.net.URI
+
 import org.neo4j.cypher.ExecutionResult
 import org.slf4j.LoggerFactory
+
 import cdl.editor.Config
 import cdl.objects.UW
-import java.net.URI
 
 class NeoWrapperException(reason: String) extends Exception(reason)
 
@@ -21,16 +22,15 @@ trait CDLNeoWrapper {
   def getNeoURI: String = neoURI.getPath
 
   /* Implement these */
-  def start()
-  def stop()
+  def start(): Boolean
+  def stop(): Boolean
   def isConnected: Boolean
-  def getHyponyms(uw: UW): Iterator[String]
+  def getHyponyms(uw: UW): Iterator[UW]
   def query(q: String): ExecutionResult
-  def cleanDB()
+  def cleanDB(): Boolean
   def fetchUWs(hw: String): Iterator[UW]
-  def importDocuments(docs: Array[File])
-  def importOntology()
-  def isInBatch: Boolean
+  def importDocuments(docs: Array[File]): Boolean
+  def importOntology(): Boolean
 
   protected def registerShutdownHook() = {
     // Registers a shutdown hook for the Neo4j instance so that it
@@ -47,26 +47,26 @@ object NeoWrapper {
   var impl: CDLNeoWrapper = null
 
   /* Direct the db calls to wrapper implementations */
-  def getHyponyms(uw: UW): Iterator[String] = impl.getHyponyms(uw)
+  def getHyponyms(uw: UW): Iterator[UW] = impl.getHyponyms(uw)
   def query(q: String): ExecutionResult = impl.query(q)
-  def cleanDB() = impl.cleanDB
+  def cleanDB(): Boolean = impl.cleanDB
   def fetchUWs(head: String): Iterator[UW] = impl.fetchUWs(head)
-  def importDocuments(docs: Array[File]) = impl.importDocuments(docs)
+  def importDocuments(docs: Array[File]): Boolean = impl.importDocuments(docs)
   def isConnected: Boolean = impl.isConnected
-  def stop() = impl.stop
-  def start() = impl.start
-  def importOntology() = impl.importOntology
-  def isInBatch: Boolean = impl.isInBatch
+  def stop(): Boolean = impl.stop
+  def start(): Boolean = impl.start
+  def importOntology(): Boolean = impl.importOntology
   def getNeoURI: String = impl.neoURI.getPath
 
   def toggleRestWrapper: Boolean = {
     log.info("Toggling REST API wrapper...")
-    if (impl != null && impl.isInstanceOf[RestNeoWrapper]) {
-      log.info("RestNeoWrapper already set")
-    }
+    if (impl != null)
+      if (impl.isInstanceOf[RestNeoWrapper])
+        log.info("RestNeoWrapper already set")
+      else stop()
+
     Config.getProperty("restNeoURI") match {
       case Some(uri) => {
-        stop()
         impl = new RestNeoWrapper(uri)
         impl.start()
         return impl.isConnected
@@ -88,10 +88,10 @@ object NeoWrapper {
     Config.getProperty("neoPath") match {
       case Some(path) => {
         stop()
-        log.info("Embedding Neo4j located at <" + path + ">")
+        log.info("Embedding Neo4j located at <"+path+">")
         impl = new EmbeddedNeoWrapper(path)
         start()
-        log.info("Toggled EmbeddedNeoWrapper at URI " + getNeoURI)
+        log.info("Toggled EmbeddedNeoWrapper at URI "+getNeoURI)
         return true
       }
       case None => log.error("<neoPath> configuration parameter not found!")
@@ -102,15 +102,15 @@ object NeoWrapper {
   def toggleEmbeddedBatchWrapper(): Boolean = {
     log.info("Toggling EmbeddedBatchWrapper...")
     if (impl != null && impl.isInstanceOf[EmbeddedBatchWrapper]) {
-      log.info("EmbeddedNeoWrapper already set at URI" + getNeoURI)
+      log.info("EmbeddedNeoWrapper already set at URI"+getNeoURI)
     }
     Config.getProperty("neoPath") match {
       case Some(path) => {
         stop()
-        log.info("Embedding Neo4j located at <" + path + "> for batch insertion")
+        log.info("Embedding Neo4j located at <"+path+"> for batch insertion")
         impl = new EmbeddedBatchWrapper(path)
         start()
-        log.info("Toggled EmbeddedBatchWrapper at URI " + getNeoURI)
+        log.info("Toggled EmbeddedBatchWrapper at URI "+getNeoURI)
         return true
       }
       case None => log.error("<neoPath> configuration parameter not found!")

@@ -20,16 +20,16 @@ import javax.swing.JScrollPane;
 import javax.swing.LayoutStyle.ComponentPlacement;
 import javax.swing.border.EmptyBorder;
 
-import cdl.neo4j.wrappers.RelTypes;
-import cdl.objects.Arc;
-import cdl.objects.Concept;
+import cdl.neo4j.wrappers.RelType;
+import cdl.objects.ElementalEntity;
+import cdl.objects.ElementalRelation;
 
 public class RelationMaker extends JFrame {
 	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
 	private Editor parent;
-	private JList<Concept> listFrom;
-	private JList<Concept> listTo;
+	private JList<ElementalEntity> listFrom;
+	private JList<ElementalEntity> listTo;
 	private JComboBox<String> comboRelation;
 
 	/**
@@ -48,7 +48,7 @@ public class RelationMaker extends JFrame {
 
 		JScrollPane scrollTo = new JScrollPane();
 
-		comboRelation = new JComboBox<String>(RelTypes.getTypes());
+		comboRelation = new JComboBox<String>(RelType.getTypes());
 
 		JLabel lblRelation = new JLabel("Relation");
 
@@ -149,24 +149,24 @@ public class RelationMaker extends JFrame {
 		JLabel lblFrom = new JLabel("From concept");
 		scrollFrom.setColumnHeaderView(lblFrom);
 
-		int size = par.listConceptsModel.getSize();
-		Concept[] cons = new Concept[size];
+		int size = par.listUWsModel.getSize();
+		ElementalEntity[] cons = new ElementalEntity[size];
 		for (int i = 0; i < size; i++) {
-			cons[i] = par.listConceptsModel.get(i);
+			cons[i] = par.listUWsModel.get(i);
 		}
-		listFrom = new JList<Concept>(cons);
+		listFrom = new JList<ElementalEntity>(cons);
 		scrollFrom.setViewportView(listFrom);
 
-		listTo = new JList<Concept>(cons);
+    listTo = new JList<ElementalEntity>(cons);
 		scrollTo.setViewportView(listTo);
 		contentPane.setLayout(gl_contentPane);
 	}
 
 	void addRelation() {
-		String from = listFrom.getSelectedValue().rlabel();
+		String from = listFrom.getSelectedValue().rlabel().toString();
 		String rel = (String) comboRelation.getSelectedItem();
-		String to = listTo.getSelectedValue().rlabel();
-		Arc relation = new Arc(from, rel, to);
+		String to = listTo.getSelectedValue().rlabel().toString();
+		ElementalRelation relation = new ElementalRelation(from, rel, to);
 		parent.addRelation(relation);
 	}
 }

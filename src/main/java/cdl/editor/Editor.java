@@ -12,7 +12,6 @@ import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.nio.file.FileSystems;
 import java.nio.file.Path;
-import java.util.ArrayList;
 import java.util.Enumeration;
 import java.util.Iterator;
 import java.util.List;
@@ -41,78 +40,77 @@ import org.neo4j.cypher.ExecutionResult;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import cdl.neo4j.wrappers.EmbeddedBatchInserter;
+import scala.collection.JavaConversions;
+import cdl.neo4j.wrappers.EmbeddedBatchWrapper;
 import cdl.neo4j.wrappers.NeoWrapper;
-import cdl.objects.Arc;
-import cdl.objects.Concept;
-import cdl.objects.Statement;
+import cdl.objects.ElementalRelation;
 import cdl.objects.UW;
 import cdl.query.CDLQuery;
 import cdl.unl.Attributes;
 
 public class Editor {
-	/* for CDL concept IDs */
-	private static short number = 0;
-	private static char character = 'A';
+  /* for CDL concept IDs */
+  private static short number = 0;
+  private static char character = 'A';
 
-	JFrame frame;
-	Logger logger;
-	JTextField textfUW;
-	DefaultComboBoxModel<UW> comboFormsModel;
-	JComboBox<UW> comboForms;
-	private JPanel panelStatus;
-	JLabel lblStatus;
-	private JTextArea textaResult;
-	private JTextArea textaCypher;
-	private JTextArea textaCDL;
-	protected DefaultListModel<Concept> listConceptsModel;
-	private JList<Arc> listRelations;
-	private DefaultListModel<Arc> listRelationsModel;
-	private JList<String> listAttributes;
-	private JList<Concept> listConcepts;
-	private JComboBox<Integer> comboExpansion;
+  JFrame frame;
+  Logger log;
+  JTextField textfUW;
+  DefaultComboBoxModel<UW> comboFormsModel;
+  JComboBox<UW> comboForms;
+  private JPanel panelStatus;
+  JLabel lblStatus;
+  private JTextArea textaResult;
+  private JTextArea textaCypher;
+  private JTextArea textaCDL;
+  protected DefaultListModel<UW> listUWsModel;
+  private JList<ElementalRelation> listRelations;
+  private DefaultListModel<ElementalRelation> listRelationsModel;
+  private JList<String> listAttributes;
+  private JList<UW> listUWs;
+  private JComboBox<Integer> comboExpansion;
 
-	private static String getCode() {
-		String code = "" + character + number++;
-		if (number > 9) {
-			number = 0;
-			character++;
-		}
-		return code;
-	}
+  private static String getCode() {
+    String code = "" + character + number++;
+    if (number > 9) {
+      number = 0;
+      character++;
+    }
+    return code;
+  }
 
-	/**
-	 * Launch the application.
-	 */
-	public static void main(final String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			@Override
-			public void run() {
-				try {
-					Editor window = new Editor();
-					window.frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
-	}
+  /**
+   * Launch the application.
+   */
+  public static void main(final String[] args) {
+    EventQueue.invokeLater(new Runnable() {
+      @Override
+      public void run() {
+        try {
+          Editor window = new Editor();
+          window.frame.setVisible(true);
+        } catch (Exception e) {
+          e.printStackTrace();
+        }
+      }
+    });
+  }
 
-	/**
-	 * Create the application.
-	 */
-	public Editor() {
-		initialize();
-		loadConfig();
-		NeoWrapper.toggleRestWrapper();
-	}
+  /**
+   * Create the application.
+   */
+  public Editor() {
+    initialize();
+    loadConfig();
+    NeoWrapper.toggleRestWrapper();
+  }
 
-	/**
-	 * Initialize the contents of the frame.
-	 */
-	private void initialize() {
+  /**
+   * Initialize the contents of the frame.
+   */
+  private void initialize() {
 
-		logger = LoggerFactory.getLogger(Editor.class);
+		log = LoggerFactory.getLogger(Editor.class);
 		frame = new JFrame();
 		frame.setBounds(100, 100, 819, 589);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -128,7 +126,7 @@ public class Editor {
 		JScrollPane scrollCypher = new JScrollPane();
 		JScrollPane scrollAttributes = new JScrollPane();
 		JScrollPane scrollRelations = new JScrollPane();
-		JScrollPane scrollConcept = new JScrollPane();
+		JScrollPane scrollUW = new JScrollPane();
 		JLabel lblUw = new JLabel("UW");
 
 		textfUW = new JTextField();
@@ -136,11 +134,11 @@ public class Editor {
 			@Override
 			public void keyPressed(KeyEvent e) {
 				if (e.getKeyCode() == KeyEvent.VK_ENTER) {
-					UW[] uws = NeoWrapper.fetchUWs(textfUW.getText());
-					logger.info("Fetched "+uws.length+" UWs");
+					scala.collection.Iterator<UW> uws = NeoWrapper.fetchUWs(textfUW.getText());
+					log.info("Fetched "+uws.length()+" UWs");
 					comboFormsModel.removeAllElements();
-					for (int i = 0; i < uws.length; i++) {
-						comboFormsModel.addElement(uws[i]);
+					while(uws.hasNext()){
+						comboFormsModel.addElement(uws.next());
 					}
 				}
 			}
@@ -152,7 +150,7 @@ public class Editor {
 		btnAddPlain.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mousePressed(MouseEvent e) {
-				addConcept(new UW(textfUW.getText()));
+				addUW(new UW("", textfUW.getText(), null));
 			}
 		});
 
@@ -160,7 +158,7 @@ public class Editor {
 		btnAddUw.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mousePressed(MouseEvent e) {
-				addConcept((UW) comboForms.getSelectedItem());
+				addUW((UW) comboForms.getSelectedItem());
 			}
 		});
 
@@ -315,7 +313,7 @@ public class Editor {
 																										.addPreferredGap(
 																												ComponentPlacement.RELATED)
 																										.addComponent(
-																												scrollConcept,
+																												scrollUW,
 																												GroupLayout.DEFAULT_SIZE,
 																												217,
 																												Short.MAX_VALUE)))
@@ -439,7 +437,7 @@ public class Editor {
 																																				147,
 																																				GroupLayout.PREFERRED_SIZE))
 																														.addComponent(
-																																scrollConcept,
+																																scrollUW,
 																																GroupLayout.PREFERRED_SIZE,
 																																149,
 																																GroupLayout.PREFERRED_SIZE)))
@@ -539,20 +537,20 @@ public class Editor {
 		lblStatus = new JLabel("");
 		panelStatus.add(lblStatus);
 
-		JLabel lblConcepts = new JLabel("Concepts");
-		scrollConcept.setColumnHeaderView(lblConcepts);
+		JLabel lblUWs = new JLabel("UWs");
+		scrollUW.setColumnHeaderView(lblUWs);
 
-		listConceptsModel = new DefaultListModel<Concept>();
-		listConcepts = new JList<Concept>(listConceptsModel);
-		listConcepts.addKeyListener(new KeyAdapter() {
+		listUWsModel = new DefaultListModel<UW>();
+		listUWs = new JList<UW>(listUWsModel);
+		listUWs.addKeyListener(new KeyAdapter() {
 			@Override
 			public void keyPressed(KeyEvent e) {
 				if (e.getKeyCode() == KeyEvent.VK_DELETE) {
-					deleteConcepts();
+					deleteUWs();
 				}
 			}
 		});
-		scrollConcept.setViewportView(listConcepts);
+		scrollUW.setViewportView(listUWs);
 
 		JLabel lblQueryResult = new JLabel("Query result");
 		scrollResult.setColumnHeaderView(lblQueryResult);
@@ -563,8 +561,8 @@ public class Editor {
 		JLabel lblRelations = new JLabel("Relations");
 		scrollRelations.setColumnHeaderView(lblRelations);
 
-		listRelationsModel = new DefaultListModel<Arc>();
-		listRelations = new JList<Arc>(listRelationsModel);
+		listRelationsModel = new DefaultListModel<ElementalRelation>();
+		listRelations = new JList<ElementalRelation>(listRelationsModel);
 		listRelations.addKeyListener(new KeyAdapter() {
 			@Override
 			public void keyPressed(KeyEvent e) {
@@ -602,6 +600,7 @@ public class Editor {
 		mntmToggleEmbedded.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mousePressed(MouseEvent e) {
+			  loadConfig();
 				NeoWrapper.toggleEmbeddedWrapper();
 			}
 		});
@@ -611,6 +610,7 @@ public class Editor {
 		mntmStopDB.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mousePressed(MouseEvent e) {
+        loadConfig();
 				NeoWrapper.toggleRestWrapper();
 			}
 		});
@@ -623,7 +623,7 @@ public class Editor {
 				try {
 					if (NeoWrapper.isConnected()) {
 						lblStatus.setText("Connection to "
-								+ NeoWrapper.impl().accessPoint() + " works");
+								+ NeoWrapper.impl().getNeoURI() + " works");
 					} else {
 						lblStatus.setText("Problem with connection");
 					}
@@ -638,6 +638,7 @@ public class Editor {
 		mntmToggleBatch.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mousePressed(MouseEvent e) {
+        loadConfig();
 				NeoWrapper.toggleEmbeddedBatchWrapper();
 			}
 		});
@@ -647,9 +648,8 @@ public class Editor {
 		mntmStopBatch.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mousePressed(MouseEvent e) {
-				EmbeddedBatchInserter ebi = (EmbeddedBatchInserter) NeoWrapper
-						.impl();
-				ebi.flush();
+				EmbeddedBatchWrapper ebw = (EmbeddedBatchWrapper) NeoWrapper.impl();
+				ebw.flush();
 			}
 		});
 		mnActions.add(mntmStopBatch);
@@ -685,97 +685,86 @@ public class Editor {
 		mnActions.add(mntmReadConf);
 	}
 
-	String[] getAttributes() {
-		return Attributes.getAttributes();
-	}
+  String[] getAttributes() {
+    return Attributes.getAttributes();
+  }
 
-	void loadConfig() {
-		Path confFile = FileSystems.getDefault().getPath(
-				"resources/application.conf"); // Path to the config
-												// file
-		Config.readConfig(confFile.toFile());
-	}
+  void loadConfig() {
+    Path confFile = FileSystems.getDefault().getPath("resources/application.conf"); // Path to the config
+    // file
+    Config.readConfig(confFile.toFile());
+  }
 
-	void generateCDLQuery() {
-		Enumeration<Concept> c = listConceptsModel.elements();
-		ArrayList<Concept> c2 = new ArrayList<Concept>();
-		while (c.hasMoreElements())
-			c2.add(c.nextElement());
-		Enumeration<Arc> a = listRelationsModel.elements();
-		ArrayList<Arc> a2 = new ArrayList<Arc>();
-		while (a.hasMoreElements())
-			a2.add(a.nextElement());
-		Statement s = new Statement(c2, a2);
-		textaCDL.setText(s.toString());
-	}
+  void generateCDLQuery() {
+    CDLQuery s = new CDLQuery(listUWsModel.elements(),listRelationsModel.elements());
+    textaCDL.setText(s.toString());
+  }
 
-	void addRelation(Arc rel) {
-		listRelationsModel.addElement(rel);
-	}
+  void addRelation(ElementalRelation rel) {
+    listRelationsModel.addElement(rel);
+  }
 
-	void addConcept(UW uw) {
-		Concept c = new Concept(getCode(), uw.hw(), uw.constraints());
-		listConceptsModel.addElement(c);
-	}
+  void addUW(UW uw) {
+    UW c = new UW(getCode(), uw.hw(), uw.cons());
+    listUWsModel.addElement(c);
+  }
 
-	/**
-	 * Add selected attributes to the selected concept
-	 */
-	void addAttributes() {
-		List<Concept> c = listConcepts.getSelectedValuesList();
-		List<String> attrs = listAttributes.getSelectedValuesList();
-		Iterator<Concept> i = c.iterator();
-		while (i.hasNext()) {
-			i.next().addAttrs(attrs);
-		}
-	}
+  /**
+   * Add selected attributes to the selected concept
+   */
+  void addAttributes() {
+    List<UW> uws = listUWs.getSelectedValuesList();
+    List<String> attrs = listAttributes.getSelectedValuesList();
+    for(UW uw: uws) {
+      //uw.addAttrs(attrs);
+    }
+  }
 
-	void generateCypherQuery() {
-		String cypher = "";
-		if (!textaCDL.getText().trim().isEmpty() && NeoWrapper.isConnected()) {
-			cypher = CDLQuery.getCypher(textaCDL.getText(),
-					comboExpansion.getSelectedIndex());
-		}
-		textaCypher.setText(cypher);
-	}
+  void generateCypherQuery() {
+    String cypher = "";
+    if (!textaCDL.getText().trim().isEmpty() && NeoWrapper.isConnected()) {
+      cypher = CDLQuery.getCypher(textaCDL.getText(), comboExpansion.getSelectedIndex());
+    }
+    textaCypher.setText(cypher);
+  }
 
-	void deleteConcepts() {
-		int[] selected = listConcepts.getSelectedIndices();
-		for (int i = 0; i < selected.length; i++) {
-			listConceptsModel.remove(i);
-		}
-	}
+  void deleteUWs() {
+    int[] selected = listUWs.getSelectedIndices();
+    for (int i = 0; i < selected.length; i++) {
+      listUWsModel.remove(i);
+    }
+  }
 
-	void deleteRelations() {
-		int[] selected = listRelations.getSelectedIndices();
-		for (int i = 0; i < selected.length; i++) {
-			listRelationsModel.remove(i);
-		}
-	}
+  void deleteRelations() {
+    int[] selected = listRelations.getSelectedIndices();
+    for (int i = 0; i < selected.length; i++) {
+      listRelationsModel.remove(i);
+    }
+  }
 
-	void launchRelationMaker() {
-		RelationMaker rm = new RelationMaker(this);
-		rm.setVisible(true);
-	}
+  void launchRelationMaker() {
+    RelationMaker rm = new RelationMaker(this);
+    rm.setVisible(true);
+  }
 
-	void launchFileReader() {
-		FileReader fr = new FileReader();
-		fr.setVisible(true);
-	}
+  void launchFileReader() {
+    FileReader fr = new FileReader();
+    fr.setVisible(true);
+  }
 
-	void runCypher() {
-		if (NeoWrapper.isConnected()) {
-			ExecutionResult result = NeoWrapper.query(textaCypher.getText());
-			if (!result.javaIterator().hasNext()) {
-				logger.info("Returned empty result");
-				textaResult.setText("");
-			} else {
-				logger.info("Query found a match");
-				textaResult.setText(result.dumpToString());
-			}
-		} else {
-			logger.info("Tried to run query without connection to DB");
-			lblStatus.setText("Cannot run query without connection to DB");
-		}
-	}
+  void runCypher() {
+    if (NeoWrapper.isConnected()) {
+      ExecutionResult result = NeoWrapper.query(textaCypher.getText());
+      if (!result.javaIterator().hasNext()) {
+        log.info("Returned empty result");
+        textaResult.setText("");
+      } else {
+        log.info("Query found a match");
+        textaResult.setText(result.dumpToString());
+      }
+    } else {
+      log.info("Tried to run query without connection to DB");
+      lblStatus.setText("Cannot run query without connection to DB");
+    }
+  }
 }

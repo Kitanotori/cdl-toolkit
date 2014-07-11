@@ -101,6 +101,7 @@
 				<configuration>
 					<source>${maven.compiler.source}</source>
 					<target>${maven.compiler.target}</target>
+					<compilerArgument>-Xlint</compilerArgument>
 				</configuration>
 			</plugin>
 			<plugin>

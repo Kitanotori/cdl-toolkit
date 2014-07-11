@@ -16,7 +16,7 @@ class UnsupportedRelType(reason: String) extends Exception(reason)
  *
  * 	@throws(classOf[UnsupportedRelType])
  */
-object RelType extends Enumeration with RelationshipType {
+object RelType extends Enumeration {
   type RelType = Value
 
   /* All possible relation types between nodes */

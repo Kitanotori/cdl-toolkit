@@ -6,7 +6,8 @@
 package cdl.neo4j.wrappers
 
 import java.io.File
-import java.net.URI
+import java.net.{ URI, URISyntaxException }
+import java.nio.file.{ Files, Paths }
 
 import scala.collection.mutable.LinkedHashMap
 
@@ -28,36 +29,42 @@ class EmbeddedNeoWrapper(uri: String) extends CDLNeoWrapper {
   private var db: GraphDatabaseService = _
   private var engine: ExecutionEngine = _
 
-  def start() = {
-    if (db == null) {
-      neoURI = new URI(uri)
-      db = new GraphDatabaseFactory().newEmbeddedDatabase(getNeoURI)
-      engine = new ExecutionEngine(db)
+  def start(): Boolean = {
+    if (db != null) { log.warn("Wrapper already running"); return false }
+    try {
+      neoURI = new File(uri).toURI
+    } catch { case e: URISyntaxException => log.error("Illegal URI syntax", e); return false }
 
-      /* 
+    if (Files.notExists(Paths.get(neoURI))) { log.error("Directory does not exist at "+getNeoURI); return false }
+
+    /* 
        * Initialize indexes
        * 
        * Default configuration: MapUtil.stringMap( IndexManager.PROVIDER, "lucene", "type", "fulltext" ) )
        * More info: http://docs.neo4j.org/chunked/stable/indexing-create-advanced.html
        * 
        */
-      try {
-        val tx = db.beginTx()
-        val schema = db.schema
-        schema.indexFor(NodeProperties.labels.UW).on(NodeProperties.Headword).create()
-        tx.success()
-      }
-      log.info("Embedded Neo4j located at URI " + getNeoURI)
+    try {
+      db = new GraphDatabaseFactory().newEmbeddedDatabase(getNeoURI)
+      engine = new ExecutionEngine(db)
+      val tx = db.beginTx()
+      val schema = db.schema
+      schema.indexFor(NodeProperties.labels.UW).on(NodeProperties.Headword).create()
+      tx.success()
       registerShutdownHook()
-    }
+      log.info("Embedded Neo4j located at URI "+getNeoURI)
+      return true
+    } catch { case e: Exception => log.error("EmbeddedNeoWrapper failed to start", e) }
+    return false
   }
 
-  def stop() = {
+  def stop(): Boolean = {
     if (db != null) {
       db.shutdown()
       db = null
-      log.info("Detached Neo4j located at URI " + getNeoURI)
+      log.info("Detached Neo4j located at URI "+getNeoURI)
     }
+    return true
   }
 
   def isConnected: Boolean = {
@@ -67,14 +74,14 @@ class EmbeddedNeoWrapper(uri: String) extends CDLNeoWrapper {
 
   def getHyponyms(uw: UW): Iterator[UW] = {
     val ontology = fetchUWs(uw.toString)
-    if (ontology.isEmpty) log.info("Didn't find corresponding ontology for UW [" + uw.toString() + "]")
-    if (ontology.size > 1) log.info("Multiple same ontologies in DB! " + ontology.mkString("{", ", ", "}"))
-    var result: ExecutionResult = query("MATCH (:UW { hw: \"" + uw.hw + "\" })-[:HYPO*1..20]->(hypo) RETURN hypo;")
-    result.columnAs("y").map(row => rowToUW(row))
+    if (ontology.isEmpty) log.info("Didn't find corresponding ontology for UW ["+uw.toString()+"]")
+    if (ontology.size > 1) log.info("Multiple same ontologies in DB! "+ontology.mkString("{", ", ", "}"))
+    var result: ExecutionResult = query("MATCH (:UW { hw: \""+uw.hw+"\" })-[:HYPO*1..20]->(hypo) RETURN hypo;")
+    return result.map(row => rowToUW(row))
   }
 
   def query(q: String): ExecutionResult = {
-    log.info("Executing query:\n" + q)
+    log.info("Executing query:\n"+q)
     var tx: Transaction = null
     var result: ExecutionResult = null
 
@@ -82,42 +89,47 @@ class EmbeddedNeoWrapper(uri: String) extends CDLNeoWrapper {
       tx = db.beginTx()
       result = engine.execute(q)
       tx.success()
-      log.info("Query returned:\n" + result)
+      log.info("Query returned:\n"+result)
     } catch {
       case e: SyntaxException => log.error("Invalid Cypher query"); tx.failure()
     }
     return result
   }
 
-  def cleanDB() {
-    query("MATCH (n) OPTIONAL MATCH (n)-[r]-() DELETE n,r)")
+  def cleanDB(): Boolean = {
+    //query("MATCH (n) OPTIONAL MATCH (n)-[r]-() DELETE n,r)")
+    return true
   }
 
   def fetchUWs(hw: String): Iterator[UW] = {
-    var result = query("MATCH (uw:UW { hw: \"" + hw + "\" } return uw")
+    var result = query("MATCH (uw:UW { hw: \""+hw+"\" } return uw")
     return result.map(row => rowToUW(row))
   }
 
-  def importDocuments(docs: Array[File]) = {
-    log.info("Performing <importDocuments> for " + docs.length + " documents")
+  def importDocuments(docs: Array[File]): Boolean = {
+    log.info("Performing <importDocuments> for "+docs.length+" documents")
     var parsingTotal = 0L
     var dbAddTotal = 0L
     var time = 0L
 
-    for (doc <- docs) {
-      time = System.currentTimeMillis
-      val parsed = (new CDLParser(doc, doc.getName)).parseDocument
-      parsingTotal += System.currentTimeMillis - time
-      time = System.currentTimeMillis
-      addDocument(parsed)
-      dbAddTotal += System.currentTimeMillis - time
-    }
-    log.info("Parsed " + docs.length + " documents in: " + parsingTotal / 1000.0 + "s")
-    log.info("Total db add time: " + dbAddTotal / 1000.0 + "s")
+    try {
+      for (doc <- docs) {
+        time = System.currentTimeMillis
+        val parsed = (new CDLParser(doc, doc.getName)).parseDocument
+        parsingTotal += System.currentTimeMillis - time
+        time = System.currentTimeMillis
+        addDocument(parsed)
+        dbAddTotal += System.currentTimeMillis - time
+      }
+    } catch { case e: Exception => log.error("Failed to import documents", e); return false }
+    log.info("Parsed "+docs.length+" documents in: "+parsingTotal / 1000.0+"s")
+    log.info("Total db add time: "+dbAddTotal / 1000.0+"s")
+    return true
   }
 
-  def importOntology() = {
+  def importOntology(): Boolean = {
     log.warn("importOntology() not supported for EmbeddedNeoWrapper Neo4j. Use EmbeddedBatchInserter.")
+    return false
   }
 
   private def rowToUW(row: Map[String, Any]): UW = {
@@ -161,9 +173,9 @@ class EmbeddedNeoWrapper(uri: String) extends CDLNeoWrapper {
             RelType.toRelType(arc.relation.toString))
         } else {
           if (!entities.contains(arc.from.toString))
-            log.warn("Did not find 'from' entity by id: " + arc.from.toString)
+            log.warn("Did not find 'from' entity by id: "+arc.from.toString)
           if (!entities.contains(arc.to.toString))
-            log.warn("Did not find 'to' entity by id: " + arc.to.toString)
+            log.warn("Did not find 'to' entity by id: "+arc.to.toString)
         }
       }
     }
