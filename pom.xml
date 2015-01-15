@@ -5,7 +5,7 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>cdl-toolkit</groupId>
-	<artifactId>cdl-toolkit_2.11</artifactId>
+	<artifactId>cdl-toolkit_2.10</artifactId>
 	<packaging>jar</packaging>
 	<description>CDL Toolkit</description>
 	<version>1.0</version>
@@ -15,14 +15,14 @@
 		<maven.compiler.source>1.8</maven.compiler.source>
 		<maven.compiler.target>1.8</maven.compiler.target>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<scala.version>2.11.4</scala.version>
+		<scala.version>2.10.4</scala.version>
 		<neo4j.version>2.1.6</neo4j.version>
 	</properties>
 
 	<dependencies>
 		<dependency>
 			<groupId>cdl-toolkit</groupId>
-			<artifactId>cdl-parser_2.11</artifactId>
+			<artifactId>cdl-parser_2.10</artifactId>
 			<version>1.2</version>
 		</dependency>
 
@@ -42,32 +42,26 @@
 			<groupId>org.neo4j</groupId>
 			<artifactId>neo4j</artifactId>
 			<version>${neo4j.version}</version>
-			<exclusions>
-				<exclusion>
-					<artifactId>parboiled-scala_2.10</artifactId>
-					<groupId>org.parboiled</groupId>
-				</exclusion>
-			</exclusions>
 		</dependency>
 
 		<dependency>
 			<groupId>org.glassfish.jersey.core</groupId>
 			<artifactId>jersey-client</artifactId>
-			<version>2.13</version>
+			<version>2.15</version>
 		</dependency>
 
 		<!-- Testing -->
 		<dependency>
 			<groupId>org.scalatest</groupId>
-			<artifactId>scalatest_2.11</artifactId>
-			<version>2.2.2</version>
+			<artifactId>scalatest_2.10</artifactId>
+			<version>2.2.3</version>
 			<scope>test</scope>
 		</dependency>
 
 		<dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
-			<version>4.11</version>
+			<version>4.12</version>
 			<scope>test</scope>
 		</dependency>
 
@@ -124,7 +118,7 @@
 						<arg>-unchecked</arg>
 						<arg>-deprecation</arg>
 						<arg>-explaintypes</arg>
-						<arg>-target:jvm-1.8</arg>
+						<arg>-target:jvm-1.7</arg>
 						<arg>-optimise</arg>
 					</args>
 					<javacArgs>
