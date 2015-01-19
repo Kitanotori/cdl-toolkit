@@ -1,0 +1,4057 @@
+{#
+	<0Z:encyclopedia(icl>document).@def>
+	<0U:free(icl>not controlled(aoj>thing))>
+	<00:semantic web.@entry>
+	<0F:wikipedia(icl>encyclopedia)>
+	[00 cnt 0F]
+	[0Z aoj 0F]
+	[0U aoj 0Z]
+}
+{#
+	<00:semantic web.@entry>
+}
+{#
+	<2M:"".@entry>
+	<0P:encyclopedia(icl>document).@def>
+	<0K:free(icl>not controlled(aoj>thing))>
+	<05:wikipedia(icl>encyclopedia)>
+	[2M frm 05]
+	[0P aoj 05]
+	[0K aoj 0P]
+}
+{#
+	<0A:"">
+	<00:jump(icl>move(agt>thing)).@entry.@impertive>
+	[00 gol 0A]
+}
+{#
+	<05:navigation(icl>process).@entry>
+	<0S:search(icl>attempt)>
+	[05 mod 0S]
+}
+{#
+	<1T:merge(agt>thing,obj>thing).@topic>
+	<0C:suggest(icl>propose(agt>thing,obj>thing)).@entry.@complete>
+	<15:semantic publishing>
+	<2A:this(mod<thing)>
+	[0C obj 1T]
+	[1T obj 15]
+	[1T gol #01]
+	[#01 mod 2A]
+	{#01
+		<2F:article(icl>document)>
+		<2Q:section(icl>part).@entry>
+		[2Q or 2F]
+	}
+}
+{#
+	<05:discuss(agt>thing,obj>thing,ptn>thing).@entry.@impertive>
+}
+{#
+	<00:W3C(equ>World Wide Web Consortium)>
+	<0J:logo(icl>symbol).@entry>
+	<06:semantic web>
+	[0J mod 06]
+	[06 pos 00]
+}
+{#
+	<16:extension(icl>increasing influence).@entry.@indef>
+	<09:semantic web.@topic.@def>
+	<1S:World Wide Web.@def>
+	<0X:evolve(icl>develop(agt>thing,obj>thing)).@progress>
+	<4F:define(icl>describe(agt>thing,obj>thing))>
+	<4O:make(icl>cause(agt>thing,obj>thing)).@progress>
+	<4Y:possible(aoj>thing)>
+	<5F:web(equ>World Wide Web).@def>
+	<6D:request(icl>information).@def.@pl>
+	<7C:use(icl>employ(agt>thing,obj>thing))>
+	<7P:web content.@def>
+	[16 aoj 09]
+	[16 obj 1S]
+	[0X obj 16]
+	[4F plc 1S]
+	[4F obj #01]
+	[4F pur 4O]
+	[4O obj 4Y]
+	[4Y aoj #02]
+	[#02 agt 5F]
+	[#02 obj 6D]
+	[6D agt #03]
+	[7C agt #03]
+	[7C obj 7P]
+	{#01
+		<2U:semantics(icl>meaning).@def>
+		<3S:service(icl>business).@entry.@pl>
+		<3C:information>
+		<48:web(equ>World Wide Web).@def>
+		[3S and 2U]
+		[2U pos 3C]
+		[3S plc 48]
+	}
+	{#02
+		<61:satisfy(agt>thing,obj>thing).@entry.@topic>
+		<5M:understand(icl>comprehend(agt>thing,obj>thing)).@topic>
+		[61 and 5M]
+	}
+	{#03
+		<70:machine(icl>tool).@entry.@pl>
+		<6P:people(icl>person)>
+		[70 and 6P]
+	}
+}
+{#
+	<03:derive(obj>thing).@entry>
+	<00:it(icl>thing).@topic>
+	<2L:vision(icl>idea)>
+	<2Z:web(equ>World Wide Web).@def>
+	<1Y:Tim Berners-Lee(iof>person)>
+	<3I:medium(icl>way).@indef>
+	<1G:director(icl>manager)>
+	<1P:Sir(icl>title)>
+	<0L:World Wide Web Consortium>
+	<5N:exchange(icl>act)>
+	<38:universal(icl>worldwide(aoj>thing))>
+	[03 obj 00]
+	[03 src 2L]
+	[2L obj 2Z]
+	[2L pos 1Y]
+	[2L gol 3I]
+	[1Y mod 1G]
+	[1P aoj 1Y]
+	[1G pos 0L]
+	[3I pur 5N]
+	[38 aoj 3I]
+	[5N obj #01]
+	{#01
+		<4F:information>
+		<57:knowledge(icl>information).@entry>
+		<3Y:data(icl>information)>
+		[57 and 4F]
+		[4F and 3Y]
+	}
+}
+{#
+	<0U:comprise(icl>consist of(aoj>thing,obj>thing)).@entry>
+	<07:core(icl>important part)>
+	<0H:semantic web.@topic.@def>
+	<03:it(icl>thing)>
+	[0U plc 07]
+	[0U aoj 0H]
+	[0U obj #01]
+	[07 pos 03]
+	{#01
+		<3W:technology(icl>knowledge).@entry.@pl>
+		<2K:working group.@pl>
+		<3A:a variety of(qua<thing)>
+		<3N:enabling(mod<thing)>
+		<1K:principle(icl>law).@pl>
+		<21:collaborative(mod<thing)>
+		<16:set(icl>group).@indef>
+		<1D:design(icl>form)>
+		[3W and 2K]
+		[3W qua 3A]
+		[3W mod 3N]
+		[2K and 1K]
+		[2K mod 21]
+		[1K qua 16]
+		[1K mod 1D]
+	}
+}
+{#
+	<05:element(icl>part).@topic.@pl>
+	<12:express(icl>show(agt>thing,obj>thing)).@entry>
+	<1Y:possibilities(icl>potential).@pl>
+	<1F:prospective(icl>potential(aoj>thing))>
+	<1R:future(mod<thing)>
+	<0L:semantic web.@def>
+	<00:some(icl>a number of(qua<thing))>
+	[12 obj 05]
+	[12 gol 1Y]
+	[#01 obj 1Y]
+	[1F aoj 1Y]
+	[1Y mod 1R]
+	[05 pos 0L]
+	[05 qua 00]
+	{#01
+		<2V:implement(agt>thing,obj>thing).@not>
+		<3A:realize(icl>aware(aoj>thing,obj>thing)).@not.@entry>
+		[3A or 2V]
+	}
+}
+{#
+	<06:element(icl>part).@topic.@pl>
+	<13:express(icl>show(agt>thing,obj>thing)).@entry>
+	<1G:formal(icl>official(aoj>thing))>
+	<00:other(icl>additional(mod<thing))>
+	<0M:semantic web.@def>
+	<1N:specification(icl>description).@pl>
+	[13 obj 06]
+	[13 plc 1N]
+	[1G aoj 1N]
+	[06 mod 0M]
+	[06 mod 00]
+}
+{#
+	<00:some(icl>a number of(qua<thing))>
+	<0E:include(aoj>thing,obj>thing).@entry>
+	<08:this(icl>thing).@topic.@pl>
+	<85:all(icl>thing)>
+	<8M:intend(agt>thing,gol>thing,obj>thing)>
+	<8Y:provide(icl>supply(agt>thing,gol>thing,obj>thing))>
+	<9E:formal description.@indef>
+	[0E aoj 08]
+	[0E obj #02]
+	[85 pof #02]
+	[8M obj 85]
+	[8M gol 8Y]
+	[8Y obj 9E]
+	[9E obj #04]
+	[08 qua 00]
+	{#02
+		<2B:data interchange format.@pl>
+		<5G:notation(icl>mark).@entry.@pl>
+		<0R:Resource Description Framework>
+		<1Y:a variety of(qua<thing)>
+		<1S:RDF(equ>Resource Description Framework).@parenthesis>
+		<5Q:such as(aoj>thing)>
+		[5G and 2B]
+		[#03 iof 5G]
+		[2B and 0R]
+		[#01 iof 2B]
+		[2B qua 1Y]
+		[1S equ 0R]
+		[5Q aoj #03]
+		{#03
+			<64:Resource Description Framework Schema>
+			<76:Web Ontology Language.@entry.@def>
+			<7Z:OWL(equ>Web Ontology Language).@parenthesis>
+			<6M:RDFS(equ>Resource Description Framework Schema).@parenthesis>
+			[76 and 64]
+			[7Z equ 76]
+			[6M equ 64]
+		}
+		{#01
+			<4T:N-Triples(iof>data interchange format).@entry>
+			<31:for example(aoj>thing)>
+			<4A:Turtle(iof>data interchange format)>
+			<3V:N3(iof>data interchange format)>
+			<3B:RDF/XML>
+			[31 aoj 4T]
+			[4T and 4A]
+			[4A and 3V]
+			[3V and 3B]
+		}
+	}
+	{#04
+		<BN:relationship(icl>way).@entry.@pl>
+		<AZ:term(icl>word).@pl>
+		<C7:within(icl>inside(gol>thing))>
+		<D2:domain(icl>field).@indef>
+		<CG:given(aoj>thing)>
+		<CS:knowledge(icl>information)>
+		<AC:concept(icl>idea).@pl>
+		[BN and AZ]
+		[BN plc C7]
+		[C7 gol D2]
+		[CG aoj D2]
+		[D2 mod CS]
+		[AZ and AC]
+	}
+}
+{#
+	<00:content(icl>things contained).@entry.@pl>
+}
+{#
+	<00:purpose(icl>intention).@entry>
+}
+{#
+	<0K:hypertext web.@def>
+	<00:relationship(icl>way).@entry>
+	[00 gol 0K]
+}
+{#
+	<0F:HTML(equ>Hypertext Markup Language)>
+	<00:limitation(icl>restriction).@entry.@pl>
+	[00 mod 0F]
+}
+{#
+	<00:semantic web>
+	<0D:solution(icl>way).@entry.@pl>
+	[0D mod 00]
+}
+{#
+	<0G:object-oriented(aoj>thing)>
+	<0W:programming(icl>process)>
+	<00:relationship(icl>way).@entry>
+	[00 gol 0W]
+	[0G aoj 0W]
+}
+{#
+	<0A:reactions(icl>ability).@entry>
+	<00:skeptical(aoj>thing)>
+	[00 aoj 0A]
+}
+{#
+	<0A:feasibility.@entry>
+	<00:practical(icl>connected with real things(aoj>thing))>
+	[00 aoj 0A]
+}
+{#
+	<0E:idea(icl>notion).@entry.@indef>
+	<03:unrealized(icl>not achieved(aoj>thing))>
+	[03 aoj 0E]
+}
+{#
+	<00:censorship(icl>occupation)>
+	<0F:privacy(icl>secret).@entry>
+	[0F and 00]
+}
+{#
+	<00:double(agt>thing,obj>thing).@entry.@progress>
+	<0G:format(icl>attribute).@pl>
+	<09:output(mod<thing)>
+	[00 obj 0G]
+	[0G mod 09]
+}
+{#
+	<00:need(icl>situation).@entry>
+}
+{#
+	<00:component(icl>part).@entry.@pl>
+}
+{#
+	<00:project(icl>plan).@entry.@pl>
+}
+{#
+	<00:DBpedia.@entry>
+}
+{#
+	<00:FOAF(equ>Friend of a Friend ).@entry>
+}
+{#
+	<00:SIOC(equ>Semantically-Interlinked Online Communities).@entry>
+}
+{#
+	<00:Open GUID(icl>web identifier).@entry>
+}
+{#
+	<00:Simile(iof>project).@entry>
+}
+{#
+	<00:NextBio(iof>life sciences search engine).@entry>
+}
+{#
+	<00:Linking Open Data(iof>project).@entry>
+}
+{#
+	<00:service(icl>business).@entry.@pl>
+}
+{#
+	<00:notification(icl>act)>
+	<0D:service(icl>business).@entry.@pl>
+	[0D mod 00]
+}
+{#
+	<00:semantic web ping service.@entry>
+}
+{#
+	<00:Piggy Bank.@entry>
+}
+{#
+	<04:also(icl>how)>
+	<00:see(icl>look at(agt>thing,obj>thing)).@entry.@impertive>
+	[00 man 04]
+}
+{#
+	<00:reference(icl>act).@entry.@pl>
+}
+{#
+	<00:further(icl>to a greater degree)>
+	<08:reading(icl>book).@entry>
+	[08 man 00]
+}
+{#
+	<00:external(aoj>thing)>
+	<09:link(icl>connection).@entry.@pl>
+	[00 aoj 09]
+}
+{#
+	<0S:demonstration(icl>show).@entry.@pl>
+	<00:semantic web>
+	<0D:software(icl>computer program)>
+	[0S and 0D]
+	[0D mod 00]
+}
+{#
+	<05:edit(agt>thing,obj>thing).@entry.@impertive>
+}
+{#
+	<05:purpose(icl>intention).@entry>
+}
+{#
+	<00:human(icl>living thing).@topic.@pl>
+	<0B:capable of(aoj>thing,obj>thing).@entry>
+	<0M:use(icl>employ(agt>thing,obj>thing)).@progress>
+	<0W:web(equ>World Wide Web).@def>
+	<13:carry out(icl>execute(agt>thing,obj>thing))>
+	<1D:task(icl>duty).@pl>
+	<1J:such as(aoj>thing)>
+	[0B aoj 00]
+	[0B obj 0M]
+	[0M obj 0W]
+	[0W pur 13]
+	[13 obj 1D]
+	[#01 iof 1D]
+	[1J aoj #01]
+	{#01
+		<1R:find(icl>discover(agt>thing,obj>thing)).@progress>
+		<3O:search for(agt>thing,obj>thing).@entry.@progress>
+		<48:price(icl>amount).@indef>
+		<4J:DVD(equ>Digital Video Disc).@indef>
+		<44:low(icl>having little relative height(aoj>thing))>
+		<2L:monkey(icl>mammal).@double_quote>
+		<2B:word(icl>symbol).@def>
+		<2U:reserve(icl>keep(agt>thing,obj>thing)).@progress>
+		<3E:book(icl>document).@indef.@pl>
+		<36:library(icl>institution)>
+		<23:Finnish(mod<thing)>
+		[3O and 1R]
+		[3O obj 48]
+		[48 plc 4J]
+		[44 aoj 48]
+		[1R obj 2L]
+		[2L aoj 2B]
+		[2U agt 2L]
+		[2U gol 3E]
+		[3E mod 36]
+		[2B mod 23]
+	}
+}
+{#
+	<11:accomplish(agt>thing,obj>thing).@entry.@ability.@not>
+	<00:however(icl>despite this)>
+	<31:design(icl>plan(agt>thing,obj>thing))>
+	<0G:computer(icl>machine).@topic.@indef>
+	<1L:task(icl>duty).@pl>
+	<1R:without(icl>not using(obj>thing))>
+	<1G:same(aoj>thing)>
+	<25:direction(icl>instruction)>
+	<1Z:human(mod<thing)>
+	<3G:read(icl>go through(agt>thing,obj>thing)).@passive>
+	<2N:webpage.@pl.@topic>
+	[11 man 00]
+	[11 rsn 31]
+	[11 agt 0G]
+	[11 obj 1L]
+	[11 man 1R]
+	[1G aoj 1L]
+	[1R obj 25]
+	[25 mod 1Z]
+	[31 obj 3G]
+	[3G obj 2N]
+	[3G agt #01]
+	{#01
+		<40:machine(icl>tool).@entry.@not.@pl>
+		<3O:people(icl>person)>
+		[40 and 3O]
+	}
+}
+{#
+	<29:so that(obj>thing)>
+	<0M:vision(icl>idea).@entry.@indef>
+	<04:semantic web.@topic.@def>
+	<0W:information>
+	<1G:understandable(icl>comprehensible(aoj>thing))>
+	<5V:by(obj>thing)>
+	<1Y:computer(icl>machine).@pl>
+	<2Q:perform(icl>carry out(agt>thing,obj>thing)).@ability>
+	<2H:they(icl>thing)>
+	<3I:work(icl>activity).@def>
+	<3N:involve(aoj>thing,obj>thing).@past>
+	<2Y:more(icl>quantity)>
+	<3A:tedious(aoj>thing)>
+	[0M pur 29]
+	[0M aoj 04]
+	[0M obj 0W]
+	[1G aoj 0W]
+	[1G man 5V]
+	[5V obj 1Y]
+	[29 obj 2Q]
+	[2Q agt 2H]
+	[2Q obj 3I]
+	[3N obj 3I]
+	[3I qua 2Y]
+	[3A aoj 3I]
+	[3N gol #01]
+	{#01
+		<4K:combine(icl>join(agt>thing,obj>thing)).@entry.@progress>
+		<48:sharing(icl>having in comma)>
+		<4U:information>
+		<5D:web(equ>World Wide Web).@def>
+		<3Z:finding(icl>act)>
+		[4K and 48]
+		[4K obj 4U]
+		[4U obj 5D]
+		[48 and 3Z]
+	}
+}
+{#
+	<00:Tim Berners-Lee(iof>person).@topic>
+	<1W:as follows(icl>how)>
+	<0R:express(icl>show(agt>thing,obj>thing)).@entry.@past>
+	<0G:originally>
+	<1J:semantic web.@def>
+	<15:vision(icl>idea).@def>
+	[0R agt 00]
+	[0R man 1W]
+	[0R obj 15]
+	[0R man 0G]
+	[15 obj 1J]
+}
+{#
+	<02:>
+	<03:>
+	<00:I(icl>person).@topic>
+	<24:all(qua<thing)>
+	<1U:analyze(icl>examine(agt>thing,obj>thing)).@progress>
+	<1C:become(icl>start to be(gol>thing,obj>thing))>
+	<3V:between(icl>in space separating(aoj>thing,gol>thing))>
+	<1J:capable of(aoj>thing,obj>thing)>
+	<11:computer(icl>machine).@pl>
+	<4E:computer(icl>machine).@entry.@pl>
+	<2Y:content(icl>things contained).@def>
+	<2C:data(icl>information).@def>
+	<09:dream(icl>event).@indef>
+	<02:have(icl>possess(aoj>thing,obj>thing)).@entry>
+	<37:link(icl>connection).@pl>
+	<43:people(icl>person)>
+	<3I:transaction(icl>business).@entry.@pl>
+	<0N:web(equ>World Wide Web).@def>
+	<2O:web(equ>World Wide Web).@def>
+	[02 aoj 00]
+	[02 obj 09]
+	[09 pur 0N]
+	[1C plc 0N]
+	[1C obj 11]
+	[1C gol 1J]
+	[1J obj 1U]
+	[1U obj 2C]
+	[2C plc 2O]
+	[2C qua 24]
+	[2O cnt #03]
+	{#03
+		<37:link(icl>connection).@pl>
+		<3I:transaction(icl>business).@entry.@pl>
+		<3V:between(icl>in space separating(aoj>thing,gol>thing))>
+		<2Y:content(icl>things contained).@def>
+		[3I and 37]
+		[3V aoj 3I]
+		[3V gol #02]
+		[37 and 2Y]
+		{#02
+			<4E:computer(icl>machine).@entry.@pl>
+			<43:people(icl>person)>
+			[4E and 43]
+		}
+	}
+}
+{#
+	<1Q:emerge(icl>appear(obj>thing)).@not.@complete>
+	<4K:handle(icl>treat(agt>thing,obj>thing)).@entry.@contrast.@will>
+	<2A:do(agt>thing)>
+	<4V:machine(icl>tool).@pl>
+	<54:talk(icl>speak(agt>thing)).@progress>
+	<5F:machine(icl>tool).@pl>
+	<27:it(icl>thing)>
+	<03:semantic web.@single_quote.@topic.@indef>
+	<0V:make(icl>cause(agt>thing,obj>thing)).@should>
+	<15:possible(aoj>thing)>
+	<10:this(icl>thing)>
+	[4K and 1Q]
+	[4K tim 2A]
+	[4K obj #01]
+	[4K agt 4V]
+	[54 agt 4V]
+	[54 gol 5F]
+	[2A agt 27]
+	[1Q obj 03]
+	[0V agt 03]
+	[0V obj 15]
+	[15 aoj 10]
+	{#01
+		<3G:bureaucracy(icl>institution)>
+		<40:daily life.@entry.@pl>
+		<3W:we>
+		<2V:mechanism(icl>system).@def.@pl>
+		<39:trade(icl>activity)>
+		<2K:day-to-day(mod<thing)>
+		[40 and 3G]
+		[40 pos 3W]
+		[3G and 2V]
+		[2V pos 39]
+		[2V mod 2K]
+	}
+}
+{#
+	<1O:age(icl>period).@pl>
+	<1Y:finally>
+	<0B:intelligent agent.@single_quote.@topic.@def.@pl>
+	<26:materialize(icl>take place(obj>thing)).@entry.@will>
+	<11:people(icl>person)>
+	<1D:tout(icl>praise(agt>thing,obj>thing)).@complete>
+	[26 obj 0B]
+	[26 man 1Y]
+	[1D obj 0B]
+	[1D agt 11]
+	[1D dur 1O]
+}
+{#
+	<0U:1999>
+	<07:Tim Berners-Lee(iof>person).@entry>
+	[07 tim 0U]
+}
+{#
+	<0U:benefit(obj>thing).@entry.@will>
+	<12:greatly>
+	<09:semantic publishing.@topic>
+	<1J:semantic web.@def>
+	[0U obj 09]
+	[0U src 1J]
+	[0U man 12]
+}
+{#
+	<0Z:expect(icl>believe(agt>thing,obj>thing)).@entry>
+	<1B:revolutionize(agt>thing,obj>thing).@topic>
+	<00:in particular(icl>how)>
+	<0J:semantic web.@def>
+	<1U:scientific publishing>
+	<2N:such as(aoj>thing)>
+	[0Z obj 1B]
+	[0Z man 00]
+	[1B agt 0J]
+	[1B obj 1U]
+	[#01 iof 1U]
+	[2N aoj #01]
+	{#01
+		<2V:real-time>
+		<3K:sharing(icl>having in comma).@entry>
+		<48:data(icl>information)>
+		<4K:Internet.@def>
+		<3V:experimental(icl>relying on experiment(aoj>thing))>
+		<35:publish(icl>produce and issue(agt>thing,obj>thing)).@progress>
+		[3K and 2V]
+		[3K obj 48]
+		[48 plc 4K]
+		[3V aoj 48]
+		[35 agt 2V]
+	}
+}
+{#
+	<16:explore(icl>examine(agt>thing,obj>thing)).@entry.@progress>
+	<0O:idea(icl>notion).@topic>
+	<0W:now(icl>at present)>
+	<30:task force(icl>people)>
+	<21:group(icl>volitional thing)>
+	<2E:scientific publishing>
+	<1W:HCLS(equ>Health Care and Life Sciences)>
+	<1N:W3C(equ>World Wide Web Consortium)>
+	<00:this(mod<thing)>
+	[16 obj 0O]
+	[16 tim 0W]
+	[16 agt 30]
+	[30 pos 21]
+	[30 mod 2E]
+	[21 mod 1W]
+	[1W mod 1N]
+	[#01 aoj 0O]
+	[0O mod 00]
+	{#01
+		<0G:radical(aoj>thing).@entry.@contrast>
+		<05:simple(icl>not complicated(aoj>thing))>
+		[0G and 05]
+	}
+}
+{#
+	<22:3.0>
+	<00:Tim Berners-Lee(iof>person).@topic>
+	<1G:component(icl>part).@indef>
+	<0K:describe(icl>say(agt>thing,obj>thing)).@entry.@complete>
+	<0Y:semantic web.@def>
+	<1Y:web(equ>World Wide Web)>
+	[0K agt 00]
+	[0K obj 0Y]
+	[0K gol 1G]
+	[1G pof 1Y]
+	[1Y mod 22]
+}
+{#
+	<05:edit(agt>thing,obj>thing).@entry.@impertive>
+}
+{#
+	<0P:hypertext web.@def>
+	<05:relationship(icl>way).@entry>
+	[05 gol 0P]
+}
+{#
+	<05:edit(agt>thing,obj>thing).@entry.@impertive>
+}
+{#
+	<0K:HTML(equ>Hypertext Markup Language)>
+	<05:limitation(icl>restriction).@entry.@pl>
+	[05 obj 0K]
+}
+{#
+	<05:file(icl>stationery).@topic.@pl>
+	<1C:divide(icl>separate(agt>thing,obj>thing)).@entry.@ability>
+	<14:loosely(icl>not exactly)>
+	<0O:computer(icl>machine).@indef>
+	<00:many(qua<thing)>
+	<0G:typical(icl>representative(aoj>thing))>
+	[1C obj 05]
+	[1C gol #01]
+	[1C man 14]
+	[05 plc 0O]
+	[05 qua 00]
+	[0G aoj 0O]
+	{#01
+		<2I:data(icl>information).@entry>
+		<1U:document(icl>information).@pl>
+		[2I and 1U]
+	}
+}
+{#
+	<00:document(icl>information).@topic.@pl>
+	<1L:read(icl>go through(agt>thing,obj>thing)).@entry>
+	<1T:human(icl>living thing).@pl>
+	[1L obj 00]
+	[1L agt 1T]
+	[#01 iof 00]
+	{#01
+		<17:brochure(icl>book).@entry.@pl>
+		<0U:report(icl>account).@pl>
+		<0K:message(icl>information).@pl>
+		<0F:mail(mod<thing)>
+		[17 and 0U]
+		[0U and 0K]
+		[0K mod 0F]
+	}
+}
+{#
+	<00:data(icl>information).@topic>
+	<1W:present(icl>describe(agt>thing,obj>thing)).@entry>
+	<26:use(icl>employ(agt>thing,obj>thing)).@progress>
+	<2F:application program.@indef>
+	<35:let(icl>permit(agt>thing,obj>thing))>
+	<3A:they(icl>person).@topic>
+	<06:like(icl>such as(aoj>thing))>
+	[1W obj 00]
+	[1W man 26]
+	[26 obj 2F]
+	[35 agt 2F]
+	[35 obj #02]
+	[#02 obj 3A]
+	[#01 iof 00]
+	[06 aoj #01]
+	{#02
+		<43:combine(icl>join(agt>thing,obj>thing)).@entry>
+		<3Q:search(icl>look(agt>thing,obj>thing))>
+		<4K:way(icl>abstract thing).@pl>
+		<4F:many(qua<thing)>
+		<3I:view(icl>think(agt>thing,gol>thing,obj>thing))>
+		[43 and 3Q]
+		[43 plc 4K]
+		[4K qua 4F]
+		[3Q and 3I]
+	}
+	{#01
+		<10:playlist.@pl>
+		<1F:spreadsheet(icl>computer program).@entry.@pl>
+		<0M:address book.@pl>
+		<0B:calendar(icl>measurement method).@pl>
+		[1F and 10]
+		[10 and 0M]
+		[0M and 0B]
+	}
+}
+{#
+	<0X:base(agt>thing,obj>thing).@entry>
+	<00:currently>
+	<0F:World Wide Web.@topic.@def>
+	<1D:document(icl>information).@pl>
+	<13:mainly(icl>how)>
+	<1N:write(icl>produce(agt>thing,obj>thing))>
+	<23:Hypertext Markup Language>
+	<3R:convention(icl>way).@indef>
+	<35:HTML(equ>Hypertext Markup Language).@parenthesis>
+	<3K:markup(icl>symbol)>
+	<4A:use(icl>employ(agt>thing,obj>thing))>
+	<4J:code(icl>convert(agt>thing,obj>thing)).@progress>
+	<4S:body(icl>part).@indef>
+	<50:text(icl>word)>
+	<55:intersperse(agt>thing,gol>thing,obj>thing).@past>
+	<5Y:object(icl>purpose).@pl>
+	<5N:multimedia(mod<thing)>
+	<66:such as(aoj>thing)>
+	[0X man 00]
+	[0X obj 0F]
+	[0X plc 1D]
+	[0X man 13]
+	[1N obj 1D]
+	[1N ins 23]
+	[3R aoj 23]
+	[35 equ 23]
+	[3R mod 3K]
+	[4A obj 3R]
+	[4A pur 4J]
+	[4J obj 4S]
+	[4S mod 50]
+	[55 gol 4S]
+	[55 obj 5Y]
+	[#01 iof 5Y]
+	[5Y mod 5N]
+	[66 aoj #01]
+	{#01
+		<71:form(icl>type).@entry.@pl>
+		<6E:image(icl>picture).@pl>
+		<6P:interactive(aoj>thing)>
+		[71 and 6E]
+		[6P aoj 71]
+	}
+}
+{#
+	<0F:for example(aoj>thing)>
+	<00:metadata tag.@entry.@pl>
+	[0F aoj 00]
+}
+{#
+	<14:categorize(agt>thing,obj>thing).@ability>
+	<0Q:computer(icl>machine).@topic.@pl>
+	<1J:content(icl>things contained).@def>
+	<0A:method(icl>quality).@indef>
+	<00:provide(icl>supply(agt>thing,gol>thing,obj>thing)).@entry.@impertive>
+	<1U:webpage.@pl>
+	[00 obj 0A]
+	[14 met 0A]
+	[14 agt 0Q]
+	[14 obj 1J]
+	[1J mod 1U]
+}
+{#
+	<00:with(icl>using(obj>thing))>
+	<37:one(icl>person).@topic>
+	<40:page(pof>document).@indef>
+	<4A:list(icl>itemize(agt>thing,obj>thing))>
+	<4G:item(icl>information).@pl>
+	<4Q:for sale(aoj>thing)>
+	<0O:render(icl>furnish(agt>thing,obj>thing))>
+	<0V:it(icl>thing)>
+	[#03 man 00]
+	[#03 agt 37]
+	[#03 obj 40]
+	[4A agt 40]
+	[4A obj 4G]
+	[4Q aoj 4G]
+	[00 obj #02]
+	[00 pur 0O]
+	[0O obj 0V]
+	[0V cnt #01]
+	{#03
+		<3F:create(icl>make(agt>thing,obj>thing)).@ability>
+		<3Q:present(icl>describe(agt>thing,obj>thing)).@entry.@ability>
+		[3Q and 3F]
+	}
+	{#02
+		<05:HTML(equ>Hypertext Markup Language)>
+		<0G:tool(icl>functional thing).@entry.@indef>
+		[0G and 05]
+	}
+	{#01
+		<1T:software(icl>computer program)>
+		<2O:user agent(icl>computer program).@entry>
+		<23:perhaps(icl>how)>
+		<2B:another(mod<thing)>
+		<0Z:perhaps(icl>how)>
+		<1C:web browser>
+		[2O and 1T]
+		[2O man 23]
+		[2O mod 2B]
+		[1T man 0Z]
+		[1T mod 1C]
+	}
+}
+{#
+	<04:HTML(equ>Hypertext Markup Language).@topic.@def>
+	<0Y:make(icl>cause(agt>thing,obj>thing)).@entry.@ability>
+	<13:simple(icl>not complicated(aoj>thing))>
+	<1Q:assertion(icl>idea).@pl>
+	<1K:level(icl>rank)>
+	<1B:document(icl>information)>
+	<21:such as(aoj>thing)>
+	<0P:page(pof>document)>
+	<0C:this(mod<thing)>
+	<0H:catalog(icl>document)>
+	[0Y agt 04]
+	[0Y obj 13]
+	[13 aoj 1Q]
+	[#02 iof 1Q]
+	[1Q mod 1K]
+	[1K mod 1B]
+	[21 aoj #02]
+	[04 mod 0P]
+	[0P mod 0C]
+	[0P mod 0H]
+	{#02
+		<2Q:title(icl>name).@topic>
+		<2F:document(icl>information)>
+		<2A:this(mod<thing)>
+		[#01 aoj 2Q]
+		[2Q pos 2F]
+		[2F mod 2A]
+		{#01
+			<37:superstore.@entry>
+			<30:widget(icl>device)>
+			[37 mod 30]
+		}
+	}
+}
+{#
+	<0G:capability(icl>ability)>
+	<0A:exist(aoj>thing).@not.@entry>
+	<1H:assert(icl>state(agt>thing,obj>thing))>
+	<0R:within(icl>inside(gol>thing))>
+	<12:HTML(equ>Hypertext Markup Language).@def>
+	<17:itself>
+	<1O:unambiguously>
+	<28:for example(aoj>thing)>
+	[0A aoj 0G]
+	[0G pur 1H]
+	[0G plc 0R]
+	[0R gol 12]
+	[12 mod 17]
+	[1H man 1O]
+	[1H obj #01]
+	[28 aoj #01]
+	{#01
+		<3B:Acme Gizmo.@indef>
+		<56:product(icl>result).@entry.@indef>
+		<4P:it(icl>thing).@topic>
+		<4X:consumer(icl>person)>
+		<2X:x586172.@topic>
+		<3M:with(icl>having(aoj>thing,obj>thing))>
+		<3T:retail price.@indef>
+		<49:euro(icl>unit of money)>
+		<4A:199>
+		<2L:item number>
+		[56 or 3B]
+		[56 aoj 4P]
+		[56 mod 4X]
+		[3B aoj 2X]
+		[3M aoj 3B]
+		[3M obj 3T]
+		[3T mod 49]
+		[49 qua 4A]
+		[2X mod 2L]
+	}
+}
+{#
+	<00:rather(icl>to some extent)>
+	<0M:say(icl>give information(agt>thing,obj>thing)).@entry.@ability>
+	<08:HTML(equ>Hypertext Markup Language).@topic>
+	<1P:something(icl>thing)>
+	<0H:only(icl>how)>
+	<0Z:span(icl>time).@topic.@def>
+	<2E:position(agt>thing,obj>thing).@should>
+	<3M:etc.>
+	<2P:near(icl>in space(gol>thing))>
+	<17:text(icl>word)>
+	<1D:x586172.@double_quote>
+	[0M man 00]
+	[0M agt 08]
+	[0M obj 1P]
+	[0M man 0H]
+	[1P aoj 0Z]
+	[2E obj 1P]
+	[2E man 3M]
+	[2E gol 2P]
+	[2P gol #01]
+	[0Z mod 17]
+	[17 cnt 1D]
+	{#01
+		<2V:Acme Gizmo.@double_quote>
+		[#02 and 2V]
+		{#02
+			<3D:199>
+			<3C:euro(icl>unit of money).@entry>
+			[3C qua 3D]
+		}
+	}
+}
+{#
+	<06:exist(aoj>thing).@not.@entry>
+	<0C:way(icl>abstract thing)>
+	[06 aoj 0C]
+	[0C pur #03]
+	{#03
+		<1I:establish(icl>ascertain(agt>thing,obj>thing)).@entry>
+		<0J:say(icl>give information(agt>thing,obj>thing))>
+		<1A:even(icl>how)>
+		[1I or 0J]
+		[1I obj #02]
+		[1I man 1A]
+		[0J obj #01]
+		{#02
+			<2F:kind(icl>variety).@indef>
+			<3G:price(icl>amount).@entry.@indef>
+			<1Y:Acme Gizmo.@double_quote.@topic>
+			<2N:title(icl>name)>
+			[3G or 2F]
+			[3G aoj #04]
+			[2F aoj 1Y]
+			[2F mod 2N]
+			{#04
+				<33:199>
+				<32:euro(icl>unit of money).@entry>
+				[32 qua 33]
+			}
+		}
+		{#01
+			<0Y:catalog(icl>document).@entry.@indef>
+			<0O:this(icl>thing).@topic>
+			[0Y aoj 0O]
+		}
+	}
+}
+{#
+	<09:also(icl>how)>
+	<1X:bind(icl>stick together(agt>thing,obj>thing))>
+	<2F:describe(icl>say(agt>thing,obj>thing)).@progress>
+	<2S:discrete(aoj>thing)>
+	<37:distinct(aoj>thing)>
+	<06:exist(aoj>thing).@not.@entry>
+	<0O:express(icl>show(agt>thing,obj>thing))>
+	<1H:information>
+	<31:item(icl>information).@indef>
+	<3R:item(icl>information).@pl>
+	<45:list(icl>itemize(agt>thing,obj>thing)).@past>
+	<3L:other(icl>additional(mod<thing))>
+	<4J:page(pof>document).@def>
+	<3X:perhaps(icl>how)>
+	<17:piece(icl>part).@pl>
+	<11:this(mod<thing).@pl>
+	<23:together(icl>how)>
+	<0H:way(icl>abstract thing)>
+	[06 aoj 0H]
+	[0H pur 0O]
+	[06 man 09]
+	[0O obj 1X]
+	[1X obj 17]
+	[1X pur 2F]
+	[1X man 23]
+	[2F obj 31]
+	[37 aoj 31]
+	[2S aoj 31]
+	[37 plf 3R]
+	[45 obj 3R]
+	[3R mod 3L]
+	[45 plc 4J]
+	[45 man 3X]
+	[17 mod 1H]
+	[17 mod 11]
+}
+{#
+	<09:HTML(equ>Hypertext Markup Language).@topic>
+	<19:HTML(equ>Hypertext Markup Language)>
+	<3C:detail(icl>attribute).@pl>
+	<3K:directly(icl>in a direct manner)>
+	<1X:follow(icl>accept(agt>thing,obj>thing)).@progress>
+	<27:intention(icl>will)>
+	<35:layout(icl>design)>
+	<1Q:markup(icl>symbol)>
+	<1E:practice(icl>action).@def>
+	<2I:rather than(bas>thing)>
+	<0J:refer to(icl>mention(agt>thing,obj>thing)).@entry>
+	<00:semantic(aoj>thing)>
+	<2U:specify(agt>thing,obj>thing).@progress>
+	<0X:traditional(aoj>thing)>
+	[0J agt 09]
+	[0J obj 1E]
+	[1E obj 1Q]
+	[0X aoj 1E]
+	[1E mod 19]
+	[1E man 1X]
+	[1X obj 27]
+	[1X man 2I]
+	[2I bas 2U]
+	[2U man 3K]
+	[2U obj 3C]
+	[3C mod 35]
+	[00 aoj 09]
+}
+{#
+	<0T:denote(icl>indicate(aoj>thing,obj>thing)).@progress>
+	<13:emphasis(icl>force).@double_quote>
+	<00:for example(aoj>thing)>
+	<2H:italic(icl>style).@pl>
+	<1D:rather than(bas>thing)>
+	<22:specify(agt>thing,obj>thing)>
+	<0H:use(icl>purpose).@def.@entry>
+	[00 aoj 0H]
+	[0H mod 0T]
+	[0T man 1D]
+	[0T obj 13]
+	[1D bas 22]
+	[22 obj 2H]
+}
+{#
+	<0Y:browser(icl>software).@def>
+	<1W:cascading style sheet.@pl>
+	<07:detail(icl>attribute).@topic.@pl>
+	<17:in combination with(obj>thing)>
+	<00:layout(icl>design)>
+	<0J:leave(icl>put(agt>thing,gol>thing,obj>thing)).@entry>
+	<0O:up to(icl>dependent on(aoj>thing,obj>thing))>
+	[0J obj 07]
+	[0J man 17]
+	[0J gol 0O]
+	[0O obj 0Y]
+	[17 obj 1W]
+	[07 mod 00]
+}
+{#
+	<0I:fall(icl>become(gol>thing,obj>thing)).@entry>
+	<09:practice(icl>action).@topic>
+	<0O:short(icl>insufficient(aoj>thing))>
+	<0X:specify(agt>thing,obj>thing).@progress>
+	<1C:semantics(icl>meaning).@def>
+	<1P:object(icl>purpose).@pl>
+	<25:item(icl>information).@pl>
+	<1X:such as(aoj>thing)>
+	<04:this(mod<thing)>
+	[0I obj 09]
+	[0I gol 0O]
+	[0O obj 0X]
+	[0X obj 1C]
+	[1C mod 1P]
+	[25 iof 1P]
+	[1X aoj 25]
+	[25 pur #01]
+	[09 mod 04]
+	{#01
+		<2N:price(icl>amount).@entry.@pl>
+		<2F:sale(icl>process)>
+		[2N or 2F]
+	}
+}
+{#
+	<00:microformat.@topic.@pl>
+	<0I:represent(icl>constitute(aoj>thing,obj>thing)).@entry>
+	<13:attempt(icl>try).@pl>
+	<1F:extend(icl>broaden(agt>thing,obj>thing))>
+	<0S:unofficial(aoj>thing)>
+	<1R:syntax(icl>linguistics)>
+	<21:create(icl>make(agt>thing,obj>thing))>
+	<1M:HTML(equ>Hypertext Markup Language)>
+	<2Y:markup(icl>symbol)>
+	<35:about(icl>in connection with(aoj>thing,obj>thing))>
+	<28:machine-readable(aoj>thing)>
+	<2P:semantic(aoj>thing)>
+	<3B:object(icl>purpose).@pl>
+	<3J:such as(aoj>thing)>
+	[0I aoj 00]
+	[0I obj 13]
+	[13 obj 1F]
+	[0S aoj 13]
+	[1F obj 1R]
+	[1R pur 21]
+	[1R mod 1M]
+	[21 obj 2Y]
+	[35 aoj 2Y]
+	[28 aoj 2Y]
+	[2P aoj 2Y]
+	[35 obj 3B]
+	[#01 iof 3B]
+	[3J aoj #01]
+	{#01
+		<49:item(icl>information).@entry.@pl>
+		<4J:sale(icl>process)>
+		<3Y:retail store.@pl>
+		[49 pur 4J]
+		[49 and 3Y]
+	}
+}
+{#
+	<05:edit(agt>thing,obj>thing).@entry.@impertive>
+}
+{#
+	<05:semantic web>
+	<0I:solution(icl>way).@entry.@pl>
+	[0I mod 05]
+}
+{#
+	<10:further(icl>to a greater degree)>
+	<04:semantic web.@topic.@def>
+	<0R:solution(icl>way).@def>
+	<0H:take(agt>thing,obj>action).@entry>
+	[0H agt 04]
+	[0H man 10]
+	[0H obj 0R]
+}
+{#
+	<1Q:data(icl>information)>
+	<1D:design(icl>plan(agt>thing,obj>thing)).@past>
+	<03:involve(aoj>thing,obj>thing).@entry>
+	<00:it(icl>thing).@topic>
+	<0Q:language(icl>system).@pl>
+	<0C:publishing(icl>industry)>
+	<10:specifically(icl>how)>
+	[03 aoj 00]
+	[03 obj 0C]
+	[0C met 0Q]
+	[1D aoj 0Q]
+	[1D pur 1Q]
+	[1D man 10]
+}
+{#
+	<2J:Extensible Markup Language.@entry>
+	<29:OWL(equ>Web Ontology Language).@parenthesis>
+	<16:RDF(equ>Resource Description Framework).@parenthesis>
+	<05:Resource Description Framework>
+	<1H:Web Ontology Language>
+	<3H:XML(equ>Extensible Markup Language).@parenthesis>
+	[2J and 1H]
+	[1H and 05]
+	[3H equ 2J]
+	[29 equ 1H]
+	[16 equ 05]
+}
+{#
+	<05:describe(icl>say(agt>thing,obj>thing)).@entry>
+	<00:HTML(equ>Hypertext Markup Language).@topic>
+	[05 agt 00]
+	[05 obj #01]
+	{#01
+		<0F:document(icl>information).@pl>
+		<0X:link(icl>connection).@entry.@def.@pl>
+		<13:between(icl>in space separating(aoj>thing,gol>thing))>
+		<1B:they(icl>thing)>
+		[0X and 0F]
+		[13 aoj 0X]
+		[13 gol 1B]
+	}
+}
+{#
+	<10:describe(icl>say(agt>thing,obj>thing)).@entry.@ability>
+	<1J:thing.@pl>
+	<0M:by contrast(icl>how)>
+	<19:arbitrary(aoj>thing)>
+	<1Q:such as(aoj>thing)>
+	[10 agt #01]
+	[10 obj 1J]
+	[10 man 0M]
+	[#02 iof 1J]
+	[19 aoj 1J]
+	[1Q aoj #02]
+	{#01
+		<05:OWL(equ>Web Ontology Language).@topic>
+		<0E:XML(equ>Extensible Markup Language).@entry.@topic>
+		<00:RDF(equ>Resource Description Framework).@topic>
+		[0E and 05]
+		[05 and 00]
+	}
+	{#02
+		<26:meeting(icl>occasion).@pl>
+		<2S:part(pof>thing).@entry.@pl>
+		<2J:airplane(icl>aircraft)>
+		<1Y:people(icl>person)>
+		[2S or 26]
+		[2S pof 2J]
+		[26 or 1Y]
+	}
+}
+{#
+	<3F:HTML(equ>Hypertext Markup Language)>
+	<00:Tim Berners-Lee(iof>person).@topic>
+	<3V:World Wide Web.@def>
+	<3K:based on(aoj>thing,obj>thing)>
+	<0G:call(icl>name(agt>thing,gol>thing,obj>thing)).@entry>
+	<1N:data(icl>information)>
+	<26:giant global graph.@def>
+	<2W:in contrast to(obj>thing)>
+	<1G:linked(aoj>thing)>
+	<10:network(icl>system).@def>
+	<0Q:result(obj>thing).@progress>
+	[0G agt 00]
+	[0G man 2W]
+	[0G gol 26]
+	[0G obj 10]
+	[10 mod 1N]
+	[0Q obj 10]
+	[1G aoj 1N]
+	[2W obj 3V]
+	[3K aoj 3V]
+	[3K obj 3F]
+}
+{#
+	<0N:combine(icl>join(agt>thing,obj>thing)).@entry>
+	<06:technology(icl>knowledge).@topic.@pl>
+	<18:provide(icl>supply(agt>thing,gol>thing,obj>thing))>
+	<1G:description(icl>writing).@pl>
+	<2O:content(icl>things contained).@def>
+	<33:document(icl>information).@pl>
+	<2Z:web(equ>World Wide Web)>
+	<00:this(mod<thing).@pl>
+	[0N obj 06]
+	[0N pur 18]
+	[18 obj 1G]
+	[#01 agt 1G]
+	[#01 obj 2O]
+	[2O pof 33]
+	[33 mod 2Z]
+	[06 mod 00]
+	{#01
+		<2E:replace(agt>thing,gol>thing,obj>thing).@entry>
+		<1Y:supplement(agt>thing,obj>thing)>
+		[2E or 1Y]
+	}
+}
+{#
+	<06:content(icl>things contained).@topic>
+	<0I:manifest(icl>appear(obj>thing)).@entry.@may>
+	[0I obj 06]
+	[0I man #03]
+	{#03
+		<0R:as(icl>in the role of(obj>thing))>
+		<2P:as(icl>in the role of(obj>thing)).@entry>
+		<2S:markup(icl>symbol)>
+		<2Z:within(icl>inside(aoj>thing,gol>thing))>
+		<36:document(icl>information).@pl>
+		<16:data(icl>information)>
+		<1B:store(icl>put(agt>thing,gol>thing,obj>thing)).@past>
+		<0U:descriptive(aoj>thing)>
+		<25:database(icl>data).@pl>
+		<1P:accessible(aoj>thing)>
+		<1L:web(equ>World Wide Web)>
+		[2P or 0R]
+		[2P obj 2S]
+		[2Z aoj 2S]
+		[2Z gol 36]
+		[36 cnt #01]
+		[0R obj 16]
+		[1B obj 16]
+		[0U aoj 16]
+		[1B gol 25]
+		[1P aoj 25]
+		[1P plc 1L]
+		{#01
+			<49:Extensible HTML>
+			<6B:XML(equ>Extensible Markup Language).@entry>
+			<61:purely>
+			<5U:often(icl>frequently)>
+			<5P:more(icl>how)>
+			<6G:with(icl>having(aoj>thing,obj>thing))>
+			<3H:particularly(icl>how)>
+			<4Y:intersperse(agt>thing,gol>thing,obj>thing).@past>
+			<4L:XHTML(equ>Extensible HTML).@parenthesis>
+			<5G:XML(equ>Extensible Markup Language)>
+			<72:cue(icl>extension).@pl>
+			<77:store(icl>put(agt>thing,gol>thing,obj>thing)).@past>
+			<7E:separately>
+			[6B or 49]
+			[6B man 61]
+			[6B man 5U]
+			[5U man 5P]
+			[6G aoj 6B]
+			[49 man 3H]
+			[4Y gol 49]
+			[49 cnt 4L]
+			[4Y obj 5G]
+			[6G obj 72]
+			[77 obj 72]
+			[72 mod #02]
+			[77 man 7E]
+			{#02
+
+			}
+		}
+	}
+}
+{#
+	<1P:add(icl>put(agt>thing,gol>thing,obj>thing))>
+	<15:content(icl>things contained)>
+	<28:content(icl>things contained).@def>
+	<4C:content(icl>things contained)>
+	<2P:describe(icl>say(agt>thing,obj>thing))>
+	<0L:description(icl>act).@topic.@def.@pl>
+	<0Y:enable(agt>thing,obj>thing).@entry>
+	<3W:have(icl>possess(aoj>thing,obj>thing))>
+	<3J:knowledge(icl>information).@def>
+	<04:machine-readable(aoj>thing)>
+	<1D:manager(icl>computer program).@pl>
+	<1T:meaning(icl>idea)>
+	<32:structure(icl>way).@def>
+	<47:that(mod<thing)>
+	<3T:we>
+	[0Y agt 0L]
+	[0Y obj 1P]
+	[1P agt 1D]
+	[1P cnt 2P]
+	[1P obj 1T]
+	[1P gol 28]
+	[2P obj 32]
+	[32 pos 3J]
+	[3J obj 4C]
+	[3W obj 3J]
+	[3W aoj 3T]
+	[4C mod 47]
+	[1D obj 15]
+	[04 aoj 0L]
+}
+{#
+	<0R:process(icl>change(agt>thing,obj>thing)).@entry.@ability>
+	<08:way(icl>abstract thing)>
+	<0F:machine(icl>tool).@topic.@indef>
+	<1H:instead of(obj>thing)>
+	<0Z:knowledge(icl>information)>
+	<19:itself>
+	<1S:text(icl>word)>
+	<1Y:use(icl>employ(agt>thing,obj>thing)).@progress>
+	<24:process(icl>action).@pl>
+	<2E:similar(aoj>thing)>
+	<2P:human(icl>living thing)>
+	<4F:thereby(icl>how)>
+	<03:this(mod<thing)>
+	[0R man 08]
+	[0R agt 0F]
+	[0R man 1H]
+	[0R obj 0Z]
+	[0Z mod 19]
+	[1H obj 1S]
+	[0R man 1Y]
+	[1Y obj 24]
+	[2E aoj 24]
+	[2E gol #01]
+	[#01 agt 2P]
+	[#03 rsn 0R]
+	[#03 man 4F]
+	[08 mod 03]
+	{#01
+		<3Y:inference(icl>notion).@entry>
+		<3A:reasoning(icl>action)>
+		<30:deductive(aoj>thing)>
+		[3Y and 3A]
+		[30 aoj 3A]
+	}
+	{#03
+		<5P:facilitate(agt>thing,obj>thing).@entry.@progress>
+		<4N:obtain(agt>thing,obj>thing).@progress>
+		<7O:computer(icl>machine).@pl>
+		<62:automated(mod<thing)>
+		<6C:information>
+		<5D:result(icl>thing).@pl>
+		<52:meaningful(aoj>thing)>
+		<4X:more(icl>how)>
+		[5P and 4N]
+		[5P obj #02]
+		[#02 ins 7O]
+		[#02 mod 62]
+		[#02 mod 6C]
+		[4N obj 5D]
+		[52 aoj 5D]
+		[52 man 4X]
+		{#02
+			<6O:gathering(icl>process)>
+			<77:research(icl>study).@entry>
+			[77 and 6O]
+		}
+	}
+}
+{#
+	<03:example(icl>functional thing).@indef.@entry>
+	<1C:semantic(aoj>thing).@not>
+	<0G:tag(icl>sequence of characters).@indef>
+	<0Y:use(icl>employ(agt>thing,obj>thing)).@will.@past>
+	<1L:webpage.@indef>
+	[03 mod 0G]
+	[0Y obj 0G]
+	[0Y plc 1L]
+	[1C aoj 1L]
+}
+{#
+	<00:encoding(icl>activity)>
+	<0H:information.@topic>
+	<1M:look like(gol>thing,obj>thing).@entry.@may.@past>
+	<1B:page(pof>document).@indef>
+	<0Y:semantic web>
+	<09:similar(aoj>thing)>
+	<1W:this(icl>thing)>
+	[1M obj 0H]
+	[1M gol 1W]
+	[00 obj 0H]
+	[0H plc 1B]
+	[09 aoj 0H]
+	[1B mod 0Y]
+}
+{#
+	<05:edit(agt>thing,obj>thing).@entry.@impertive>
+}
+{#
+	<0L:object-oriented(aoj>thing)>
+	<11:programming(icl>process)>
+	<05:relationship(icl>way).@entry>
+	[05 gol 11]
+	[0L aoj 11]
+}
+{#
+	<3D:OOP(equ>object-oriented programming).@parenthesis>
+	<00:a number of(qua<thing)>
+	<0C:author(icl>person).@topic.@pl>
+	<0K:highlight(agt>thing,obj>thing).@entry>
+	<2F:object-oriented(aoj>thing)>
+	<2V:programming(icl>process)>
+	<1L:semantic web.@def>
+	<1Y:share(icl>use(agt>thing,obj>thing))>
+	<0Y:similarity(icl>quality).@def.@pl>
+	[0K agt 0C]
+	[0K obj 0Y]
+	[1Y obj 0Y]
+	[1Y cnt 3D]
+	[1Y agt 1L]
+	[1Y ptn 2V]
+	[2F aoj 2V]
+	[0C qua 00]
+}
+{#
+	<00:both(mod<thing)>
+	<1I:have(icl>possess(aoj>thing,obj>thing)).@entry>
+	<1S:class(icl>kind).@pl>
+	<25:with(icl>having(aoj>thing,obj>thing))>
+	[1I aoj #02]
+	[1I obj 1S]
+	[25 aoj 1S]
+	[25 obj #01]
+	[#02 mod 00]
+	{#02
+		<16:programming(icl>process).@entry.@topic>
+		<09:semantic web.@def.@topic>
+		<0Q:object-oriented(aoj>thing)>
+		[16 and 09]
+		[0Q aoj 16]
+	}
+	{#01
+		<2F:attribute(icl>abstract thing).@pl>
+		<33:concept(icl>idea).@entry.@def>
+		[33 and 2F]
+	}
+}
+{#
+	<2F:manner(icl>way).@indef>
+	<0C:data(icl>information).@topic>
+	<0M:use(icl>employ(agt>thing,obj>thing)).@entry>
+	<0W:dereferenceable URI.@pl>
+	<55:OOP(equ>object-oriented programming)>
+	<2M:similar(aoj>thing)>
+	<3K:concept(icl>idea).@def>
+	<38:programming(icl>process)>
+	<31:common(icl>shared(aoj>thing))>
+	<05:linked(aoj>thing)>
+	[0M agt 0C]
+	[0M obj 0W]
+	[0M man 2F]
+	[0M plc 55]
+	[2M aoj 2F]
+	[2M gol 3K]
+	[3K cnt #02]
+	[3K mod 38]
+	[31 aoj 38]
+	[05 aoj 0C]
+	{#02
+		<40:pointer(icl>mark).@pl>
+		[#01 or 40]
+		{#01
+			<4P:identifier(icl>attribute).@entry.@pl>
+			<4I:object(icl>purpose)>
+			[4P mod 4I]
+		}
+	}
+}
+{#
+	<15:access(icl>use(agt>thing,obj>thing))>
+	<1D:data(icl>information)>
+	<0G:dereferenceable URI.@topic.@pl>
+	<1Q:reference(icl>act)>
+	<0P:thus(icl>how)>
+	<0X:use(icl>employ(agt>thing,obj>thing)).@entry.@ability>
+	[0X obj 0G]
+	[0X pur 15]
+	[0X man 0P]
+	[15 obj 1D]
+	[15 man 1Q]
+}
+{#
+	<17:design(icl>plan(agt>thing,obj>thing))>
+	<36:use(icl>employ(agt>thing,obj>thing)).@entry.@ability>
+	<09:Unified Modeling Language.@topic.@def>
+	<2Y:thus(icl>how)>
+	<3F:both(mod<thing)>
+	<1J:communicate(icl>exchange information(agt>thing))>
+	<1V:about(icl>in connection with(aoj>thing,obj>thing))>
+	<2H:system(icl>thing).@pl>
+	<21:object-oriented(aoj>thing)>
+	[36 and 17]
+	[36 obj 09]
+	[36 man 2Y]
+	[36 pur #01]
+	[#01 mod 3F]
+	[17 obj 09]
+	[17 pur 1J]
+	[1J man 1V]
+	[1V obj 2H]
+	[21 aoj 2H]
+	{#01
+		<4T:development(icl>process).@entry>
+		<40:programming(icl>process)>
+		<4G:semantic web>
+		<3K:object-oriented(aoj>thing)>
+		[4T and 40]
+		[4T obj 4G]
+		[3K aoj 40]
+	}
+}
+{#
+	<3K:language(icl>system).@pl>
+	<0T:create(icl>make(agt>thing,obj>thing)).@progress.@past>
+	<27:do(agt>thing,obj>thing).@entry.@past>
+	<20:it(icl>thing).@topic>
+	<2C:use(icl>employ(agt>thing,obj>thing)).@progress>
+	<2N:object-oriented(aoj>thing)>
+	<33:programming(icl>process)>
+	<3Z:such as(aoj>thing)>
+	<09:web(equ>World Wide Web).@def>
+	<0H:first(icl>how)>
+	[27 tim 0T]
+	[27 obj 20]
+	[27 man 2C]
+	[2C obj 3K]
+	[#02 iof 3K]
+	[2N aoj 3K]
+	[3K mod 33]
+	[3Z aoj #02]
+	[0T obj 09]
+	[0T man 0H]
+	[0T tim #01]
+	{#02
+		<5O:CORBA(equ>Common Object Request Broker Architecture).@entry>
+		<50:Smalltalk(iof>programming language)>
+		<4C:Objective-C(iof>programming language)>
+		[5O and 50]
+		[50 and 4C]
+	}
+	{#01
+		<1H:period(icl>time).@def>
+		<1X:period(icl>time).@entry>
+		<1N:early(icl>near the beginning(aoj>thing))>
+		<1T:1990>
+		<18:late(icl>near the end(mod<thing))>
+		<1D:1980>
+		[1X and 1H]
+		[1N aoj 1X]
+		[1X mod 1T]
+		[18 aoj 1H]
+		[1H mod 1D]
+	}
+}
+{#
+	<1B:further(agt>thing,obj>thing).@entry.@past>
+	<0F:period(icl>time).@def>
+	<0Y:practice(icl>action).@topic>
+	<5Z:in addition to(obj>thing)>
+	<5N:NeXT(iof>company)>
+	<5B:all(icl>completely)>
+	<1U:announcement(icl>statement).@def>
+	<6N:Component Object Model.@def>
+	<7G:release(icl>publish(agt>thing,obj>thing)).@past>
+	<7S:Microsoft(iof>company)>
+	<0H:this(mod<thing)>
+	<0M:development(icl>process)>
+	<07:mid(mod<thing)>
+	<0B:1990>
+	[1B tim 0F]
+	[1B obj 0Y]
+	[1B man 5Z]
+	[1B agt 5N]
+	[1B man 5B]
+	[1B met 1U]
+	[1U obj #01]
+	[5Z obj 6N]
+	[7G obj 6N]
+	[7G agt 7S]
+	[0Y mod 0H]
+	[0Y obj 0M]
+	[0F mod 07]
+	[0F mod 0B]
+	{#01
+		<3O:Portable Distributed Objects.@def>
+		<4V:WebObjects(iof>application server).@entry.@def>
+		<2J:Enterprise Objects Framework.@def>
+		[4V and 3O]
+		[3O and 2J]
+	}
+}
+{#
+	<1M:1>
+	<0Z:1998>
+	<23:1999>
+	<1E:RDF(equ>Resource Description Framework).@entry>
+	<05:XML(equ>Extensible Markup Language).@topic>
+	<1U:after(icl>afterwards)>
+	<0N:release(icl>publish(agt>thing,obj>thing)).@past>
+	<0I:then(icl>next)>
+	<1P:year(icl>period)>
+	[1E and 0N]
+	[1E tim 23]
+	[1E tim 1U]
+	[1U man 1P]
+	[1P qua 1M]
+	[0N obj 05]
+	[0N tim 0Z]
+	[0N man 0I]
+}
+{#
+	<1L:2>
+	<16:also(icl>how)>
+	<1B:come(icl>happen(obj>thing)).@entry.@past>
+	<0E:object-oriented(aoj>thing)>
+	<1P:other(icl>additional(mod<thing))>
+	<0U:programming(icl>process)>
+	<1V:route(icl>way).@pl>
+	<00:similarity(icl>quality).@topic>
+	[1B obj 00]
+	[1B src 1V]
+	[1B man 16]
+	[1V qua 1L]
+	[1V mod 1P]
+	[00 gol 0U]
+	[0E aoj 0U]
+}
+{#
+	<3O:come(icl>happen(obj>thing)).@entry>
+	<0I:development(icl>process).@past.@def>
+	<3H:second(icl>thing).@topic.@def>
+	<51:Hypertext Transfer Protocol.@def>
+	<04:first(icl>thing).@topic.@def>
+	<24:system(icl>equipment).@def.@pl>
+	<2K:Douglas Engelbart(iof>person)>
+	<11:very(mod<thing)>
+	<1G:centric(aoj>thing)>
+	<1P:hyperdocument.@double_quote>
+	<16:knowledge(icl>information)>
+	[3O and 0I]
+	[3O obj 3H]
+	[3O src #01]
+	[#01 obj 51]
+	[0I aoj 04]
+	[0I obj 24]
+	[0I agt 2K]
+	[24 mod 11]
+	[24 mod 1G]
+	[24 mod 1P]
+	[1G aoj 16]
+	{#01
+		<4D:development(icl>process).@entry>
+		<43:usage(icl>way).@def>
+		[4D and 43]
+	}
+}
+{#
+	<05:edit(agt>thing,obj>thing).@entry.@impertive>
+}
+{#
+	<0F:reaction(icl>answer).@entry>
+	<05:skeptic(mod<thing)>
+	[0F mod 05]
+}
+{#
+	<05:edit(agt>thing,obj>thing).@entry.@impertive>
+}
+{#
+	<0F:feasibility.@entry>
+	<05:practical(icl>connected with real things(aoj>thing))>
+	[05 aoj 0F]
+}
+{#
+	<00:critic(icl>person).@topic.@pl>
+	<08:question(icl>doubt(agt>thing,obj>thing)).@entry>
+	<0R:feasibility.@def>
+	<1X:fulfillment(icl>act).@indef>
+	<0L:basic(icl>forming a base(aoj>thing))>
+	<2G:semantic web.@def>
+	[08 agt 00]
+	[08 obj 0R]
+	[0R obj 1X]
+	[0L aoj 0R]
+	[1X obj 2G]
+	[#01 aoj 1X]
+	{#01
+		<18:complete(icl>to the greatest degree possible(aoj>thing))>
+		<1P:partial(icl>incomplete(aoj>thing)).@entry>
+		<1K:even(icl>how)>
+		[1P or 18]
+		[1P man 1K]
+	}
+}
+{#
+	<02:>
+	<1M:behavior(icl>way)>
+	<0J:critique(icl>report)>
+	<05:develop(icl>think of(agt>thing,obj>thing)).@entry>
+	<32:diminish(agt>thing,obj>thing)>
+	<3X:fulfillment(icl>act)>
+	<1G:human(mod<thing)>
+	<3T:it(icl>thing)>
+	<3F:likelihood(icl>chance).@def>
+	<2R:ostensibly>
+	<1Z:personal(icl>own(mod<thing))>
+	<11:perspective(icl>way).@def>
+	<28:preference(icl>thing).@entry.@pl>
+	<00:some(icl>person).@topic>
+	<0D:they(icl>person).@pl>
+	[05 agt 00]
+	[05 obj 0J]
+	[0J frm 11]
+	[0J pos 0D]
+	[11 mod #02]
+	[32 agt #02]
+	[32 obj 3F]
+	[32 man 2R]
+	[3F obj 3X]
+	[3X obj 3T]
+	{#02
+		<1M:behavior(icl>way)>
+		<28:preference(icl>thing).@entry.@pl>
+		<1Z:personal(icl>own(mod<thing))>
+		<1G:human(mod<thing)>
+		[28 and 1M]
+		[28 mod 1Z]
+		[1M mod 1G]
+	}
+}
+{#
+	<06:commentator(icl>person).@topic.@pl>
+	<20:current(mod<thing)>
+	<11:exist(aoj>thing)>
+	<3C:itself>
+	<15:limitation(icl>restriction).@pl>
+	<0J:object(icl>disagree(agt>thing,obj>thing)).@entry>
+	<00:other(icl>additional(mod<thing))>
+	<2M:software engineering>
+	<28:state(icl>abstract thing).@def>
+	<1M:stem(icl>result(obj>thing))>
+	[0J agt 06]
+	[0J obj 11]
+	[11 aoj 15]
+	[1M obj 15]
+	[1M src 28]
+	[28 pos 2M]
+	[28 mod 20]
+	[2M mod 3C]
+	[06 mod 00]
+}
+{#
+	<06:semantic web>
+	<00:where(icl>place)>
+	<2I:tend(aoj>thing,obj>thing).@complete.@entry>
+	<2B:it(icl>thing)>
+	<2V:among(icl>in the middle of(aoj>thing,gol>thing))>
+	<4U:project(icl>plan).@pl>
+	<36:specialized(aoj>thing)>
+	<31:core(icl>important part)>
+	<4M:intra-company(mod<thing)>
+	<11:find(icl>discover(agt>thing,obj>thing)).@complete>
+	<0J:technology(icl>knowledge).@topic.@pl>
+	<1H:degree(icl>level).@indef>
+	<21:adoption(icl>use)>
+	<1R:practical(icl>connected with real things(aoj>thing))>
+	<19:great(icl>with influence(aoj>thing))>
+	<6B:more(icl>how)>
+	[2I plc 00]
+	[2I aoj 2B]
+	[2I obj 2V]
+	[2V gol #01]
+	[#01 pur 4U]
+	[#01 mod 36]
+	[36 aoj 31]
+	[4U mod 4M]
+	[11 plc 00]
+	[11 agt 0J]
+	[11 obj 1H]
+	[0J mod 06]
+	[1H mod 21]
+	[1R aoj 21]
+	[19 aoj 1H]
+	[19 man 6B]
+	{#01
+		<3I:community(icl>society).@pl>
+		<3Y:organization(icl>group).@entry.@pl>
+		[3Y and 3I]
+	}
+}
+{#
+	<1B:appear(icl>seem(gol>thing,obj>thing)).@entry.@complete>
+	<0E:constraint(icl>restriction).@topic.@def.@pl>
+	<1P:challenging(aoj>thing)>
+	<21:where(icl>place)>
+	<1K:less(icl>how)>
+	<2W:limit(agt>thing,gol>thing,obj>thing)>
+	<39:that(icl>thing)>
+	<2R:more(icl>how)>
+	<0Q:toward(aoj>thing,gol>thing)>
+	<04:practical(icl>connected with real things(aoj>thing))>
+	<0X:adoption(icl>use)>
+	[1B obj 0E]
+	[1B gol 1P]
+	[1B plc 21]
+	[1P man 1K]
+	[2W plc 21]
+	[2W obj #01]
+	[2W bas 39]
+	[2W man 2R]
+	[39 mod #02]
+	[0Q aoj 0E]
+	[04 aoj 0E]
+	[0Q gol 0X]
+	{#01
+		<27:domain(icl>field).@topic>
+		<2I:scope(icl>opportunity).@entry.@topic>
+		[2I and 27]
+	}
+	{#02
+		<3L:general public.@def>
+		<4J:web(equ>World Wide Web).@entry.@def>
+		<48:world-wide(aoj>thing)>
+		[4J and 3L]
+		[48 aoj 4J]
+	}
+}
+{#
+	<05:edit(agt>thing,obj>thing).@entry.@impertive>
+}
+{#
+	<0J:idea(icl>notion).@entry.@indef>
+	<08:unrealized(icl>not achieved(aoj>thing))>
+	[08 aoj 0J]
+}
+{#
+	<0D:2001>
+	<1N:Berners-Lee(iof>person)>
+	<0N:Scientific American(iof>magazine)>
+	<1C:article(icl>document).@topic.@def>
+	<7R:by(aoj>thing,obj>thing)>
+	<1Z:describe(icl>say(agt>thing,obj>thing)).@entry.@past>
+	<2L:evolution(icl>development).@indef>
+	<32:existing(mod<thing)>
+	<2C:expected(aoj>thing)>
+	<04:original(mod<thing)>
+	<3K:semantic web.@indef>
+	<3B:web(equ>World Wide Web).@def>
+	[1Z agt 1C]
+	[1Z obj 2L]
+	[2L obj 3B]
+	[2C aoj 2L]
+	[2L gol 3K]
+	[3B mod 32]
+	[7R aoj 1C]
+	[1C mod 04]
+	[1C mod 0D]
+	[1C mod 0N]
+	[7R obj 1N]
+}
+{#
+	<08:evolution(icl>development).@topic.@indef>
+	<0T:occur(icl>happen(obj>thing)).@not.@complete.@entry>
+	<00:such(icl>of type(mod<thing))>
+	<0M:yet(icl>still)>
+	[0T obj 08]
+	[0T man 0M]
+	[08 mod 00]
+}
+{#
+	<00:indeed(icl>how)>
+	<1Q:state(icl>say(agt>thing,obj>thing)).@entry.@past>
+	<0M:article(icl>document).@topic.@indef>
+	<0F:recent(aoj>thing)>
+	<0A:more(icl>how)>
+	[1Q man 00]
+	[1Q agt 0M]
+	[0M frm #01]
+	[0F aoj 0M]
+	[0F man 0A]
+	{#01
+		<0Z:Berners-Lee(iof>person)>
+		<1F:colleague(icl>person).@entry.@pl>
+		[1F and 0Z]
+	}
+}
+{#
+}
+{#
+	<05:edit(agt>thing,obj>thing).@entry.@impertive>
+}
+{#
+	<05:censorship(icl>occupation)>
+	<0K:privacy(icl>secret).@entry>
+	[0K and 05]
+}
+{#
+	<00:enthusiasm(icl>emotion).@topic>
+	<17:temper(icl>change(agt>thing,obj>thing)).@entry.@ability.@past>
+	<1J:concern(icl>worry).@pl>
+	<1S:regarding(aoj>thing,obj>thing)>
+	<0L:semantic web.@def>
+	[17 obj 00]
+	[17 agt 1J]
+	[1S aoj 1J]
+	[1S obj #01]
+	[00 obj 0L]
+	{#01
+		<27:censorship(icl>occupation)>
+		<2W:privacy(icl>secret).@entry>
+		[2W and 27]
+	}
+}
+{#
+	<1W:bypass(agt>thing,obj>thing).@ability.@entry>
+	<00:for instance(aoj>thing)>
+	<13:technique(icl>way).@pl>
+	<1I:now(icl>at present)>
+	<1P:easily(icl>conveniently)>
+	<0J:text analyzing(mod<thing)>
+	[00 aoj 1W]
+	[1W obj 13]
+	[1W man 1I]
+	[1W met #01]
+	[1W man 1P]
+	[13 mod 0J]
+	{#01
+		<28:use(icl>employ(agt>thing,obj>thing)).@progress>
+		<3L:use(icl>employ(agt>thing,obj>thing)).@progress.@entry>
+		<3R:image(icl>picture).@pl>
+		<3Y:in place of(aoj>thing,obj>thing)>
+		<4A:word(icl>symbol).@pl>
+		<2K:word(icl>symbol).@pl>
+		<2E:other(icl>additional(mod<thing))>
+		<2R:metaphor(icl>rhetoric).@pl>
+		<31:for instance(aoj>thing)>
+		[3L and 28]
+		[3L obj 3R]
+		[3Y aoj 3R]
+		[3Y obj 4A]
+		[28 obj 2K]
+		[2K mod 2E]
+		[2R iof 2K]
+		[31 aoj 2R]
+	}
+}
+{#
+	<0C:implementation(icl>act).@topic.@indef>
+	<1H:make(icl>cause(agt>thing,obj>thing)).@entry.@will.@past>
+	<1U:easy(icl>not difficult(aoj>thing))>
+	<2K:control(icl>operate(agt>thing,obj>thing)).@topic>
+	<1P:much(icl>how)>
+	<7T:more(icl>how)>
+	<25:government(icl>organization).@pl>
+	<3R:information>
+	<3K:online(aoj>thing)>
+	<52:easy(icl>not difficult(aoj>thing)).@will.@past>
+	<6I:understand(icl>comprehend(agt>thing,obj>thing))>
+	<B0:more(icl>how)>
+	<4X:much(icl>how)>
+	<4C:information.@topic>
+	<67:machine(icl>tool).@indef>
+	<5G:automated(mod<thing)>
+	<5Q:content blocking>
+	<47:this(mod<thing)>
+	<0Y:semantic web.@def>
+	<03:advanced(aoj>thing)>
+	[1H agt 0C]
+	[1H obj 1U]
+	[1U aoj 2K]
+	[1U man 1P]
+	[1U man 7T]
+	[2K agt 25]
+	[2K obj #01]
+	[#01 obj 3R]
+	[3K aoj 3R]
+	[1H rsn 52]
+	[52 aoj 6I]
+	[52 man B0]
+	[52 man 4X]
+	[6I obj 4C]
+	[6I agt 67]
+	[67 mod 5G]
+	[67 mod 5Q]
+	[4C mod 47]
+	[0C obj 0Y]
+	[03 aoj 0C]
+	{#01
+		<38:creation(icl>act).@entry>
+		<2W:viewing(icl>seeing)>
+		[38 and 2W]
+	}
+}
+{#
+	<00:in addition>
+	<11:raise(icl>broach(agt>thing,obj>thing)).@entry.@complete>
+	<0H:issue(icl>problem).@topic.@def>
+	<0R:also(icl>how)>
+	<3U:exist(aoj>thing).@will.@past>
+	<1N:use(icl>act).@def>
+	<49:anonymity(icl>state)>
+	<4J:associated with(aoj>thing,obj>thing)>
+	<42:little(aoj>thing)>
+	<3X:very(icl>how)>
+	<53:authorship(icl>identity).@def>
+	<5H:article(icl>document).@pl>
+	<5T:thing.@pl>
+	<6O:blog(icl>weblog).@indef>
+	<60:such as(aoj>thing)>
+	<6A:personal(icl>own(mod<thing))>
+	[11 man 00]
+	[11 obj 0H]
+	[11 man 0R]
+	[0H cnt 3U]
+	[3U man 1N]
+	[3U aoj 49]
+	[4J aoj 49]
+	[42 aoj 49]
+	[42 man 3X]
+	[4J obj 53]
+	[53 mod 5H]
+	[5H plc 5T]
+	[6O iof 5T]
+	[60 aoj 6O]
+	[6O mod 6A]
+	[1N mod #01]
+	{#01
+		<29:file(icl>stationery).@pl>
+		<31:metadata.@entry>
+		<2J:geo(aoj>thing)>
+		<2N:location(icl>act)>
+		<1Z:FOAF(equ>Friend of a Friend )>
+		[31 and 29]
+		[2J aoj 31]
+		[31 mod 2N]
+		[29 mod 1Z]
+	}
+}
+{#
+	<05:edit(agt>thing,obj>thing).@entry.@impertive>
+}
+{#
+	<05:double(agt>thing,obj>thing).@entry.@progress>
+	<0L:format(icl>attribute).@pl>
+	<0E:output(mod<thing)>
+	[05 obj 0L]
+	[0L mod 0E]
+}
+{#
+	<08:criticism(icl>act).@topic>
+	<0P:semantic web.@def>
+	<00:another(mod<thing)>
+	[#02 aoj 08]
+	[08 obj 0P]
+	[08 mod 00]
+	{#02
+		<3X:exist(aoj>thing).@will.@past.@need>
+		<1W:time-consuming(aoj>thing).@entry.@will.@past>
+		<1M:much(icl>how)>
+		<1R:more(icl>how)>
+		<2X:content(icl>things contained)>
+		<3D:there(icl>place)>
+		<44:format(icl>way).@pl>
+		<4T:data(icl>information)>
+		<40:2>
+		<4K:piece(icl>amount)>
+		<4G:1>
+		[1W rsn 3X]
+		[1W aoj #01]
+		[1W man 1M]
+		[1W man 1R]
+		[#01 obj 2X]
+		[3X man 3D]
+		[3X aoj 44]
+		[44 pur 4T]
+		[44 qua 40]
+		[4T qua 4K]
+		[4K qua 4G]
+		{#01
+			<2E:create(icl>make(agt>thing,obj>thing)).@topic>
+			<2P:publish(icl>produce and issue(agt>thing,obj>thing)).@entry.@topic>
+			[2P and 2E]
+		}
+	}
+}
+{#
+	<08:human(icl>living thing)>
+	<0Y:machine(icl>tool).@pl>
+	<00:one(icl>thing)>
+	<0Q:one(icl>thing).@entry>
+	<0E:viewing(icl>seeing)>
+	[0Q and 00]
+	[0Q pur 0Y]
+	[00 pur 0E]
+	[0E agt 08]
+}
+{#
+	<1O:address(icl>deal with(aoj>thing,obj>thing)).@entry.@progress>
+	<00:however(icl>despite this)>
+	<0J:web application.@topic.@pl>
+	<24:issue(icl>act)>
+	<2D:create(icl>make(agt>thing,obj>thing)).@progress>
+	<1Z:this(mod<thing)>
+	<35:format(icl>attribute).@indef>
+	<2O:machine-readable(aoj>thing)>
+	<18:development(icl>process)>
+	<09:many(qua<thing)>
+	[1O man 00]
+	[1O aoj 0J]
+	[1O obj 24]
+	[1O man 2D]
+	[24 mod 1Z]
+	[2D obj 35]
+	[35 pur #01]
+	[2O aoj 35]
+	[18 obj 0J]
+	[0J qua 09]
+	{#01
+		<3L:publishing(icl>industry).@def>
+		<4B:request(icl>intention).@entry.@def>
+		<55:data(icl>information)>
+		<4O:machine(icl>tool).@indef>
+		<50:such(icl>of type(mod<thing))>
+		<3Z:data(icl>information)>
+		[4B or 3L]
+		[4B obj 55]
+		[4B agt 4O]
+		[55 mod 50]
+		[3L obj 3Z]
+	}
+}
+{#
+	<1F:1>
+	<28:criticism(icl>act)>
+	<04:development(icl>process).@topic.@def>
+	<20:kind(icl>variety)>
+	<0O:microformat.@pl>
+	<1J:reaction(icl>answer).@entry.@past.@complete>
+	<1V:this(mod<thing)>
+	[1J aoj 04]
+	[1J gol 28]
+	[1J qua 1F]
+	[28 mod 20]
+	[20 mod 1V]
+	[04 obj 0O]
+}
+{#
+	<1L:allow(icl>make possible(aoj>thing,obj>thing)).@entry>
+	<00:specification(icl>description).@topic.@pl>
+	<2G:embed(agt>thing,gol>thing,obj>thing)>
+	<25:data(icl>information).@topic>
+	<2X:page(pof>document).@pl>
+	<2S:HTML(equ>Hypertext Markup Language)>
+	<1R:arbitrary(aoj>thing)>
+	<21:RDF(equ>Resource Description Framework)>
+	<0F:such as(aoj>thing)>
+	[1L aoj 00]
+	[1L obj 2G]
+	[2G obj 25]
+	[2G gol 2X]
+	[2X mod 2S]
+	[1R aoj 25]
+	[25 mod 21]
+	[#01 iof 00]
+	[0F aoj #01]
+	{#01
+		<1B:RDFa(equ>RDF in Attributes).@entry>
+		<0S:eRDF(equ>Embedded RDF)>
+		[1B and 0S]
+	}
+}
+{#
+	<2H:allow(icl>make possible(aoj>thing,obj>thing)).@entry>
+	<5I:need(aoj>thing,obj>thing)>
+	<27:mechanism(icl>system).@topic.@def>
+	<4F:interpret(agt>thing,gol>thing,obj>thing).@passive>
+	<2X:material(icl>data).@topic>
+	<2O:existing(mod<thing)>
+	<4U:RDF(equ>Resource Description Framework)>
+	<41:automatically>
+	<09:GRDDL(equ>Gleaning Resource Descriptions from Dialects of Language)>
+	<52:publisher(icl>person).@pl>
+	<5Q:use(icl>employ(agt>thing,obj>thing))>
+	<5D:only(icl>how)>
+	<63:format(icl>way).@indef>
+	<6J:HTML(equ>Hypertext Markup Language)>
+	<5W:single(icl>only one(mod<thing))>
+	<6B:such as(aoj>thing)>
+	[5I rsn 2H]
+	[2H aoj 27]
+	[2H obj 4F]
+	[4F obj 2X]
+	[2X mod 2O]
+	[#01 aoj 2X]
+	[4F gol 4U]
+	[4F man 41]
+	[27 mod 09]
+	[09 equ #02]
+	[5I aoj 52]
+	[5I obj 5Q]
+	[5I man 5D]
+	[5Q obj 63]
+	[6J iof 63]
+	[63 mod 5W]
+	[6B aoj 6J]
+	{#01
+		<37:include(aoj>thing,obj>thing).@entry.@progress>
+		<3H:microformat.@pl>
+		[37 obj 3H]
+	}
+	{#02
+		<13:description(icl>act).@pl>
+		<0L:glean(agt>thing,obj>information).@entry.@progress>
+		<1L:dialect(icl>language).@pl>
+		<0U:resource(icl>supply)>
+		<1X:language(icl>system)>
+		[0L obj 13]
+		[13 frm 1L]
+		[13 mod 0U]
+		[1L mod 1X]
+	}
+}
+{#
+	<05:edit(agt>thing,obj>thing).@entry.@impertive>
+}
+{#
+	<05:need(icl>situation).@entry>
+}
+{#
+	<2P:build(icl>develop(agt>thing,obj>thing)).@entry>
+	<04:idea(icl>notion).@topic.@def>
+	<2V:on the assumption>
+	<3S:possible(aoj>thing).@not>
+	<4W:interpret(agt>thing,gol>thing,obj>thing).@topic>
+	<47:machine(icl>tool).@indef>
+	<56:code(icl>instruction)>
+	<4I:appropriately>
+	<5B:based on(aoj>thing,obj>thing)>
+	<66:relationship(icl>way).@def.@pl>
+	<5K:nothing but(mod<thing)>
+	<60:order(icl>way)>
+	<0F:semantic web.@single_quote.@indef>
+	<15:come(icl>happen(obj>thing)).@progress>
+	<1U:code(icl>instruction)>
+	<0T:necessarily>
+	<1Z:other than(aoj>thing,obj>thing)>
+	<1H:some(icl>unknown(mod<thing))>
+	<1M:marking(icl>act)>
+	<2H:HTML(equ>Hypertext Markup Language)>
+	<2A:simple(icl>not complicated(aoj>thing))>
+	[2P obj 04]
+	[2P man 2V]
+	[2V obj 3S]
+	[3S aoj 4W]
+	[4W agt 47]
+	[4W obj 56]
+	[4W man 4I]
+	[4W man 5B]
+	[5B obj 66]
+	[66 obj #01]
+	[66 mod 5K]
+	[66 mod 60]
+	[04 obj 0F]
+	[15 obj 0F]
+	[15 src 1U]
+	[15 man 0T]
+	[1Z aoj 1U]
+	[1U mod 1H]
+	[1U mod 1M]
+	[1Z obj 2H]
+	[2A aoj 2H]
+	{#01
+		<6N:letter(icl>symbol).@pl>
+		<6Z:word(icl>symbol).@entry.@pl>
+		[6Z and 6N]
+	}
+}
+{#
+	<22:HTML(equ>Hypertext Markup Language)>
+	<27:alone(icl>only(aoj>thing))>
+	<1C:build(icl>develop(agt>thing,obj>thing)).@topic>
+	<2X:built(mod<thing)>
+	<3I:coding(icl>process)>
+	<2E:make(icl>cause(agt>thing,obj>thing)).@progress>
+	<10:possible(aoj>thing).@entry.@may>
+	<1L:semantic web.@single_quote.@indef>
+	<34:semantic web.@single_quote.@indef>
+	<2N:specially>
+	<3P:system(icl>thing)>
+	<03:this(icl>thing).@topic>
+	<0F:true(icl>correct(aoj>thing)).@not>
+	<3W:unnecessary(aoj>thing)>
+	[10 con 0F]
+	[10 aoj 1C]
+	[1C obj 1L]
+	[1C plc 22]
+	[2E rsn 10]
+	[27 aoj 22]
+	[2E obj 3W]
+	[3I obj 34]
+	[34 mod 2X]
+	[2X man 2N]
+	[3P mod 3I]
+	[3W aoj 3P]
+	[0F aoj 03]
+}
+{#
+	<06:exist(aoj>thing).@entry>
+	<0X:network model.@pl>
+	<28:train(agt>thing,gol>thing,obj>thing).@single_quote.@ability>
+	<0A:latent(aoj>thing)>
+	<0H:dynamic(mod<thing)>
+	<2Z:learn(icl>gain knowledge of(agt>thing,obj>thing)).@single_quote>
+	<2K:appropriately>
+	<1E:under(icl>experiencing(obj>thing))>
+	<1S:condition(icl>state).@pl>
+	<1K:certain(icl>fixed(aoj>thing))>
+	<46:process(icl>action).@def>
+	<36:meaning(icl>idea)>
+	<3E:based on(aoj>thing,obj>thing)>
+	<3T:order data>
+	<4F:learn(icl>gain knowledge of(agt>thing,obj>thing)).@single_quote.@progress>
+	<4P:relationship(icl>way).@pl>
+	<58:order(icl>way)>
+	[06 aoj 0X]
+	[28 gol 0X]
+	[0A aoj 0X]
+	[0X mod 0H]
+	[28 obj 2Z]
+	[28 man 2K]
+	[28 man 1E]
+	[1E obj 1S]
+	[1K aoj 1S]
+	[2Z scn 46]
+	[2Z obj 36]
+	[3E aoj 36]
+	[3E obj 3T]
+	[4F agt 46]
+	[4F obj 4P]
+	[4P gol 58]
+	[58 cnt #01]
+	{#01
+		<69:grammar(icl>rule)>
+		<5H:kind(icl>group).@entry.@indef>
+		<5P:rudimentary(aoj>thing)>
+		<61:working(icl>practical(mod<thing))>
+		[5H mod 69]
+		[5P aoj 69]
+		[69 mod 61]
+	}
+}
+{#
+	<11:analysis(icl>examination)>
+	<04:for example(aoj>thing)>
+	<0L:latent(aoj>thing)>
+	<00:see(icl>look at(agt>thing,obj>thing)).@entry.@impertive>
+	<0S:semantic(aoj>thing)>
+	[00 obj 11]
+	[04 aoj 11]
+	[0L aoj 11]
+	[0S aoj 11]
+}
+{#
+	<05:edit(agt>thing,obj>thing).@entry>
+}
+{#
+	<05:component(icl>part).@entry.@pl>
+}
+{#
+	<09:semantic web>
+	<0M:stack(icl>way).@entry.@def>
+	[0M mod 09]
+}
+{#
+	<0H:comprise(icl>consist of(aoj>thing,obj>thing)).@entry>
+	<04:semantic web.@topic.@def>
+	<4E:organize(agt>thing,obj>group)>
+	<5E:stack(icl>way).@def>
+	<51:semantic web>
+	[0H aoj 04]
+	[0H obj #01]
+	[4E obj #02]
+	[4E plc 5E]
+	[5E mod 51]
+	{#01
+		<0V:standard(icl>level of quality).@def.@pl>
+		<19:tool(icl>functional thing).@entry.@pl>
+		[19 and 0V]
+	}
+	{#02
+		<3V:OWL(equ>Web Ontology Language).@entry>
+		<36:Resource Description Framework Schema>
+		<2Q:RDF(equ>Resource Description Framework)>
+		<23:XML Schema>
+		<1N:XML(equ>Extensible Markup Language)>
+		[3V and 36]
+		[36 and 2Q]
+		[2Q and 23]
+		[23 and 1N]
+	}
+}
+{#
+	<1D:describe(icl>say(agt>thing,obj>thing)).@entry>
+	<13:overview(icl>description).@topic.@def>
+	<2Y:component(icl>part).@pl>
+	<3G:semantic web.@def>
+	<2K:each(icl>thing)>
+	<2S:this(mod<thing).@pl>
+	<0D:Web Ontology Language>
+	<09:OWL(equ>Web Ontology Language)>
+	[1D agt 13]
+	[1D obj #01]
+	[#01 mod 2Y]
+	[2Y mod 3G]
+	[2Y mod 2K]
+	[2Y mod 2S]
+	[13 obj 0D]
+	[0D mod 09]
+	{#01
+		<1R:function(icl>quantity).@def>
+		<24:relationship(icl>way).@entry.@def>
+		[24 and 1R]
+	}
+}
+{#
+	<00:XML(equ>Extensible Markup Language).@topic>
+	<2A:associate(icl>connect(agt>thing,gol>thing,obj>thing)).@not>
+	<3U:contain(aoj>thing,obj>thing).@past>
+	<16:content(icl>things contained)>
+	<3M:content(icl>things contained).@def>
+	<1V:document(icl>information).@pl>
+	<0L:elemental(mod<thing)>
+	<37:meaning(icl>idea).@def>
+	<09:provide(icl>supply(agt>thing,gol>thing,obj>thing)).@entry>
+	<2O:semantics(icl>meaning)>
+	<1E:structure(icl>way)>
+	<0V:syntax(icl>linguistics).@indef>
+	<1O:within(icl>inside(aoj>thing,gol>thing))>
+	[09 man 2A]
+	[09 agt 00]
+	[09 obj 0V]
+	[0V pur 1E]
+	[0V mod 0L]
+	[1O aoj 1E]
+	[1E mod 16]
+	[1O gol 1V]
+	[2A obj 2O]
+	[2A gol 37]
+	[37 mod 3M]
+	[3U obj 3M]
+}
+{#
+	<00:XML Schema.@topic>
+	<0L:language(icl>system).@entry.@indef>
+	<2H:element(icl>part).@pl>
+	<2Q:contain(aoj>thing,obj>thing).@past>
+	<30:within(icl>inside(gol>thing))>
+	<3B:document(icl>information).@pl>
+	<37:XML(equ>Extensible Markup Language)>
+	[0L aoj 00]
+	[0L pur #02]
+	[#01 mod 2H]
+	[2Q obj 2H]
+	[2Q gol 30]
+	[30 gol 3B]
+	[3B mod 37]
+	{#02
+		<0Y:provide(icl>supply(agt>thing,gol>thing,obj>thing)).@progress>
+		<1C:restrict(icl>limit(agt>thing,gol>thing,obj>thing)).@entry.@progress>
+		[1C and 0Y]
+	}
+	{#01
+		<26:content(icl>things contained).@entry.@def>
+		<1S:structure(icl>way).@def>
+		[26 and 1S]
+	}
+}
+{#
+	<00:RDF(equ>Resource Description Framework).@topic>
+	<0L:language(icl>system).@entry.@indef>
+	<0Y:express(icl>show(agt>thing,obj>thing)).@progress>
+	<0E:simple(icl>not complicated(aoj>thing))>
+	<1E:data model.@pl>
+	<23:refer to(icl>mention(agt>thing,obj>thing))>
+	[0L aoj 00]
+	[0L pur 0Y]
+	[0E aoj 0L]
+	[0Y obj 1E]
+	[23 agt 1E]
+	[23 obj #01]
+	{#01
+		<2C:object(icl>purpose).@pl>
+		<3K:relationship(icl>way).@entry.@pl>
+		<3E:they(icl>thing).@pl>
+		<2S:resource(icl>supply).@parenthesis.@double_quote.@pl>
+		[3K and 2C]
+		[3K pos 3E]
+		[2C cnt 2S]
+	}
+}
+{#
+	<03:RDF(equ>Resource Description Framework)>
+	<15:XML(equ>Extensible Markup Language)>
+	<07:based on(aoj>thing,obj>thing)>
+	<0D:model(icl>copy).@topic.@indef>
+	<0Q:represent(icl>constitute(aoj>thing,obj>thing)).@entry.@ability>
+	<19:syntax(icl>linguistics)>
+	[0Q obj 0D]
+	[0Q man 19]
+	[19 mod 15]
+	[07 aoj 0D]
+	[07 obj 03]
+}
+{#
+	<00:RDF Schema.@topic>
+	<0L:vocabulary(icl>word).@entry.@indef>
+	<2M:with(icl>having(aoj>thing,obj>thing))>
+	<10:describe(icl>say(agt>thing,obj>thing)).@progress>
+	<2B:resource(icl>supply).@pl>
+	<25:based on(aoj>thing,obj>thing)>
+	<21:RDF(equ>Resource Description Framework)>
+	<2R:semantics(icl>meaning)>
+	<3H:hierarchy(icl>system).@pl>
+	<35:generalized(mod<thing)>
+	<3W:such(icl>of type(mod<thing))>
+	[0L aoj 00]
+	[0L man 2M]
+	[0L pur 10]
+	[10 obj #01]
+	[#01 mod 2B]
+	[25 aoj 2B]
+	[25 obj 21]
+	[2M obj 2R]
+	[2R pur 3H]
+	[3H mod #02]
+	[3H mod 35]
+	[#02 mod 3W]
+	{#01
+		<1Q:class(icl>kind).@entry.@pl>
+		<1B:property(icl>quality).@pl>
+		[1Q and 1B]
+	}
+	{#02
+		<4G:class(icl>kind).@entry.@pl>
+		<41:property(icl>quality).@pl>
+		[4G and 41]
+	}
+}
+{#
+	<00:OWL(equ>Web Ontology Language).@topic>
+	<09:add(icl>put(agt>thing,gol>thing,obj>thing)).@entry>
+	<0J:vocabulary(icl>word)>
+	<0Y:describe(icl>say(agt>thing,obj>thing)).@progress>
+	<0E:more(bas>thing,qua<thing)>
+	[09 agt 00]
+	[09 obj 0J]
+	[0J pur 0Y]
+	[0J qua 0E]
+	[0Y obj #01]
+	{#01
+		<1O:class(icl>kind).@entry.@pl>
+		<19:property(icl>quality).@pl>
+		[1O and 19]
+	}
+}
+{#
+	<0O:between(icl>in space separating(aoj>thing,gol>thing))>
+	<0E:relation(icl>way).@entry.@pl>
+	<00:among(icl>in the middle of(aoj>thing,gol>thing))>
+	<06:others(icl>thing)>
+	[0O aoj 0E]
+	[0O gol #04]
+	[00 aoj 0E]
+	[00 gol 06]
+	{#04
+		<3Q:characteristic(icl>quality).@pl>
+		<5G:class(icl>kind).@entry.@pl>
+		<55:enumerate(agt>thing,obj>thing).@past>
+		<34:typing(icl>writing)>
+		<49:property(icl>quality).@pl>
+		<2N:equality(icl>relation)>
+		<3E:property(icl>quality).@pl>
+		<2X:rich(icl>full of variety(aoj>thing))>
+		<2Y:more(icl>how)>
+		<1P:cardinality(icl>relationship)>
+		<0W:class(icl>kind).@pl>
+		[5G and 3Q]
+		[55 obj 5G]
+		[3Q and 34]
+		[3Q mod 49]
+		[#01 iof 49]
+		[34 and 2N]
+		[34 obj 3E]
+		[2X aoj 34]
+		[2X man 2Y]
+		[2N and 1P]
+		[1P and 0W]
+		[#02 iof 1P]
+		[#03 iof 0W]
+		{#01
+			<4L:for example(aoj>thing)>
+			<4Q:symmetry(icl>quality).@entry>
+			[4L aoj 4Q]
+		}
+		{#02
+			<22:for example(aoj>thing)>
+			[22 aoj #05]
+			{#05
+				<28:exactly(icl>how)>
+				<2G:one(icl>thing).@entry>
+				[2G man 28]
+			}
+		}
+		{#03
+			<1A:disjointness(icl>state).@entry>
+			<15:for example(aoj>thing)>
+			[15 aoj 1A]
+		}
+	}
+}
+{#
+	<00:SPARQL.@topic>
+	<10:language(icl>system).@entry.@indef>
+	<1Q:data source(icl>device).@pl>
+	<1D:semantic web>
+	[10 aoj 00]
+	[10 pur 1Q]
+	[10 mod #01]
+	[1Q mod 1D]
+	{#01
+		<0H:protocol(icl>rule)>
+		<0U:query(icl>question).@entry>
+		[0U and 0H]
+	}
+}
+{#
+	<00:current(mod<thing)>
+	<0X:include(aoj>thing,obj>thing).@entry>
+	<08:ongoing(mod<thing)>
+	<0G:standardization(icl>act).@topic.@pl>
+	[0X aoj 0G]
+	[0G mod 00]
+	[0G mod 08]
+}
+{#
+	<0U:RIF(equ>Rule Interchange Format).@parenthesis>
+	<00:Rule Interchange Format.@entry>
+	<0Z:as(icl>in the role of(aoj>thing,obj>thing))>
+	<1B:layer(icl>part).@def>
+	<16:rule(icl>statement)>
+	<1T:semantic web>
+	<26:stack(icl>way).@def>
+	[0Z aoj 00]
+	[0U equ 00]
+	[0Z obj 1B]
+	[1B pof 26]
+	[1B mod 16]
+	[26 mod 1T]
+}
+{#
+	<0H:enhance(agt>thing,obj>thing).@entry>
+	<04:intent(icl>intention).@topic.@def>
+	[04 obj 0H]
+	[0H obj #01]
+	{#01
+		<0Y:usability(icl>quality).@def>
+		<1H:usefulness(icl>quality).@entry.@def>
+		[1H and 0Y]
+	}
+}
+{#
+	<1H:RDF(equ>Resource Description Framework)>
+	<0E:expose(icl>reveal(agt>thing,obj>thing))>
+	<00:server(icl>computer program).@entry.@pl>
+	<0Z:system(icl>thing).@pl>
+	<17:use(icl>employ(agt>thing,obj>thing)).@progress>
+	<0L:existing(mod<thing)>
+	<0U:data(icl>information)>
+	<1W:standard(icl>level of quality).@def.@pl>
+	[0E agt 00]
+	[0E obj 0Z]
+	[0E man 17]
+	[0Z mod 0L]
+	[0Z mod 0U]
+	[17 obj 1W]
+	[1W mod #01]
+	{#01
+		<1H:RDF(equ>Resource Description Framework)>
+		<1P:SPARQL.@entry>
+		[1P and 1H]
+	}
+}
+{#
+	<0O:RDF(equ>Resource Description Framework)>
+	<1I:application(icl>computer program).@pl>
+	<0A:converter(icl>computer program).@topic.@pl>
+	<18:different(icl>various(aoj>thing))>
+	<0X:exist(aoj>thing).@entry>
+	<00:many(qua<thing)>
+	[0X aoj 0A]
+	[0X src 1I]
+	[18 aoj 1I]
+	[0A gol 0O]
+	[0A qua 00]
+}
+{#
+	<0G:database(icl>data).@topic.@pl>
+	<12:important(icl>of great value(aoj>thing))>
+	<05:relational(mod<thing)>
+	<1C:source(icl>origin).@entry.@indef>
+	[1C aoj 0G]
+	[12 aoj 1C]
+	[0G mod 05]
+}
+{#
+	<1S:affect(icl>influence(agt>thing,obj>thing)).@progress.@not>
+	<0O:attach(gol>thing,obj>thing).@entry>
+	<14:existing(mod<thing)>
+	<22:it(icl>thing)>
+	<26:operation(icl>act)>
+	<04:semantic web>
+	<0H:server(icl>computer program).@topic.@def>
+	<1D:system(icl>thing).@def>
+	[0O obj 0H]
+	[0O gol 1D]
+	[1S agt 1D]
+	[1D mod 14]
+	[1S obj 26]
+	[26 pos 22]
+	[0H mod 04]
+}
+{#
+	<00:document(icl>information).@entry.@pl>
+	<0B:mark up(icl>mark(agt>thing,obj>thing)).@double_quote.@past>
+	<0R:semantic information>
+	[0B obj 00]
+	[0B ins 0R]
+	[0R cnt #01]
+	{#01
+		<1L:extension(icl>increasing influence).@entry.@indef>
+		<39:use(icl>employ(agt>thing,obj>thing)).@past>
+		<2Z:tag(icl>sequence of characters).@def.@pl>
+		<27:HTML(equ>Hypertext Markup Language)>
+		<2L:meta(mod<thing).@angle_bracket>
+		<3P:webpage.@pl>
+		<42:supply(agt>thing,gol>thing,obj>thing)>
+		<3H:today(icl>day)>
+		<4E:information>
+		<58:search engine(icl>computer program).@pl>
+		<5S:use(icl>employ(agt>thing,obj>thing)).@progress>
+		<4Z:web(equ>World Wide Web)>
+		<68:web crawler(icl>computer program).@pl>
+		[39 obj 1L]
+		[1L mod 2Z]
+		[2Z mod 27]
+		[2L aoj 27]
+		[39 plc 3P]
+		[3P pur 42]
+		[3P mod 3H]
+		[42 obj 4E]
+		[4E pur 58]
+		[5S agt 58]
+		[58 mod 4Z]
+		[5S obj 68]
+	}
+}
+{#
+	<1B:information.@ability.@past>
+	<5Q:metadata.@entry.@ability.@past>
+	<52:it(icl>thing).@topic>
+	<64:represent(icl>constitute(aoj>thing,obj>thing)).@progress>
+	<5E:purely>
+	<6Q:fact(icl>event).@pl>
+	<6J:set(icl>group).@indef>
+	<00:this(icl>thing).@topic>
+	<2I:content(icl>things contained).@def>
+	<0R:understandable(icl>comprehensible(aoj>thing))>
+	<0J:machine(icl>tool)>
+	<2X:document(icl>information).@def>
+	<23:understandable(icl>comprehensible(aoj>thing))>
+	<1X:human(icl>living thing)>
+	[5Q or 1B]
+	[5Q aoj 52]
+	[64 aoj 5Q]
+	[5Q man 5E]
+	[64 obj 6Q]
+	[#02 iof 6Q]
+	[6Q qua 6J]
+	[1B aoj 00]
+	[1B obj 2I]
+	[0R aoj 1B]
+	[0R agt 0J]
+	[2I pof 2X]
+	[23 aoj 2I]
+	[23 agt 1X]
+	[#04 iof 2I]
+	{#02
+		<6X:such as(aoj>thing)>
+		<7S:elsewhere>
+		<89:site(icl>website).@def>
+		[6X aoj #01]
+		[#01 plc 7S]
+		[7S plc 89]
+		{#01
+			<75:resource(icl>supply).@pl>
+			<7J:service(icl>business).@entry.@pl>
+			[7J and 75]
+		}
+	}
+	{#04
+		<37:such as(aoj>thing)>
+		<4P:document(icl>information).@def>
+		[37 aoj #03]
+		[#03 pof 4P]
+		{#03
+			<3Z:description(icl>type).@def>
+			<4C:etc..@entry.@def>
+			<3S:title(icl>name).@def>
+			<3J:creator(icl>person).@def>
+			[4C and 3Z]
+			[3Z and 3S]
+			[3S and 3J]
+		}
+	}
+}
+{#
+	<00:note(icl>notice(agt>thing,obj>thing)).@entry>
+	<4D:reason(agt>thing).@ability>
+	<3E:describe(icl>say(agt>thing,obj>thing)).@ability>
+	<3W:semantic web.@topic.@def>
+	<4K:about(icl>in connection with(aoj>thing,obj>thing))>
+	<0F:anything(icl>something)>
+	<0F:anything(icl>thing)>
+	<15:identify(agt>thing,gol>thing,obj>thing).@ability>
+	<1S:Uniform Resource Identifier.@indef>
+	<2W:URI(equ>Uniform Resource Identifier).@parenthesis>
+	[00 obj 4D]
+	[4D rsn 3E]
+	[4D agt 3W]
+	[4D man 4K]
+	[4K obj #01]
+	[3E obj 0F]
+	[15 obj 0F]
+	[15 gol 1S]
+	[2W equ 1S]
+	{#01
+		<5M:etc..@entry>
+		<5F:idea(icl>notion).@pl>
+		<57:place(icl>area).@pl>
+		<4Z:people(icl>person)>
+		<4Q:animal(icl>living thing).@pl>
+		[5M and 5F]
+		[5F and 57]
+		[57 and 4Z]
+		[4Z and 4Q]
+	}
+}
+{#
+	<0Z:automatically>
+	<0P:generate(icl>produce(agt>thing,obj>thing)).@entry>
+	<1Q:manually>
+	<09:markup(icl>symbol).@topic>
+	<0J:often(icl>frequently)>
+	<1E:rather than(bas>thing)>
+	<00:semantic(aoj>thing)>
+	[0P obj 09]
+	[0P man 0Z]
+	[0P man 0J]
+	[0Z man 1E]
+	[1E bas 1Q]
+	[00 aoj 09]
+}
+{#
+	<00:common(icl>shared(aoj>thing))>
+	<1M:map(icl>drawing).@entry>
+	<0G:vocabulary(icl>word).@topic.@pl>
+	<1R:between(icl>in space separating(gol>thing))>
+	<1Z:vocabulary(icl>word).@pl>
+	<2H:allow(icl>make possible(aoj>thing,obj>thing))>
+	<4R:use(icl>employ(agt>thing,obj>thing)).@ability>
+	<38:know(icl>have information(aoj>thing,obj>thing))>
+	<2W:creator(icl>person).@pl>
+	<3K:mark up(icl>mark(agt>thing,obj>thing))>
+	<3D:how>
+	<3Y:document(icl>information).@pl>
+	<3S:they(icl>person).@pl>
+	<2N:document(icl>information)>
+	<10:ontology(icl>structure).@parenthesis.@pl>
+	<07:metadata>
+	<4G:agent(icl>computer program).@pl>
+	<4Z:information.@def>
+	<5R:metadata.@def>
+	<5I:supply(agt>thing,gol>thing,obj>thing).@past>
+	[1M and 0G]
+	[1M man 1R]
+	[1R gol 1Z]
+	[2H pur 4R]
+	[2H aoj 1Z]
+	[2H obj 38]
+	[38 aoj 2W]
+	[38 pur 3K]
+	[3K man 3D]
+	[3K obj 3Y]
+	[3Y pos 3S]
+	[2W mod 2N]
+	[0G cnt 10]
+	[00 aoj 0G]
+	[0G mod 07]
+	[4R agt 4G]
+	[4R pur #02]
+	[4R obj 4Z]
+	[4Z plc 5R]
+	[5I obj 5R]
+	{#02
+		<6E:author(icl>person).@topic>
+		<84:confuse(agt>thing,gol>thing,obj>thing).@not.@will.@entry>
+		<8N:author(icl>person)>
+		<8Z:in the sense of(aoj>thing,obj>thing)>
+		<9H:book(icl>document).@indef>
+		<9Y:subject(icl>thing).@def>
+		<AG:review(icl>examination).@indef>
+		<AB:book(icl>document)>
+		<6Q:in the sense of(aoj>thing,obj>thing)>
+		[84 obj 6E]
+		[84 gol 8N]
+		[8Z aoj 8N]
+		[8Z obj 9H]
+		[9Y aoj 9H]
+		[9Y pof AG]
+		[AG obj AB]
+		[6Q aoj 6E]
+		[6Q obj #01]
+		{#01
+			<7B:author(icl>person).@entry.@def>
+			<7P:page(pof>document).@def>
+			[7B mod 7P]
+		}
+	}
+}
+{#
+	<0A:agent(icl>computer program).@entry.@pl>
+	<00:automated(mod<thing)>
+	<23:data(icl>information)>
+	<0K:perform(icl>carry out(agt>thing,obj>thing))>
+	<1F:semantic web.@def>
+	<0S:task(icl>duty).@pl>
+	<1Y:this(mod<thing)>
+	<1S:use(icl>employ(agt>thing,obj>thing)).@progress>
+	<12:user(icl>person).@pl>
+	[0A pur 0K]
+	[0A mod 00]
+	[0K obj 0S]
+	[0K pur 1S]
+	[1S agt 12]
+	[1S obj 23]
+	[23 mod 1Y]
+	[12 mod 1F]
+}
+{#
+	<0A:service(icl>business).@entry.@pl>
+	<1J:supply(agt>thing,gol>thing,obj>thing)>
+	<04:based on(aoj>thing,obj>thing)>
+	<00:web(equ>World Wide Web)>
+	<2I:agent(icl>computer program).@pl>
+	<22:specifically(icl>how)>
+	<1Q:information>
+	[0A pur 1J]
+	[#03 aoj 0A]
+	[04 aoj 0A]
+	[04 obj 00]
+	[1J gol 2I]
+	[1J man 22]
+	[1J obj 1Q]
+	[#02 iof 2I]
+	{#03
+		<0K:often(icl>frequently)>
+		<0Q:with(icl>using(aoj>thing,obj>thing)).@entry>
+		<0V:agent(icl>computer program).@pl>
+		<15:their own(mod<thing)>
+		[0Q man 0K]
+		[0Q obj 0V]
+		[0V mod 15]
+	}
+	{#02
+		<2Q:for example(aoj>thing)>
+		<3A:trust service.@indef.@entry>
+		<4D:ask(icl>inquire(agt>thing,gol>thing,obj>thing)).@ability.@past>
+		<41:agent(icl>substance).@indef>
+		<52:have(icl>possess(aoj>thing,obj>thing))>
+		<4W:store(icl>shop)>
+		<58:history(icl>event).@indef>
+		<4K:some(icl>unknown(mod<thing))>
+		<4P:online(aoj>thing)>
+		[2Q aoj 3A]
+		[3A cnt 4D]
+		[4D agt 41]
+		[4D obj 52]
+		[52 aoj 4W]
+		[52 obj 58]
+		[58 mod #01]
+		[4W mod 4K]
+		[4P aoj 4W]
+		{#01
+			<5O:service(icl>business)>
+			<64:spamming(icl>practice).@entry>
+			<5J:poor(icl>not good(aoj>thing))>
+			[64 or 5O]
+			[5J aoj 5O]
+		}
+	}
+}
+{#
+	<05:edit(agt>thing,obj>thing).@entry.@impertive>
+}
+{#
+	<05:project(icl>plan).@entry.@pl>
+}
+{#
+	<25:incomplete(aoj>thing).@entry.@contrast>
+	<0D:provide(icl>supply(agt>thing,gol>thing,obj>thing))>
+	<05:section(icl>part).@topic>
+	<20:very(icl>how)>
+	<0M:some(icl>a number of(qua<thing))>
+	<0W:example(icl>functional thing)>
+	<00:this(mod<thing)>
+	[25 and 0D]
+	[25 aoj 05]
+	[25 man 20]
+	[0D agt 05]
+	[0D obj #01]
+	[#01 qua 0M]
+	[#01 mod 0W]
+	[05 mod 00]
+	{#01
+		<19:project(icl>plan).@pl>
+		<1M:tool(icl>functional thing).@entry.@pl>
+		[1M and 19]
+	}
+}
+{#
+	<0Z:arbitrary(aoj>thing)>
+	<04:choice(icl>act).@topic.@def>
+	<1N:illustrative(aoj>thing,obj>thing)>
+	<0E:project(icl>plan).@pl>
+	<20:purpose(icl>intention).@pl>
+	<1H:serve(icl>useful(aoj>thing)).@entry.@contrast.@may>
+	<0Q:somewhat(icl>how)>
+	[1H and 0Z]
+	[1H aoj 04]
+	[1H obj 20]
+	[1N aoj 20]
+	[0Z aoj 04]
+	[0Z man 0Q]
+	[04 obj 0E]
+}
+{#
+	<30:possible(aoj>thing).@topic>
+	<0B:remarkable(aoj>thing).@entry>
+	<06:also(icl>how)>
+	<15:stage(icl>state)>
+	<3C:compile(agt>thing,obj>thing).@topic>
+	<2S:already>
+	<3M:list(icl>document).@indef>
+	<46:component(icl>part).@pl>
+	<5F:use(icl>employ(agt>thing,obj>thing)).@ability>
+	<3U:hundreds of(qua<thing)>
+	<4M:in one way or another(icl>how)>
+	<69:semantic web.@pl>
+	<1I:development(icl>process).@def>
+	<0Z:early(icl>near the beginning(aoj>thing))>
+	<0U:this(icl>how)>
+	<2A:technology(icl>equipment)>
+	<1X:semantic web>
+	[0B aoj 30]
+	[0B man 06]
+	[30 tim 15]
+	[30 aoj 3C]
+	[30 man 2S]
+	[3C obj 3M]
+	[3M mod 46]
+	[5F obj 46]
+	[46 qua 3U]
+	[5F man 4M]
+	[5F pur #01]
+	[#01 obj 69]
+	[15 mod 1I]
+	[0Z aoj 15]
+	[0Z man 0U]
+	[1I obj 2A]
+	[2A mod 1X]
+	{#01
+		<5N:build(icl>make(agt>thing,obj>thing)).@progress>
+		<5Z:extend(icl>enlarge(agt>thing,obj>thing)).@entry.@progress>
+		[5Z or 5N]
+	}
+}
+{#
+	<05:edit(agt>thing,obj>thing).@entry.@impertive>
+}
+{#
+	<05:DBpedia.@entry>
+}
+{#
+	<00:DBpedia.@topic>
+	<1C:data(icl>information)>
+	<0J:effort(icl>attempt).@entry.@indef>
+	<1H:extract(icl>obtain(agt>thing,obj>thing)).@past>
+	<0T:publish(icl>produce and issue(agt>thing,obj>thing))>
+	<11:structure(icl>arrange(agt>thing,obj>thing)).@past>
+	<1W:wikipedia(icl>encyclopedia)>
+	[0J aoj 00]
+	[0J obj 0T]
+	[0T obj 1C]
+	[1H obj 1C]
+	[11 obj 1C]
+	[1H src 1W]
+}
+{#
+	<3H:allow(icl>make possible(aoj>thing,obj>thing)).@progress>
+	<4D:provide(icl>supply(agt>thing,gol>thing,obj>thing))>
+	<3C:thus(icl>how)>
+	<43:agent(icl>computer program).@pl>
+	<87:data source(icl>device).@pl>
+	<81:other(icl>additional(mod<thing))>
+	<3Q:semantic web>
+	[3H rsn #04]
+	[3H obj 4D]
+	[3H man 3C]
+	[4D agt 43]
+	[4D obj #03]
+	[87 mod 81]
+	[43 mod 3Q]
+	{#04
+		<0X:make(icl>cause(agt>thing,obj>thing)).@entry.@past>
+		<0C:publish(icl>produce and issue(agt>thing,obj>thing))>
+		<04:data(icl>information).@topic.@def>
+		<12:available(aoj>thing,obj>thing)>
+		<1R:use(icl>act)>
+		<1J:web(equ>World Wide Web).@def>
+		<1V:under(icl>according to(gol>thing))>
+		<2A:GNU Free Documentation License.@def>
+		<0P:RDF(equ>Resource Description Framework)>
+		[0X and 0C]
+		[0X agt 04]
+		[0X obj 12]
+		[12 aoj 1R]
+		[12 plc 1J]
+		[1R man 1V]
+		[1V gol 2A]
+		[0C obj 04]
+		[0C man 0P]
+	}
+	{#03
+		<6M:facilitate(agt>thing,obj>thing).@entry.@progress>
+		<6A:dataset(icl>data).@def>
+		<62:derived(mod<thing)>
+		<5S:wikipedia(icl>encyclopedia)>
+		[6M and #01]
+		[6M obj #02]
+		[6A mod 62]
+		[62 src 5S]
+		[#01 obj 6A]
+		{#01
+			<4L:inferencing(icl>act)>
+			<5A:querying(icl>act).@entry>
+			<51:advanced(aoj>thing)>
+			[5A and 4L]
+			[51 aoj 5A]
+		}
+		{#02
+			<7O:extension(icl>increasing influence).@entry>
+			<7D:reuse(icl>act)>
+			<87:data source(icl>device).@pl>
+			<6Z:interlink(obj>thing).@progress>
+			[7O and 7D]
+			[7O plc 87]
+			[7D and 6Z]
+		}
+	}
+}
+{#
+	<05:edit(agt>thing,obj>thing).@entry.@impertive>
+}
+{#
+	<05:FOAF(equ>Friend of a Friend ).@entry>
+}
+{#
+	<1E:Friend of a Friend.@entry>
+	<0A:application(icl>computer program).@topic.@indef>
+	<2J:describe(icl>say(agt>thing,obj>thing))>
+	<26:FOAF(equ>Friend of a Friend ).@parenthesis>
+	<41:in terms of(obj>thing)>
+	<2T:relationship(icl>way).@pl>
+	<37:among(icl>in the middle of(aoj>thing,gol>thing))>
+	<4D:RDF(equ>Resource Description Framework)>
+	<0T:semantic web.@def>
+	<02:popular(aoj>thing)>
+	[1E aoj 0A]
+	[2J agt 1E]
+	[26 or 1E]
+	[2J man 41]
+	[2J obj 2T]
+	[37 aoj 2T]
+	[37 gol #01]
+	[41 obj 4D]
+	[0A mod 0T]
+	[02 aoj 0A]
+	{#01
+		<3U:agent(icl>computer program).@entry.@pl>
+		<3D:people(icl>person)>
+		<3O:other(icl>additional(mod<thing))>
+		[3U and 3D]
+		[3U mod 3O]
+	}
+}
+{#
+	<05:edit(agt>thing,obj>thing).@entry.@impertive>
+}
+{#
+	<05:SIOC(equ>Semantically-Interlinked Online Communities).@entry>
+}
+{#
+	<0J:project(icl>plan).@topic>
+	<2B:provide(icl>supply(agt>thing,gol>thing,obj>thing)).@entry>
+	<2M:vocabulary(icl>word).@indef>
+	<3T:model(icl>simulate(agt>thing,obj>thing))>
+	<48:space(icl>area).@pl>
+	<43:data(icl>information)>
+	<3Z:web(equ>World Wide Web)>
+	<09:SIOC(equ>Semantically-Interlinked Online Communities).@topic.@def>
+	<1U:community(icl>society).@pl>
+	<1N:online(aoj>thing)>
+	<1B:interlink(obj>thing).@past>
+	<0Y:semantically>
+	[2B agt 0J]
+	[2B obj 2M]
+	[2M mod #01]
+	[3T agt #01]
+	[3T obj 48]
+	[48 mod 43]
+	[43 mod 3Z]
+	[09 cnt 1U]
+	[0J mod 09]
+	[1N aoj 1U]
+	[1B obj 1U]
+	[1B man 0Y]
+	{#01
+		<3A:relationship(icl>way).@entry.@pl>
+		<30:term(icl>word).@pl>
+		[3A and 30]
+	}
+}
+{#
+	<12:among(icl>in the middle of(gol>thing))>
+	<0H:data(icl>information)>
+	<00:example(icl>functional thing).@topic.@pl>
+	<0T:include(aoj>thing,obj>thing).@entry>
+	<18:others(icl>thing)>
+	<0M:space(icl>area).@pl>
+	<0C:such(icl>of type(mod<thing))>
+	[0T aoj 00]
+	[0T man 12]
+	[12 gol 18]
+	[00 obj 0M]
+	[0M mod 0C]
+	[0M mod 0H]
+}
+{#
+}
+{#
+	<05:edit(agt>thing,obj>thing).@entry.@impertive>
+}
+{#
+	<05:Open GUID(icl>web identifier).@entry>
+}
+{#
+	<1D:Open GUID(icl>web identifier).@topic>
+	<00:aim(icl>intend(agt>thing,obj>thing)).@past>
+	<0J:context(icl>information)>
+	<24:global(icl>worldwide(aoj>thing))>
+	<2G:identifier(icl>attribute)>
+	<3M:linked(aoj>thing)>
+	<1S:maintain(icl>preserve(agt>thing,obj>thing)).@entry>
+	<09:provide(icl>supply(agt>thing,gol>thing,obj>thing)).@progress>
+	<2W:repository(icl>placeg).@indef>
+	<0Z:semantic web.@def>
+	<3B:use(icl>act)>
+	<3T:web(equ>World Wide Web).@def>
+	[1S man 00]
+	[1S agt 1D]
+	[1S obj 2W]
+	[2W pur 3B]
+	[24 aoj 2W]
+	[2W mod 2G]
+	[3B plc 3T]
+	[3M aoj 3T]
+	[00 obj 09]
+	[09 obj 0J]
+	[0J pur 0Z]
+}
+{#
+	<1O:establish(icl>start(agt>thing,obj>thing)).@entry>
+	<27:relationship(icl>way).@pl>
+	<1Y:identity(icl>relation)>
+	<2Q:Open GUID(icl>web identifier).@pl>
+	[1O agt #01]
+	[1O obj 27]
+	[27 mod 1Y]
+	[27 gol 2Q]
+	{#01
+		<0L:ontology(icl>structure).@pl.@topic>
+		<1D:publisher(icl>person).@entry.@pl.@topic>
+		<15:content(icl>things contained)>
+		<07:specific(icl>particular(aoj>thing))>
+		<00:domain(icl>field)>
+		[1D and 0L]
+		[1D mod 15]
+		[07 aoj 0L]
+		[07 gol 00]
+	}
+}
+{#
+	<05:edit(agt>thing,obj>thing).@entry.@impertive>
+}
+{#
+	<05:Simile(iof>project).@entry>
+}
+{#
+	<00:semantic(aoj>thing)>
+	<09:interoperability.@entry>
+	<1S:environment(icl>natural world).@pl>
+	<1L:unlike(mod<thing)>
+	[09 mod #01]
+	[00 aoj 09]
+	[#01 plc 1S]
+	[1S mod 1L]
+	{#01
+		<16:information.@entry>
+		<0T:metadata>
+		[16 and 0T]
+	}
+}
+{#
+	<00:Simile(iof>project).@topic>
+	<0N:project(icl>plan).@entry.@indef>
+	<0W:conduct(icl>direct(agt>thing,obj>thing)).@past>
+	<0H:joint(mod<thing)>
+	<2X:seek(icl>look for(agt>thing,obj>thing))>
+	<36:enhance(agt>thing,obj>thing)>
+	<3E:interoperability>
+	<3V:among(icl>in the middle of(aoj>thing,gol>thing))>
+	[0N aoj 00]
+	[0W obj 0N]
+	[0N mod 0H]
+	[0W agt #03]
+	[2X agt 0N]
+	[2X obj 36]
+	[36 obj 3E]
+	[3V aoj 3E]
+	[3V gol #02]
+	{#03
+		<2E:CSAIL(equ>Computer Science and Artificial Intelligence Laboratory).@entry>
+		<1M:library(icl>institution).@def.@pl>
+		<2A:MIT(equ>Massachusetts Institute of Technology)>
+		<1I:MIT(equ>Massachusetts Institute of Technology)>
+		[2E and 1M]
+		[2E mod 2A]
+		[1M mod 1I]
+	}
+	{#02
+		<5F:metadata>
+		<5U:service(icl>business).@entry.@pl>
+		<49:asset(icl>thing).@pl>
+		<41:digital(mod<thing)>
+		[5U and 5F]
+		[5F and #01]
+		[#01 and 49]
+		[49 mod 41]
+		{#01
+			<53:ontology(icl>structure).@entry.@pl>
+			<4Q:vocabulary(icl>word).@pl>
+			<4H:schema(icl>outline).@pl>
+			[53 or 4Q]
+			[4Q or 4H]
+		}
+	}
+}
+{#
+	<05:edit(agt>thing,obj>thing).@entry.@impertive>
+}
+{#
+	<05:NextBio(iof>life sciences search engine).@entry>
+}
+{#
+	<0B:consolidate(agt>thing,obj>thing).@progress>
+	<02:database(icl>data).@entry.@indef>
+	<1W:data(icl>information)>
+	<15:life science.@pl>
+	<1J:experimental(icl>relying on experiment(aoj>thing))>
+	<2M:via(icl>by means of(obj>thing))>
+	<31:ontology(icl>structure).@pl>
+	<2Q:biomedical(aoj>thing)>
+	<0U:throughput(icl>amount)>
+	<0P:high(icl>containing a lot of(aoj>thing,obj>thing))>
+	[0B agt 02]
+	[0B obj 1W]
+	[1W mod 15]
+	[#01 obj 1W]
+	[1J aoj 1W]
+	[#01 man 2M]
+	[2M obj 31]
+	[2Q aoj 31]
+	[15 mod 0U]
+	[0P aoj 0U]
+	{#01
+		<2C:connect(icl>join(agt>thing,obj>thing)).@entry.@past>
+		<21:tag(icl>add character(agt>thing,obj>thing)).@past>
+		[2C and 21]
+	}
+}
+{#
+	<05:NextBio(iof>life sciences search engine).@topic>
+	<0L:accessible(aoj>thing).@entry>
+	<1G:interface(icl>way).@indef>
+	<12:search engine(icl>computer program)>
+	<0W:via(icl>by means of(obj>thing))>
+	[0L aoj 05]
+	[0L man 0W]
+	[0W obj 1G]
+	[1G mod 12]
+}
+{#
+	<0G:contribute(agt>thing,gol>thing,obj>thing).@entry.@ability>
+	<1V:database(icl>data).@def>
+	<0X:finding(icl>information).@pl>
+	<1A:incorporation(icl>action)>
+	<02:researcher(icl>person).@topic.@pl>
+	<0R:they(icl>person).@pl>
+	[0G agt 02]
+	[0G obj 0X]
+	[0X pur 1A]
+	[0X pos 0R]
+	[0G gol 1V]
+}
+{#
+	<28:expand(icl>increase(obj>thing)).@entry.@progress>
+	<0N:support(agt>thing,obj>thing)>
+	<04:database(icl>data).@topic.@def>
+	<2L:support(agt>thing,obj>thing)>
+	<1Z:steadily(icl>in a manner)>
+	<3A:data type.@pl>
+	<2T:other(icl>additional(mod<thing))>
+	<2Z:biological(aoj>thing)>
+	<1N:data(icl>information)>
+	<0D:currently>
+	[28 and 0N]
+	[28 obj 04]
+	[28 pur 2L]
+	[28 man 1Z]
+	[2L obj 3A]
+	[3A mod 2T]
+	[2Z aoj 3A]
+	[0N agt 04]
+	[0N obj 1N]
+	[0N man 0D]
+	[1N mod #01]
+	{#01
+		<0W:gene expression>
+		<14:protein expression.@entry>
+		[14 or 0W]
+	}
+}
+{#
+	<05:edit(agt>thing,obj>thing).@entry.@impertive>
+}
+{#
+	<05:Linking Open Data(iof>project).@entry>
+}
+{#
+	<00:"".@entry>
+	<1E:2008>
+	<0C:Linking Open Data(iof>project)>
+	<19:September>
+	<13:as of(aoj>thing,obj>thing)>
+	<0U:project(icl>plan).@def>
+	[00 plc 0U]
+	[0U mod 0C]
+	[13 aoj 0U]
+	[13 obj 19]
+	[19 tim 1E]
+}
+{#
+	<0Q:Linking Open Data(iof>project)>
+	<00:class(icl>kind)>
+	<18:dataset(icl>data).@def.@pl>
+	<06:linkage(icl>act).@entry.@pl>
+	<0F:within(icl>inside(aoj>thing,gol>thing))>
+	[0F aoj 06]
+	[06 mod 00]
+	[0F gol 18]
+	[18 mod 0Q]
+}
+{#
+	<1N:effort(icl>attempt).@entry.@indef>
+	<0R:project(icl>plan).@topic.@def>
+	<1X:create(icl>make(agt>thing,obj>thing))>
+	<1J:lead(icl>in control of(agt>thing,obj>thing)).@past>
+	<19:community(icl>society)>
+	<38:data(icl>information)>
+	<3K:web(equ>World Wide Web).@def>
+	<34:RDF(equ>Resource Description Framework)>
+	<09:Linking Open Data(iof>project)>
+	[1N aoj 0R]
+	[1N obj 1X]
+	[1J obj 1N]
+	[1J agt 19]
+	[1X obj 38]
+	[1X gol 3K]
+	[#01 obj 38]
+	[38 mod 34]
+	[0R mod 09]
+	{#01
+		<2B:accessible(aoj>thing)>
+		<2R:interlink(obj>thing).@entry.@past>
+		<24:openly>
+		[2R and 2B]
+		[2B man 24]
+	}
+}
+{#
+	<18:RDF(equ>Resource Description Framework)>
+	<24:broad(icl>wide(aoj>thing))>
+	<2A:collection(icl>act).@indef>
+	<1C:data set.@pl>
+	<2O:data source(icl>device).@pl>
+	<04:data(icl>information).@topic.@def>
+	<1R:draw(icl>get(agt>thing,obj>thing))>
+	<0V:form(icl>type).@def>
+	<09:in question(icl>being discussed(aoj>thing))>
+	<0L:take(icl>carry(agt>thing,obj>thing)).@entry>
+	[0L agt 04]
+	[0L obj 0V]
+	[09 aoj 04]
+	[0V pos 1C]
+	[1R obj 1C]
+	[1C mod 18]
+	[1R src 2A]
+	[2A obj 2O]
+	[24 aoj 2A]
+}
+{#
+	<1U:RDF(equ>Resource Description Framework)>
+	<10:data(icl>information)>
+	<06:exist(aoj>thing).@entry>
+	<0B:focus(icl>act).@indef>
+	<0T:linked(aoj>thing)>
+	<1J:publish(icl>produce and issue(agt>thing,obj>thing)).@progress>
+	<1A:style(icl>attribute).@def>
+	<25:web(equ>World Wide Web).@def>
+	[06 aoj 0B]
+	[0B obj 1A]
+	[1A mod 1J]
+	[0T aoj 1A]
+	[1A mod 10]
+	[1J obj 1U]
+	[1U plc 25]
+}
+{#
+	<09:#Triplify>
+	<1H:data(icl>information)>
+	<31:data(icl>information)>
+	<1A:expose(icl>reveal(agt>thing,obj>thing))>
+	<2U:linked(aoj>thing)>
+	<10:plug-in(icl>computer program).@indef>
+	<00:see(icl>look at(agt>thing,obj>thing)).@entry.@impertive>
+	<0U:small(icl>not large(aoj>thing))>
+	<21:web application>
+	<1R:you>
+	[00 obj 09]
+	[09 pur 1A]
+	[1A agt 10]
+	[0U aoj 10]
+	[1A obj 1H]
+	[1A src 21]
+	[21 pos 1R]
+	[1A gol 31]
+	[2U aoj 31]
+}
+{#
+	<0F:one(icl>thing).@entry>
+	<04:project(icl>plan).@topic.@def>
+	<0M:several(icl>thing)>
+	<0U:sponsor(icl>pay the costs of(agt>thing,obj>thing)).@past>
+	<32:group(icl>volitional thing)>
+	<3F:SWEO(equ>Semantic Web Education and Outreach).@parenthesis>
+	<1G:W3C(equ>World Wide Web Consortium)>
+	[0F aoj 04]
+	[0F pof 0M]
+	[0U obj 0M]
+	[0U agt 32]
+	[32 mod #01]
+	[3F equ #01]
+	[32 pos 1G]
+	{#01
+		<24:education(icl>activity).@def>
+		<2T:interest(icl>feeling).@entry>
+		<2K:outreach(icl>activity)>
+		<1R:semantic web>
+		[2T and 24]
+		[2T mod 2K]
+		[24 mod 1R]
+	}
+}
+{#
+	<05:edit(agt>thing,obj>thing).@entry.@impertive>
+}
+{#
+	<05:service(icl>business).@entry.@pl>
+}
+{#
+	<05:edit(agt>thing,obj>thing).@entry.@impertive>
+}
+{#
+	<05:notification(icl>act)>
+	<0I:service(icl>business).@entry.@pl>
+	[0I mod 05]
+}
+{#
+	<05:edit(agt>thing,obj>thing).@entry.@impertive>
+}
+{#
+	<05:semantic web ping service.@entry>
+}
+{#
+	<09:semantic web ping service.@topic.@def>
+	<1M:service(icl>business).@entry.@indef>
+	<22:semantic web.@def>
+	<19:notification(icl>act)>
+	<2K:track(agt>thing,obj>thing)>
+	<3Y:data source(icl>device).@pl>
+	<4I:web(equ>World Wide Web).@def>
+	<3S:based on(aoj>thing,obj>thing)>
+	<3O:RDF(equ>Resource Description Framework)>
+	[1M aoj 09]
+	[1M pur 22]
+	[1M mod 19]
+	[2K agt 1M]
+	[2K obj #01]
+	[#01 obj 3Y]
+	[3Y plc 4I]
+	[3S aoj 3Y]
+	[3S obj 3O]
+	{#01
+		<2V:creation(icl>act).@def>
+		<38:modification(icl>act).@entry.@def>
+		[38 and 2V]
+	}
+}
+{#
+	<1N:RDF(equ>Resource Description Framework)>
+	<11:couple(obj>thing).@past>
+	<1R:data(icl>information)>
+	<00:it(icl>thing).@topic>
+	<0T:loosely(icl>not exactly)>
+	<19:monitoring(icl>act)>
+	<03:provide(icl>supply(agt>thing,gol>thing,obj>thing)).@entry>
+	<0G:service(icl>business).@pl>
+	<0C:web(equ>World Wide Web)>
+	[03 agt 00]
+	[03 obj 0G]
+	[0G pur 19]
+	[0G mod 0C]
+	[19 obj 1R]
+	[11 obj 19]
+	[11 man 0T]
+	[1R mod 1N]
+}
+{#
+	<14:RDF(equ>Resource Description Framework)>
+	<0R:breakdown(icl>phenomenon).@indef>
+	<18:data source(icl>device).@pl>
+	<00:in addition>
+	<2C:include(aoj>thing,obj>thing)>
+	<0D:it(icl>thing).@topic>
+	<0G:provide(icl>supply(agt>thing,gol>thing,obj>thing)).@entry>
+	<1L:track(agt>thing,obj>thing).@past>
+	<1W:vocabulary(icl>word)>
+	[0G man 00]
+	[0G agt 0D]
+	[0G obj 0R]
+	[0R obj 18]
+	[1L obj 18]
+	[18 mod 14]
+	[1L agt 1W]
+	[2C aoj 1W]
+}
+{#
+	<0C:DOAP(equ>Description of a Project)>
+	<06:FOAF(equ>Friend of a Friend )>
+	<0S:OWL(equ>Web Ontology Language).@entry>
+	<0I:RDFS(equ>Resource Description Framework Schema)>
+	<00:SIOC(equ>Semantically-Interlinked Online Communities)>
+	[0S and 0I]
+	[0I and 0C]
+	[0C and 06]
+	[06 and 00]
+}
+{#
+	<05:edit(agt>thing,obj>thing).@entry.@impertive>
+}
+{#
+	<05:Piggy Bank.@entry>
+}
+{#
+	<25:Firefox(iof>Web browser)>
+	<19:Piggy Bank.@entry.@def>
+	<00:another(mod<thing)>
+	<0F:downloadable(aoj>thing)>
+	<08:freely>
+	<1P:plug-in(icl>able to be added(aoj>thing))>
+	<0S:tool(icl>functional thing).@topic>
+	[19 aoj 0S]
+	[1P aoj 19]
+	[1P gol 25]
+	[0S mod 00]
+	[0F aoj 0S]
+	[0F man 08]
+}
+{#
+	<0B:work(icl>function(obj>thing)).@entry.@pl>
+	<00:Piggy Bank>
+	[0B met #02]
+	[0B obj 00]
+	{#02
+		<2B:store(icl>put(agt>thing,gol>thing,obj>thing)).@entry.@progress>
+		<2O:information>
+		<3E:computer(icl>machine).@def>
+		<2J:this(mod<thing)>
+		<37:user(icl>person)>
+		<1A:web script(icl>service).@pl>
+		<1V:information>
+		<1R:RDF(equ>Resource Description Framework)>
+		[2B and #01]
+		[2B obj 2O]
+		[2B gol 3E]
+		[2O mod 2J]
+		[3E pos 37]
+		[#01 obj 1A]
+		[#01 gol 1V]
+		[1V mod 1R]
+		{#01
+			<0K:extract(icl>obtain(agt>thing,obj>thing)).@progress>
+			<0Y:translate(icl>change(agt>thing,gol>thing,obj>thing)).@progress.@entry>
+			[0Y or 0K]
+		}
+	}
+}
+{#
+	<05:information.@topic>
+	<0L:then(icl>next)>
+	<3C:use(icl>employ(agt>thing,obj>thing)).@progress>
+	<2X:for example(aoj>thing)>
+	<3I:Google Map(iof>web search engine).@pl>
+	<3X:display(agt>thing,obj>ability)>
+	<45:information>
+	<00:this(mod<thing)>
+	[#01 obj 05]
+	[#01 man 0L]
+	[#01 met 3C]
+	[2X aoj 3C]
+	[3C obj 3I]
+	[3C pur 3X]
+	[3X obj 45]
+	[05 mod 00]
+	{#01
+		<0T:retrieve(agt>thing,obj>information).@ability>
+		<29:use(icl>employ(agt>thing,obj>thing)).@entry.@ability>
+		<2N:context(icl>situation).@pl>
+		<2H:other(icl>additional(mod<thing))>
+		<13:independently>
+		<1X:context(icl>situation).@def>
+		<1O:original(mod<thing)>
+		[29 and 0T]
+		[29 plc 2N]
+		[2N mod 2H]
+		[0T man 13]
+		[13 src 1X]
+		[1X mod 1O]
+	}
+}
+{#
+	<00:Piggy Bank>
+	<1F:bank(icl>organization)>
+	<1X:combine(icl>join(agt>thing,gol>thing,obj>thing))>
+	<2A:idea(icl>notion).@def>
+	<2Q:information>
+	<3J:language(icl>system).@def.@pl>
+	<0O:new(icl>not existing before(aoj>thing))>
+	<3B:new(icl>not existing before(aoj>thing))>
+	<16:semantic(aoj>thing)>
+	<0S:service(icl>business).@indef>
+	<2I:tag(icl>add character(agt>thing,obj>thing)).@progress>
+	<3F:web(equ>World Wide Web)>
+	<0H:with(icl>using(obj>thing))>
+	<0B:work(icl>function(obj>thing)).@entry.@pl>
+	[0B man 0H]
+	[0B obj 00]
+	[0H obj 0S]
+	[0S cnt 1F]
+	[16 aoj 1F]
+	[0O aoj 0S]
+	[1X agt 0S]
+	[1X obj 2A]
+	[2A obj 2I]
+	[2I gol 2Q]
+	[1X gol 3J]
+	[3B aoj 3J]
+	[3J mod 3F]
+}
+{#
+	<00:Piggy Bank.@topic>
+	<62:RDF(equ>Resource Description Framework)>
+	<2C:RDFizer(icl>sofyware).@pl>
+	<11:Simile(iof>project)>
+	<5J:US(equ>United States of America)>
+	<1T:also(icl>how)>
+	<0F:develop(icl>think of(agt>thing,obj>thing)).@entry.@past>
+	<4N:for example(aoj>thing)>
+	<4A:information>
+	<18:project(icl>plan).@def>
+	<1Y:provide(icl>supply(agt>thing,gol>thing,obj>thing))>
+	<3S:specific(icl>particular(aoj>thing))>
+	<2S:tool(icl>functional thing).@pl>
+	<3I:translate(icl>change(agt>thing,gol>thing,obj>thing))>
+	<41:type(icl>kind).@pl>
+	<3A:use(icl>employ(agt>thing,obj>thing)).@ability>
+	<4Z:weather report.@pl>
+	<5M:zip code.@pl>
+	[0F obj 00]
+	[0F agt 18]
+	[18 mod 11]
+	[1Y agt 18]
+	[1Y obj 2C]
+	[1Y man 1T]
+	[2S aoj 2C]
+	[3A obj 2S]
+	[3A pur 3I]
+	[3I obj 41]
+	[41 mod 4A]
+	[3S aoj 41]
+	[4Z iof 4A]
+	[4N aoj 4Z]
+	[3I gol 62]
+	[4Z pur 5M]
+	[5M mod 5J]
+}
+{#
+	<0P:ease(agt>thing,obj>thing).@entry.@ability.@past>
+	<00:effort(icl>attempt).@topic.@pl>
+	<1K:transition(icl>process).@indef>
+	<1V:between(icl>in space separating(aoj>thing,gol>thing))>
+	<18:troublesome(aoj>thing)>
+	<0W:potentially>
+	<0D:this(icl>thing).@pl>
+	<08:like(icl>such as(aoj>thing))>
+	[0P agt 00]
+	[0P obj 1K]
+	[1V aoj 1K]
+	[18 aoj 1K]
+	[18 man 0W]
+	[1V gol #01]
+	[0D iof 00]
+	[08 aoj 0D]
+	{#01
+		<31:successor(icl>person).@entry>
+		<27:web(equ>World Wide Web).@def>
+		<2O:it(icl>thing)>
+		<2S:semantic(aoj>thing)>
+		<2E:today(icl>day)>
+		[31 and 27]
+		[31 pos 2O]
+		[2S aoj 31]
+		[27 mod 2E]
+	}
+}
+{#
+	<05:edit(agt>thing,obj>thing).@entry.@impertive>
+}
+{#
+	<09:also(icl>how)>
+	<05:see(icl>look at(agt>thing,obj>thing)).@entry.@impertive>
+	[05 man 09]
+}
+{#
+	<00:entity-attribute-value model.@entry>
+}
+{#
+	<08:emerge(icl>appear(obj>thing)).@progress>
+	<00:list(icl>document).@entry>
+	<0H:technology(icl>knowledge).@pl>
+	[00 mod 0H]
+	[08 obj 0H]
+}
+{#
+	<09:advertising(icl>business).@entry>
+	<00:semantic(aoj>thing)>
+	[00 aoj 09]
+}
+{#
+	<00:semantic(aoj>thing)>
+	<09:sensor>
+	<0G:web(equ>World Wide Web).@entry>
+	[00 aoj 0G]
+	[0G mod 09]
+}
+{#
+	<00:semantic web>
+	<0D:service(icl>business).@entry.@pl>
+	[0D mod 00]
+}
+{#
+	<07:semantic web.@entry>
+	<00:social(icl>connected with society(mod<thing))>
+	[07 mod 00]
+}
+{#
+	<00:Swoogle(iof>search engine).@entry>
+}
+{#
+	<04:3.0>
+	<00:web(equ>World Wide Web).@entry>
+	[00 mod 04]
+}
+{#
+	<00:Website Parse Template.@entry>
+}
+{#
+	<00:wikipedia(icl>encyclopedia).@entry>
+}
+{#
+	<09:MediaWiki.@entry>
+	<00:semantic(aoj>thing)>
+	[00 aoj 09]
+}
+{#
+	<05:edit(agt>thing,obj>thing).@entry.@impertive>
+}
+{#
+	<05:reference(icl>act).@entry.@pl>
+}

@@ -6,7 +6,7 @@
 package cdl.neo4j.wrappers
 
 import java.io.File
-import java.net.{ URI, URISyntaxException }
+import java.net.URISyntaxException
 import java.nio.file.{ Files, Paths }
 
 import scala.collection.mutable.LinkedHashMap
@@ -102,7 +102,7 @@ class EmbeddedNeoWrapper(uri: String) extends CDLNeoWrapper {
   }
 
   def fetchUWs(hw: String): Iterator[UW] = {
-    var result = query("MATCH (uw:UW { hw: \""+hw+"\" } return uw")
+    var result = query("MATCH (uw:UW) WHERE uw.uw =~ \""+hw+".*\" RETURN uw")
     return result.map(row => rowToUW(row))
   }
 
@@ -133,10 +133,11 @@ class EmbeddedNeoWrapper(uri: String) extends CDLNeoWrapper {
   }
 
   private def rowToUW(row: Map[String, Any]): UW = {
-    val hw = row(NodeProperties.Headword).asInstanceOf[String]
-    val consString = row(NodeProperties.Constraints).asInstanceOf[String]
-    val cons = CDLParser.parseConstraints(consString)
-    new UW(hw, cons)
+    val uw = row(NodeProperties.UniversalWord).asInstanceOf[String]
+    //val consString = row(NodeProperties.Constraints).asInstanceOf[String]
+    //val cons = CDLParser.parseConstraints(consString)
+    //new UW(hw, cons)
+    CDLParser.parseBaseUW(uw)
   }
 
   private def addDocument(parsedDoc: CDLDocument) = {

@@ -6,6 +6,7 @@
 *.log
 .factorypath
 .shell_history
+data/**
 
 # sbt specific
 dist/*
