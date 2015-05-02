@@ -8,6 +8,7 @@ package cdl.neo4j.wrappers
 import java.io.File
 import java.net.URI
 
+import org.glassfish.jersey.client.ClientProperties
 import org.neo4j.cypher.ExecutionResult
 
 import cdl.objects.UW
@@ -16,21 +17,27 @@ import javax.ws.rs.core.{ MediaType, Response }
 
 class RestNeoWrapper(uri: String) extends CDLNeoWrapper {
   def getHyponyms(uw: UW): Iterator[UW] = {
+    //TODO: implement
     return null
   }
   def query(q: String): ExecutionResult = {
+    //TODO: implement
     return null
   }
   def cleanDB(): Boolean = {
+    //TODO: implement
     return false
   }
   def fetchUWs(hw: String): Iterator[UW] = {
+    //TODO: implement
     return null
   }
   def importDocuments(docs: Array[File]): Boolean = {
+    //TODO: implement
     return false
   }
   def importOntology(): Boolean = {
+    //TODO: implement
     return false
   }
 
@@ -57,6 +64,7 @@ class RestNeoWrapper(uri: String) extends CDLNeoWrapper {
       .target(neoURI)
       .path("/")
       .request(MediaType.APPLICATION_JSON_TYPE)
+      .property(ClientProperties.CONNECT_TIMEOUT, 1000)
     var response: Response = null
     try {
       response = request.get
